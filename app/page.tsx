@@ -1,69 +1,8 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+import Link from "next/link";import {getAllReviews,getFeaturedReview,mark} from "@/lib/reviews";
+function Stamp({score}:{score:number}){const m=mark(score);return <div className="stamp"><span>HMM</span><b>{m.symbol}</b><strong>{score.toFixed(1)}</strong></div>}
+export default function Home(){const reviews=getAllReviews();const featured=getFeaturedReview();const rest=reviews.filter(r=>r.slug!==featured.slug);const index=[...reviews].sort((a,b)=>a.title.localeCompare(b.title));return <><header className="siteHeader shell"><Link className="brand" href="/">MOVIE<span>—HMM</span></Link><nav><a href="#reviews">Reviews</a><a href="#index">Index</a><Link href="/about">Our Standard</Link></nav></header><main>
+<section className="newsHero shell"><div className="editionLine"><span>MOVIE-HMM · REVIEW DESK</span><span>{reviews.length} REVIEWS · INDEPENDENT</span></div><div className="newsHeroGrid"><div><p className="eyebrow">INDEPENDENT MOVIE REVIEWS</p><h1>No hype. No hate.<em> Just the movie.</em></h1></div><div className="heroManifesto"><strong>HMM?</strong><p>We watch. We think. We write.<br/>Every score has to be earned.</p></div></div></section>
+<section className="featureWrap shell"><div className="sectionLabel">FEATURED REVIEW</div><div className="featureGrid"><Link href={`/reviews/${featured.slug}`} className="featuredPosterLink"><img src={featured.poster} alt={`${featured.title} — Movie-Hmm Review`} className="featuredPosterImage"/></Link><div className="featureCopy"><div className="meta">{featured.language} · {featured.genre} · {featured.year}</div><h2>{featured.title}</h2><div className="featureScore"><Stamp score={featured.score}/><div><div className="verdict">{featured.verdict}</div><p>{featured.dek}</p></div></div><Link className="readLink" href={`/reviews/${featured.slug}`}>READ THE REVIEW →</Link></div><aside className="scoreKey"><span className="eyebrow">HMM INDEX</span><h3>What the mark means.</h3><div><b>9+</b><span>HMM★</span><small>Exceptional</small></div><div><b>8+</b><span>HMM✓</span><small>Strong yes</small></div><div><b>7+</b><span>HMM✓</span><small>Good</small></div><div><b>6+</b><span>HMM?</span><small>Maybe</small></div><div><b>&lt;6</b><span>HMM×</span><small>No</small></div></aside></div></section>
+<section id="reviews" className="contentGrid shell"><div className="reviewsMain"><div className="sectionHead"><div className="sectionLabel">FROM THE REVIEW SHELF</div><span>{reviews.length} reviews</span></div><div className="cardGrid">{rest.map((r,i)=><Link className="reviewCard" href={`/reviews/${r.slug}`} key={r.slug}><div className="reviewPosterWrap"><img src={r.poster} alt={`${r.title} review poster`} className="reviewPosterImage"/><div className="cornerScore">{r.score.toFixed(1)}</div></div><div className="cardTop"><h3>{r.title}</h3><span className="tinyMark">HMM{mark(r.score).symbol}</span></div><div className="meta">{r.language} · {r.year}</div><p>{r.dek}</p><div className="miniVerdict">{r.verdict}</div></Link>)}</div></div>
+<aside id="index" className="reviewIndex"><div className="sticky"><p className="sectionLabel">ALL REVIEWS</p><h2>Every film.<br/>One honest take.</h2><div className="indexList">{index.map(r=><Link href={`/reviews/${r.slug}`} key={r.slug}><span>{r.title}</span><b>{r.score.toFixed(1)}</b></Link>)}</div></div></aside></section>
+<section className="standard shell"><p className="eyebrow">THE MOVIE-HMM STANDARD</p><h2>An 8 should mean something.</h2><p>We do not inflate scores for stars, fandoms or opening-weekend excitement. We do not underrate films to look clever. The review explains the score, and the score has to be earned.</p><Link href="/about">HOW WE RATE →</Link></section></main><footer className="footer shell"><div><div className="brand">MOVIE<span>—HMM</span><sup className="tm">™</sup></div><div className="legalNav"><Link href="/editorial-policy">Editorial Policy</Link><Link href="/disclaimer">Disclaimer</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/copyright">Copyright & DMCA</Link><Link href="/contact">Contact</Link></div></div><p>No hype. No hate. Just the movie.</p><small>© 2026 Movie-Hmm. All rights reserved.</small></footer></>}

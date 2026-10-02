@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie-Hmm
 
-## Getting Started
+No hype. No hate. Just the movie.
 
-First, run the development server:
+## Daily review workflow
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Put the poster in `public/posters/`.
+2. Add one JSON file in `content/reviews/`.
+3. Set `"featured": true` only for the movie currently in the homepage banner.
+4. Set all other reviews to `"featured": false`.
+5. `git add . && git commit -m "Add review: Movie Name" && git push`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Homepage, index, review page and sitemap are generated automatically from review JSON files.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Production editorial standard
 
-## Learn More
+Score language is fixed:
+- 9.0–10: HMM★ WOW
+- 8.0–8.9: HMM✓ YES
+- 7.0–7.9: HMM✓ GOOD
+- 6.0–6.9: HMM? MAYBE
+- Below 6: HMM× NO
 
-To learn more about Next.js, take a look at the following resources:
+Homepage:
+- Exactly one review has `featured: true`.
+- Other reviews are ordered by `displayOrder`, then published date.
+- Keep poster art visually simple enough to read at card size.
+- The alphabetical index is intentionally hidden until the library is large enough.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Daily publishing requires only a poster and one JSON review file.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Launch checklist
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add a dedicated Movie-Hmm contact email before public promotion.
+- Do not use ® unless federal trademark registration is actually granted.
+- Review Privacy Policy before enabling analytics, advertising, newsletters, accounts, or non-essential cookies.
+- A formal DMCA designated-agent notice requires actual Copyright Office designation and real contact details.
+- Do not publish ticket confirmation numbers, QR codes, order IDs, or payment details.

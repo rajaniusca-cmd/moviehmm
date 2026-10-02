@@ -1,0 +1,10 @@
+import Link from "next/link";
+export const metadata={title:"Editorial Policy"};
+export default function Page(){return <main className="article legalPage shell"><Link className="back" href="/">← MOVIE-HMM</Link><p className="eyebrow">HOW WE REVIEW</p><h1>Editorial Policy</h1>
+<p className="lead">Movie-Hmm is an independent written movie-review publication. Our job is to explain what we saw, why it worked or did not work for us, and how the published score follows from that criticism.</p>
+<h2>Our scoring rule</h2><p>Scores are editorial judgments, not objective measurements. We do not change a score because a film is popular, unpopular, commercially successful, heavily promoted, or rated differently by another publication or aggregator.</p>
+<ul><li>9.0–10: HMM★ WOW — exceptional and deliberately rare.</li><li>8.0–8.9: HMM✓ YES — strongly recommended.</li><li>7.0–7.9: HMM✓ GOOD — a good film with meaningful strengths.</li><li>6.0–6.9: HMM? MAYBE — mixed; worthwhile for the right viewer.</li><li>Below 6: HMM× NO — not recommended overall.</li></ul>
+<h2>Independent opinion</h2><p>We distinguish criticism from factual reporting. Public consensus may be discussed when it helps readers understand the reception of a film, but consensus does not determine our verdict.</p>
+<h2>Corrections</h2><p>Material factual errors should be corrected when identified. Correcting a fact does not require changing the underlying critical opinion unless the corrected fact materially changes the analysis.</p>
+<h2>Conflicts and access</h2><p>If Movie-Hmm receives complimentary access, promotional consideration, sponsorship, or another material relationship relevant to a review, it should be disclosed clearly on that review.</p>
+<p className="published">Effective October 2, 2026 · Movie-Hmm™</p></main>}

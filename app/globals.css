@@ -138,3 +138,26 @@ body{background:#f3efe6}
 .reelHole{position:absolute;width:86px;height:112px;background:#15120e;border:4px solid #8b7044;border-radius:48%;transform-origin:50% 180px}.reelHole.h1{left:132px;top:22px}.reelHole.h2{left:225px;top:116px;transform:rotate(90deg)}.reelHole.h3{left:132px;top:214px;transform:rotate(180deg)}.reelHole.h4{left:36px;top:116px;transform:rotate(90deg)}.reelHub{position:absolute;left:145px;top:145px;width:70px;height:70px;background:#17130f;border:6px solid #a88343;border-radius:50%}
 @media(max-width:900px){.brandEditorial .brandMovie{font-size:38px}.brandEditorial .brandDots{font-size:28px}.brandEditorial em{font-size:40px}.brandEditorial small{display:none}.editorialHeroGrid{grid-template-columns:1fr}.editorialStatement{padding-right:10px}.editorialThought{border-left:0;border-top:1px solid #aaa195;margin:10px 0 0;padding:28px 130px 18px 5px}.reelMark{width:260px;height:260px;right:-145px;bottom:-120px}.editorialStatement h1{font-size:clamp(55px,12vw,90px)}}
 @media(max-width:600px){.editorialKicker span:last-child{display:none}.editorialStatement{padding-top:35px}.editorialStatement h1{letter-spacing:-4px}.editorialStatement p{font-size:8px;letter-spacing:3px;line-height:1.6}.editorialThought{padding-right:75px}.editorialThought p{font-size:21px}.reelMark{opacity:.42;right:-185px}.brandEditorial .brandMovie{font-size:33px}.brandEditorial .brandDots{font-size:24px}.brandEditorial em{font-size:35px}}
+
+/* v16 — final Movie...hmm wordmark + compact first viewport */
+.brandWordmark{display:flex!important;align-items:baseline!important;gap:0!important;position:relative!important;line-height:.86!important;text-transform:none!important;letter-spacing:0!important;padding-bottom:19px}
+.brandWordmark .wordMovie{font-family:Arial,Helvetica,sans-serif;font-size:42px;font-weight:900;letter-spacing:-3.2px;color:#111}
+.brandWordmark .wordDots{font-family:Georgia,"Times New Roman",serif;font-size:31px;font-weight:700;color:#b77b00;letter-spacing:-1px;margin:0 2px}
+.brandWordmark em{font-family:Georgia,"Times New Roman",serif;font-size:47px;font-weight:400;font-style:italic;letter-spacing:-3px;color:#b77b00}
+.brandWordmark small{position:absolute;left:2px;top:49px;font-family:Arial,Helvetica,sans-serif;font-size:6px;font-weight:700;letter-spacing:2.45px;white-space:nowrap;color:#4f4942}
+.header{padding-top:24px!important;padding-bottom:18px!important}
+.editorialHero{margin-top:15px!important;padding-bottom:16px!important}
+.editorialKicker{padding:10px 5px!important}
+.editorialHeroGrid{min-height:215px!important;grid-template-columns:minmax(0,1.7fr) minmax(280px,.62fr)!important}
+.editorialStatement{padding:27px 30px 14px 5px!important}
+.editorialStatement h1{font-size:clamp(43px,4.7vw,70px)!important;line-height:.89!important;letter-spacing:-4px!important;max-width:790px!important}
+.editorialStatement h1 em{margin-top:3px!important}
+.editorialStatement p{margin-top:18px!important;font-size:8px!important;letter-spacing:3.6px!important}
+.editorialThought{margin:25px 0 0!important;padding:1px 18px 0 30px!important}
+.editorialThought .quoteMark{font-size:38px!important}
+.editorialThought p{font-size:18px!important;margin:8px 0 14px!important;line-height:1.22!important}
+.editorialThought>span{padding-top:8px!important;font-size:7px!important;letter-spacing:2.4px!important;border-top-width:2px!important}
+.reelMark{display:none!important}
+.featureWrap{padding-top:20px!important}
+@media(max-width:900px){.brandWordmark .wordMovie{font-size:36px}.brandWordmark .wordDots{font-size:27px}.brandWordmark em{font-size:40px}.brandWordmark small{top:43px;font-size:5.5px}.editorialHeroGrid{grid-template-columns:1fr!important}.editorialStatement{padding-top:25px!important}.editorialThought{border-left:0!important;border-top:1px solid #aaa195!important;margin-top:8px!important;padding:18px 5px 8px!important}.editorialStatement h1{font-size:clamp(44px,9vw,65px)!important}}
+@media(max-width:600px){.brandWordmark small{display:none}.brandWordmark{padding-bottom:0}.brandWordmark .wordMovie{font-size:31px}.brandWordmark .wordDots{font-size:23px}.brandWordmark em{font-size:35px}.editorialKicker span:last-child{display:none}.editorialStatement h1{font-size:48px!important;letter-spacing:-3px!important}.editorialStatement p{font-size:7px!important;letter-spacing:2.5px!important}.editorialThought p{font-size:17px!important}}

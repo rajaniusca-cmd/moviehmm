@@ -114,3 +114,27 @@ body{background:#f3efe6}
 .manifestEmoji{font-size:54px;line-height:1;margin-bottom:10px}.heroManifesto>strong{font-family:Arial,sans-serif;font-size:28px;letter-spacing:-1px}.heroManifesto>strong em{font-family:Georgia,serif;color:#c88700;font-style:normal;font-size:35px}.heroManifesto p{margin-top:11px}
 .cardTop{align-items:center}.shelfScore{width:82px;height:82px;flex:none;margin-left:auto}.shelfScore span{font-size:8px}.shelfScore em{font-size:18px}.shelfScore strong{font-size:25px;letter-spacing:-1px;margin-top:4px}.miniVerdict{font-family:Georgia,serif!important;font-size:27px!important;font-weight:700!important;color:#111!important;line-height:1.1!important;margin-top:8px!important}.miniVerdict::first-letter{color:#b77b00}.verdict{font-size:30px!important;line-height:1.1!important;font-weight:700!important}.posterBrand{display:none!important}
 @media(max-width:760px){.scoreKey>div:not(.reactionSignature){grid-template-columns:30px 45px 1fr}.scoreKey>div>i{font-size:27px}.scoreKey>div>span{font-size:15px}.reactionSignature>i{font-size:58px!important}.shelfScore{width:70px;height:70px}.miniVerdict{font-size:23px!important}.verdict{font-size:25px!important}}
+
+/* v15 — approved Movie... hmm editorial masthead + hero */
+.brandEditorial{display:flex!important;align-items:baseline;gap:0!important;position:relative;line-height:1;text-transform:none!important;letter-spacing:0!important}
+.brandEditorial .brandMovie{font-family:Georgia,"Times New Roman",serif;font-size:47px;font-weight:700;letter-spacing:-3px}
+.brandEditorial .brandDots{font-family:Georgia,serif;font-size:34px;font-weight:700;color:#ae7811;letter-spacing:-2px;margin-left:3px}
+.brandEditorial em{font-family:Georgia,"Times New Roman",serif;font-size:49px;font-weight:400;font-style:italic;color:#ae7811;letter-spacing:-3px}
+.brandEditorial small{position:absolute;left:5px;top:57px;font-family:Arial,sans-serif;font-size:7px;font-weight:700;letter-spacing:3.2px;white-space:nowrap;color:#3f3a34}
+.header{padding-bottom:30px}
+.editorialHero{border-top:1px solid #111;border-bottom:1px solid #111;margin-top:30px;padding:0 0 30px}
+.editorialKicker{display:flex;justify-content:space-between;align-items:center;padding:15px 5px;border-bottom:1px solid #111;font-size:9px;font-weight:700;letter-spacing:3px;color:#5f584f}
+.editorialHeroGrid{position:relative;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(310px,.75fr);min-height:355px;overflow:hidden}
+.editorialStatement{padding:48px 40px 24px 5px;position:relative;z-index:2}
+.editorialStatement h1{margin:0;max-width:960px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(62px,7.1vw,112px);line-height:.88;font-weight:400;letter-spacing:-6px}
+.editorialStatement h1 em{display:block;color:#ae7811;font-weight:400;font-style:italic;margin-top:7px}
+.editorialStatement p{margin:30px 0 0;font-size:10px;font-weight:700;letter-spacing:5px;color:#5f584f}
+.editorialThought{position:relative;z-index:3;border-left:1px solid #aaa195;margin:42px 0 0;padding:4px 150px 0 42px}
+.quoteMark{font-family:Georgia,serif;color:#ae7811;font-size:54px;line-height:.7}
+.editorialThought p{font-family:Georgia,serif;font-size:24px;line-height:1.28;margin:15px 0 25px}
+.editorialThought p em{font-style:italic}
+.editorialThought>span{display:inline-block;border-top:3px solid #ae7811;padding-top:14px;font-size:9px;font-weight:800;letter-spacing:3px}
+.reelMark{position:absolute;right:-145px;bottom:-175px;width:360px;height:360px;border:10px solid #7e6842;border-radius:50%;box-shadow:inset 0 0 0 4px #b28a45,inset 0 0 0 9px #17130f;opacity:.88;transform:rotate(-12deg);z-index:1}
+.reelHole{position:absolute;width:86px;height:112px;background:#15120e;border:4px solid #8b7044;border-radius:48%;transform-origin:50% 180px}.reelHole.h1{left:132px;top:22px}.reelHole.h2{left:225px;top:116px;transform:rotate(90deg)}.reelHole.h3{left:132px;top:214px;transform:rotate(180deg)}.reelHole.h4{left:36px;top:116px;transform:rotate(90deg)}.reelHub{position:absolute;left:145px;top:145px;width:70px;height:70px;background:#17130f;border:6px solid #a88343;border-radius:50%}
+@media(max-width:900px){.brandEditorial .brandMovie{font-size:38px}.brandEditorial .brandDots{font-size:28px}.brandEditorial em{font-size:40px}.brandEditorial small{display:none}.editorialHeroGrid{grid-template-columns:1fr}.editorialStatement{padding-right:10px}.editorialThought{border-left:0;border-top:1px solid #aaa195;margin:10px 0 0;padding:28px 130px 18px 5px}.reelMark{width:260px;height:260px;right:-145px;bottom:-120px}.editorialStatement h1{font-size:clamp(55px,12vw,90px)}}
+@media(max-width:600px){.editorialKicker span:last-child{display:none}.editorialStatement{padding-top:35px}.editorialStatement h1{letter-spacing:-4px}.editorialStatement p{font-size:8px;letter-spacing:3px;line-height:1.6}.editorialThought{padding-right:75px}.editorialThought p{font-size:21px}.reelMark{opacity:.42;right:-185px}.brandEditorial .brandMovie{font-size:33px}.brandEditorial .brandDots{font-size:24px}.brandEditorial em{font-size:35px}}

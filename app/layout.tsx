@@ -1,3 +1,3 @@
 import type {Metadata} from "next";import "./globals.css";
-export const metadata:Metadata={metadataBase:new URL("https://moviehmm.com"),title:{default:"Movie-Hmm — No hype. No hate. Just the movie.",template:"%s | Movie-Hmm"},description:"Independent written movie reviews with scores that are earned, not inherited from hype."};
+export const metadata:Metadata={metadataBase:new URL("https://www.moviehmm.com"),title:{default:"Movie-Hmm — No hype. No hate. Just the movie.",template:"%s | Movie-Hmm"},description:"Independent written movie reviews with scores that are earned, not inherited from hype."};
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}

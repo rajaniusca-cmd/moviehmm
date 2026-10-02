@@ -89,3 +89,6 @@ body{background:#f3efe6}
 /* v11 launch/legal */
 .legalNav{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:18px}.legalNav a{font-size:9px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:#5f584f;text-decoration:none}.legalNav a:hover{color:#111}
 .legalPage{max-width:860px}.legalPage h1{font-size:clamp(52px,8vw,92px)}.legalPage h2{font-family:Georgia,serif;font-weight:400;font-size:31px;margin-top:55px}.legalPage h3{font-size:15px;margin-top:30px}.legalPage li{font-family:Georgia,serif;font-size:18px;line-height:1.65;margin:8px 0}.legalNote{border:1px solid #aaa;padding:20px 22px;margin:32px 0;font-family:Georgia,serif;line-height:1.55}.tm{font-size:.48em;vertical-align:super;letter-spacing:0}
+
+/* expression identity */
+.heroManifesto strong{font-size:34px;letter-spacing:-1.5px}.heroManifesto strong em{font-family:Georgia,serif;font-weight:400}.verdict,.miniVerdict{text-transform:none;font-family:Georgia,serif;letter-spacing:.1px}.verdict{font-size:19px}

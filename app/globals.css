@@ -619,3 +619,35 @@ body{background:#f3efe6}
   padding-top: 16px !important;
 }
 
+
+.footerMovieLogo {
+  display:flex;
+  align-items:baseline;
+  gap:0;
+}
+
+.footerMovieLogo span {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:32px;
+  letter-spacing:-2px;
+}
+
+.footerMovieLogo b {
+  font-family:Georgia,serif;
+  font-size:20px;
+  color:#b57908;
+}
+
+.footerMovieLogo i {
+  font-style:normal;
+  font-size:20px;
+}
+
+.footerMovieLogo em {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:34px;
+  font-style:italic;
+  color:#b57908;
+  letter-spacing:-2px;
+}
+

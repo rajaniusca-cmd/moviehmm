@@ -115,49 +115,507 @@ body{background:#f3efe6}
 .cardTop{align-items:center}.shelfScore{width:82px;height:82px;flex:none;margin-left:auto}.shelfScore span{font-size:8px}.shelfScore em{font-size:18px}.shelfScore strong{font-size:25px;letter-spacing:-1px;margin-top:4px}.miniVerdict{font-family:Georgia,serif!important;font-size:27px!important;font-weight:700!important;color:#111!important;line-height:1.1!important;margin-top:8px!important}.miniVerdict::first-letter{color:#b77b00}.verdict{font-size:30px!important;line-height:1.1!important;font-weight:700!important}.posterBrand{display:none!important}
 @media(max-width:760px){.scoreKey>div:not(.reactionSignature){grid-template-columns:30px 45px 1fr}.scoreKey>div>i{font-size:27px}.scoreKey>div>span{font-size:15px}.reactionSignature>i{font-size:58px!important}.shelfScore{width:70px;height:70px}.miniVerdict{font-size:23px!important}.verdict{font-size:25px!important}}
 
-/* v15 — approved Movie... hmm editorial masthead + hero */
-.brandEditorial{display:flex!important;align-items:baseline;gap:0!important;position:relative;line-height:1;text-transform:none!important;letter-spacing:0!important}
-.brandEditorial .brandMovie{font-family:Georgia,"Times New Roman",serif;font-size:47px;font-weight:700;letter-spacing:-3px}
-.brandEditorial .brandDots{font-family:Georgia,serif;font-size:34px;font-weight:700;color:#ae7811;letter-spacing:-2px;margin-left:3px}
-.brandEditorial em{font-family:Georgia,"Times New Roman",serif;font-size:49px;font-weight:400;font-style:italic;color:#ae7811;letter-spacing:-3px}
-.brandEditorial small{position:absolute;left:5px;top:57px;font-family:Arial,sans-serif;font-size:7px;font-weight:700;letter-spacing:3.2px;white-space:nowrap;color:#3f3a34}
-.header{padding-bottom:30px}
-.editorialHero{border-top:1px solid #111;border-bottom:1px solid #111;margin-top:30px;padding:0 0 30px}
-.editorialKicker{display:flex;justify-content:space-between;align-items:center;padding:15px 5px;border-bottom:1px solid #111;font-size:9px;font-weight:700;letter-spacing:3px;color:#5f584f}
-.editorialHeroGrid{position:relative;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(310px,.75fr);min-height:355px;overflow:hidden}
-.editorialStatement{padding:48px 40px 24px 5px;position:relative;z-index:2}
-.editorialStatement h1{margin:0;max-width:960px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(62px,7.1vw,112px);line-height:.88;font-weight:400;letter-spacing:-6px}
-.editorialStatement h1 em{display:block;color:#ae7811;font-weight:400;font-style:italic;margin-top:7px}
-.editorialStatement p{margin:30px 0 0;font-size:10px;font-weight:700;letter-spacing:5px;color:#5f584f}
-.editorialThought{position:relative;z-index:3;border-left:1px solid #aaa195;margin:42px 0 0;padding:4px 150px 0 42px}
-.quoteMark{font-family:Georgia,serif;color:#ae7811;font-size:54px;line-height:.7}
-.editorialThought p{font-family:Georgia,serif;font-size:24px;line-height:1.28;margin:15px 0 25px}
-.editorialThought p em{font-style:italic}
-.editorialThought>span{display:inline-block;border-top:3px solid #ae7811;padding-top:14px;font-size:9px;font-weight:800;letter-spacing:3px}
-.reelMark{position:absolute;right:-145px;bottom:-175px;width:360px;height:360px;border:10px solid #7e6842;border-radius:50%;box-shadow:inset 0 0 0 4px #b28a45,inset 0 0 0 9px #17130f;opacity:.88;transform:rotate(-12deg);z-index:1}
-.reelHole{position:absolute;width:86px;height:112px;background:#15120e;border:4px solid #8b7044;border-radius:48%;transform-origin:50% 180px}.reelHole.h1{left:132px;top:22px}.reelHole.h2{left:225px;top:116px;transform:rotate(90deg)}.reelHole.h3{left:132px;top:214px;transform:rotate(180deg)}.reelHole.h4{left:36px;top:116px;transform:rotate(90deg)}.reelHub{position:absolute;left:145px;top:145px;width:70px;height:70px;background:#17130f;border:6px solid #a88343;border-radius:50%}
-@media(max-width:900px){.brandEditorial .brandMovie{font-size:38px}.brandEditorial .brandDots{font-size:28px}.brandEditorial em{font-size:40px}.brandEditorial small{display:none}.editorialHeroGrid{grid-template-columns:1fr}.editorialStatement{padding-right:10px}.editorialThought{border-left:0;border-top:1px solid #aaa195;margin:10px 0 0;padding:28px 130px 18px 5px}.reelMark{width:260px;height:260px;right:-145px;bottom:-120px}.editorialStatement h1{font-size:clamp(55px,12vw,90px)}}
-@media(max-width:600px){.editorialKicker span:last-child{display:none}.editorialStatement{padding-top:35px}.editorialStatement h1{letter-spacing:-4px}.editorialStatement p{font-size:8px;letter-spacing:3px;line-height:1.6}.editorialThought{padding-right:75px}.editorialThought p{font-size:21px}.reelMark{opacity:.42;right:-185px}.brandEditorial .brandMovie{font-size:33px}.brandEditorial .brandDots{font-size:24px}.brandEditorial em{font-size:35px}}
+/* v18 — exact approved reference direction, compact and review-first */
+.refLogo{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.refLogo>div{display:flex;align-items:baseline;gap:0}
+.refLogo span{font-family:Arial,Helvetica,sans-serif;font-size:48px;font-weight:900;letter-spacing:-4px;color:#0e0e0d}
+.refLogo b{font-family:Georgia,serif;font-size:35px;letter-spacing:-2px;color:#b27a0b;margin-left:2px}
+.refLogo em{font-family:Georgia,"Times New Roman",serif;font-size:55px;font-weight:400;font-style:italic;letter-spacing:-4px;color:#b27a0b}
+.refLogo small{font-family:Arial,sans-serif;font-size:7px;font-weight:600;letter-spacing:4px;color:#5d5750;margin:8px 0 0 4px}
+.header{padding-top:20px!important;padding-bottom:15px!important}
+.refHero{margin-top:12px;border-top:1px solid #817a70;border-bottom:1px solid #111}
+.refStrip{height:42px;border-bottom:1px solid #111;display:flex;align-items:center;justify-content:space-between;padding:0 5px;font-family:Arial,sans-serif;font-size:8px;font-weight:700;letter-spacing:3.5px;color:#555049}
+.refHeroBody{height:275px;display:grid;grid-template-columns:minmax(0,1.45fr) 310px 330px;position:relative;overflow:hidden}
+.refStatement{padding:35px 28px 15px 5px}
+.refStatement h1{font-family:Georgia,"Times New Roman",serif;font-size:68px;line-height:.88;letter-spacing:-5px;font-weight:400;margin:0}
+.refStatement h1 em{display:block;font-weight:400;font-style:italic;color:#b27a0b;margin-top:4px}
+.refStatement p{font-family:Arial,sans-serif;font-size:8px;font-weight:700;letter-spacing:4.3px;color:#625c55;margin:24px 0 0}
+.refQuote{border-left:1px solid #aaa195;padding:26px 20px 0 42px;position:relative;z-index:3}
+.refQuote>b{font-family:Georgia,serif;font-size:43px;line-height:.7;color:#b27a0b}
+.refQuote p{font-family:Georgia,"Times New Roman",serif;font-size:20px;line-height:1.25;margin:15px 0 17px}
+.refQuote p em{font-style:italic}
+.refQuote i{display:block;width:48px;border-top:2px solid #b27a0b;margin-bottom:11px}
+.refQuote small{font-family:Arial,sans-serif;font-size:7px;font-weight:800;letter-spacing:2.8px;color:#4d4740}
+.refReel{position:relative;background:linear-gradient(135deg,#eee1c4 0%,#dbc298 44%,#9c764c 100%);overflow:hidden}
+.refReel:before{content:"";position:absolute;inset:-60px;background:linear-gradient(110deg,rgba(255,251,235,.72) 10%,rgba(255,251,235,.12) 42%,transparent 43%);transform:rotate(-5deg)}
+.refReel .outer{position:absolute;width:245px;height:245px;border-radius:50%;right:-73px;bottom:-80px;border:11px solid #594a36;box-shadow:inset 0 0 0 5px #b18e57,inset 0 0 0 10px #2d2821}
+.refReel .hole{position:absolute;width:48px;height:70px;background:#29241e;border:4px solid #98794c;border-radius:50%;right:47px;bottom:81px;z-index:2}
+.refReel .hole.b{transform:rotate(90deg);right:104px;bottom:29px}.refReel .hole.c{transform:rotate(180deg);right:46px;bottom:-25px}.refReel .hole.d{transform:rotate(90deg);right:-13px;bottom:29px}
+.refReel .hub{position:absolute;width:43px;height:43px;border-radius:50%;background:#2a251f;border:6px solid #9b7b4d;right:48px;bottom:32px;z-index:3}
+.featureWrap{padding-top:16px!important}
+.sectionLabel{margin-top:0!important}
+@media(max-width:1100px){.refHeroBody{grid-template-columns:minmax(0,1.5fr) 280px;height:260px}.refReel{display:none}.refStatement h1{font-size:61px}.refLogo span{font-size:42px}.refLogo b{font-size:31px}.refLogo em{font-size:49px}}
+@media(max-width:760px){.refLogo span{font-size:34px}.refLogo b{font-size:25px}.refLogo em{font-size:40px}.refLogo small{display:none}.refStrip span:last-child{display:none}.refHeroBody{height:auto;grid-template-columns:1fr}.refStatement{padding:28px 5px 22px}.refStatement h1{font-size:51px;letter-spacing:-3px}.refStatement p{font-size:7px;letter-spacing:2.8px}.refQuote{border-left:0;border-top:1px solid #aaa195;padding:18px 5px 17px}.refQuote p{font-size:18px}}
 
-/* v16 — final Movie...hmm wordmark + compact first viewport */
-.brandWordmark{display:flex!important;align-items:baseline!important;gap:0!important;position:relative!important;line-height:.86!important;text-transform:none!important;letter-spacing:0!important;padding-bottom:19px}
-.brandWordmark .wordMovie{font-family:Arial,Helvetica,sans-serif;font-size:42px;font-weight:900;letter-spacing:-3.2px;color:#111}
-.brandWordmark .wordDots{font-family:Georgia,"Times New Roman",serif;font-size:31px;font-weight:700;color:#b77b00;letter-spacing:-1px;margin:0 2px}
-.brandWordmark em{font-family:Georgia,"Times New Roman",serif;font-size:47px;font-weight:400;font-style:italic;letter-spacing:-3px;color:#b77b00}
-.brandWordmark small{position:absolute;left:2px;top:49px;font-family:Arial,Helvetica,sans-serif;font-size:6px;font-weight:700;letter-spacing:2.45px;white-space:nowrap;color:#4f4942}
-.header{padding-top:24px!important;padding-bottom:18px!important}
-.editorialHero{margin-top:15px!important;padding-bottom:16px!important}
-.editorialKicker{padding:10px 5px!important}
-.editorialHeroGrid{min-height:215px!important;grid-template-columns:minmax(0,1.7fr) minmax(280px,.62fr)!important}
-.editorialStatement{padding:27px 30px 14px 5px!important}
-.editorialStatement h1{font-size:clamp(43px,4.7vw,70px)!important;line-height:.89!important;letter-spacing:-4px!important;max-width:790px!important}
-.editorialStatement h1 em{margin-top:3px!important}
-.editorialStatement p{margin-top:18px!important;font-size:8px!important;letter-spacing:3.6px!important}
-.editorialThought{margin:25px 0 0!important;padding:1px 18px 0 30px!important}
-.editorialThought .quoteMark{font-size:38px!important}
-.editorialThought p{font-size:18px!important;margin:8px 0 14px!important;line-height:1.22!important}
-.editorialThought>span{padding-top:8px!important;font-size:7px!important;letter-spacing:2.4px!important;border-top-width:2px!important}
-.reelMark{display:none!important}
-.featureWrap{padding-top:20px!important}
-@media(max-width:900px){.brandWordmark .wordMovie{font-size:36px}.brandWordmark .wordDots{font-size:27px}.brandWordmark em{font-size:40px}.brandWordmark small{top:43px;font-size:5.5px}.editorialHeroGrid{grid-template-columns:1fr!important}.editorialStatement{padding-top:25px!important}.editorialThought{border-left:0!important;border-top:1px solid #aaa195!important;margin-top:8px!important;padding:18px 5px 8px!important}.editorialStatement h1{font-size:clamp(44px,9vw,65px)!important}}
-@media(max-width:600px){.brandWordmark small{display:none}.brandWordmark{padding-bottom:0}.brandWordmark .wordMovie{font-size:31px}.brandWordmark .wordDots{font-size:23px}.brandWordmark em{font-size:35px}.editorialKicker span:last-child{display:none}.editorialStatement h1{font-size:48px!important;letter-spacing:-3px!important}.editorialStatement p{font-size:7px!important;letter-spacing:2.5px!important}.editorialThought p{font-size:17px!important}}
+/* v19 APPROVED TOP — header + hero only */
+.approvedLogo{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.approvedLogo>div{display:flex;align-items:center;gap:0}
+.approvedLogo span{font-family:Georgia,"Times New Roman",serif;font-size:51px;font-weight:400;letter-spacing:-3px;color:#0c0b0a}
+.approvedLogo b{font-family:Georgia,serif;font-size:34px;color:#b57a08;letter-spacing:-2px;margin-left:2px}
+.approvedLogo i{font-style:normal;font-size:38px;line-height:1;margin:0 1px 0 2px}
+.approvedLogo em{font-family:Georgia,"Times New Roman",serif;font-size:55px;font-weight:400;font-style:italic;letter-spacing:-4px;color:#b57a08}
+.approvedLogo small{font-family:Arial,Helvetica,sans-serif;font-size:7px;font-weight:600;letter-spacing:4px;color:#403c37;margin:8px 0 0 4px}
+.header{padding-top:18px!important;padding-bottom:15px!important}
+
+.approvedHero{margin-top:10px;border-top:1px solid #777168;border-bottom:1px solid #111}
+.approvedStrip{height:42px;border-bottom:1px solid #8f887e;display:flex;align-items:center;justify-content:space-between;padding:0 5px;font-family:Arial,Helvetica,sans-serif;font-size:8px;font-weight:700;letter-spacing:3.4px;color:#38342f}
+.approvedHeroBody{display:grid;grid-template-columns:47% 53%;height:405px;overflow:hidden;background:#f3efe6}
+.approvedCopy{padding:35px 24px 20px 6px;position:relative;z-index:2;background:linear-gradient(90deg,#f3efe6 0%,#f3efe6 76%,rgba(243,239,230,.96) 88%,rgba(243,239,230,.65) 100%)}
+.approvedCopy h1{font-family:Georgia,"Times New Roman",serif;font-size:67px;line-height:.89;letter-spacing:-5px;font-weight:400;margin:0;white-space:nowrap}
+.approvedCopy h1 em{display:block;font-weight:400;font-style:italic;color:#b57a08;margin-top:6px}
+.approvedDek{font-family:Arial,Helvetica,sans-serif;font-size:8px;font-weight:700;letter-spacing:4.2px;color:#4f4942;margin:25px 0 0}
+.approvedQuote{border-left:1px solid #888178;margin-top:31px;padding:0 0 0 28px}
+.approvedQuote>b{font-family:Georgia,serif;font-size:44px;line-height:.7;color:#b57a08}
+.approvedQuote p{font-family:Georgia,"Times New Roman",serif;font-size:20px;line-height:1.22;margin:12px 0 14px}
+.approvedQuote p em{font-style:italic}
+.approvedQuote>i{display:block;width:38px;border-top:2px solid #b57a08;margin-bottom:10px}
+.approvedQuote>small{font-family:Arial,Helvetica,sans-serif;font-size:7px;font-weight:800;letter-spacing:2.6px;color:#403b35}
+
+.approvedCinema{height:100%;background-image:linear-gradient(90deg,rgba(243,239,230,.42) 0%,rgba(243,239,230,.08) 15%,transparent 28%),url("/brand/approved-cinema-still.jpg");background-size:cover;background-position:center right;background-repeat:no-repeat}
+
+@media(max-width:1050px){
+ .approvedHeroBody{grid-template-columns:55% 45%;height:365px}
+ .approvedCopy h1{font-size:57px}
+ .approvedLogo span{font-size:44px}.approvedLogo b{font-size:30px}.approvedLogo i{font-size:33px}.approvedLogo em{font-size:49px}
+}
+@media(max-width:760px){
+ .approvedLogo span{font-size:34px}.approvedLogo b{font-size:24px}.approvedLogo i{font-size:27px}.approvedLogo em{font-size:39px}.approvedLogo small{display:none}
+ .approvedStrip span:last-child{display:none}
+ .approvedHeroBody{grid-template-columns:1fr;height:auto}
+ .approvedCopy{padding:28px 5px 22px;background:#f3efe6}
+ .approvedCopy h1{font-size:49px;letter-spacing:-3px;white-space:normal}
+ .approvedDek{font-size:7px;letter-spacing:2.7px}
+ .approvedQuote{margin-top:24px}
+ .approvedCinema{height:210px;background-position:center}
+}
+
+/* v20 — FIX: actual top logo + more compact approved hero */
+.topMovieLogo{
+  position:relative; display:flex; align-items:baseline; gap:0;
+  text-decoration:none; color:#0d0c0b; line-height:.9;
+  padding-bottom:20px;
+}
+.topMovieLogo>span{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:46px; font-weight:400; letter-spacing:-3px;
+}
+.topMovieLogo>b{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:30px; color:#b57a08; letter-spacing:-2px;
+  margin-left:2px;
+}
+.topMovieLogo>i{
+  font-style:normal; font-size:32px; line-height:1;
+  margin:0 2px;
+}
+.topMovieLogo>em{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:49px; font-weight:400; font-style:italic;
+  letter-spacing:-3px; color:#b57a08;
+}
+.topMovieLogo>small{
+  position:absolute; left:3px; top:49px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:6px; font-weight:700; letter-spacing:3.3px;
+  white-space:nowrap; color:#4b4640;
+}
+
+/* Compact the approved section so Featured Review enters the first screen */
+.approvedHeroBody{height:315px!important;grid-template-columns:47% 53%!important}
+.approvedCopy{padding:25px 22px 14px 6px!important}
+.approvedCopy h1{font-size:56px!important;line-height:.88!important;letter-spacing:-4px!important}
+.approvedCopy h1 em{margin-top:3px!important}
+.approvedDek{margin-top:18px!important;font-size:7px!important;letter-spacing:3.6px!important}
+.approvedQuote{margin-top:21px!important;padding-left:23px!important}
+.approvedQuote>b{font-size:35px!important}
+.approvedQuote p{font-size:17px!important;margin:8px 0 10px!important}
+.approvedQuote>i{margin-bottom:7px!important}
+.approvedQuote>small{font-size:6px!important}
+.approvedCinema{background-position:center right!important}
+.featureWrap{padding-top:14px!important}
+
+@media(max-width:1050px){
+  .topMovieLogo>span{font-size:40px}
+  .topMovieLogo>b{font-size:27px}
+  .topMovieLogo>i{font-size:29px}
+  .topMovieLogo>em{font-size:43px}
+  .topMovieLogo>small{top:44px}
+  .approvedHeroBody{height:290px!important}
+  .approvedCopy h1{font-size:50px!important}
+}
+@media(max-width:760px){
+  .topMovieLogo{padding-bottom:0}
+  .topMovieLogo>span{font-size:32px}
+  .topMovieLogo>b{font-size:22px}
+  .topMovieLogo>i{font-size:24px}
+  .topMovieLogo>em{font-size:35px}
+  .topMovieLogo>small{display:none}
+  .approvedHeroBody{height:auto!important}
+  .approvedCopy h1{font-size:46px!important}
+}
+
+/* v21 — clean, pleasant, review-first homepage */
+.siteHeader{min-height:82px!important;padding-top:18px!important;padding-bottom:12px!important}
+.topMovieLogo{padding-bottom:14px!important}
+.topMovieLogo>span{font-size:42px!important}
+.topMovieLogo>b{font-size:27px!important}
+.topMovieLogo>i{font-size:29px!important}
+.topMovieLogo>em{font-size:45px!important}
+.topMovieLogo>small{top:44px!important;font-size:5.5px!important;letter-spacing:3px!important}
+
+.approvedHero{margin-top:6px!important}
+.approvedStrip{height:34px!important;font-size:7px!important;letter-spacing:3px!important}
+.approvedHeroBody{height:230px!important;grid-template-columns:48% 52%!important}
+.approvedCopy{padding:20px 18px 10px 6px!important}
+.approvedCopy h1{font-size:46px!important;line-height:.9!important;letter-spacing:-3.5px!important}
+.approvedCopy h1 em{margin-top:2px!important}
+.approvedDek{margin-top:14px!important;font-size:6.5px!important;letter-spacing:3.2px!important}
+.approvedQuote{margin-top:17px!important;padding-left:18px!important}
+.approvedQuote>b{font-size:28px!important}
+.approvedQuote p{font-size:15px!important;line-height:1.18!important;margin:5px 0 0!important}
+.approvedCinema{background-position:center 54%!important}
+
+.featureWrap{padding-top:12px!important}
+.featureWrap .sectionLabel{margin-bottom:12px!important}
+
+/* Keep first review visually dominant but reduce wasted vertical space */
+.featureGrid{align-items:start!important}
+.featuredPosterImage{max-height:500px!important;object-fit:cover!important}
+.featureCopy h2{margin-top:8px!important;margin-bottom:15px!important}
+.featureScore{margin-top:12px!important}
+.scoreKey{padding-top:4px!important}
+
+@media(max-width:1050px){
+ .approvedHeroBody{height:215px!important}
+ .approvedCopy h1{font-size:42px!important}
+}
+@media(max-width:760px){
+ .siteHeader{min-height:auto!important}
+ .topMovieLogo{padding-bottom:0!important}
+ .approvedHeroBody{height:auto!important;grid-template-columns:1fr!important}
+ .approvedCopy{padding:20px 5px 16px!important}
+ .approvedCopy h1{font-size:42px!important}
+ .approvedCinema{height:150px!important}
+ .featuredPosterImage{max-height:none!important}
+}
+
+/* v22 — FINAL approved cinema hero. Everything below remains v21. */
+.topMovieLogo{
+  padding-bottom:14px!important;
+}
+.topMovieLogo>span{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:42px!important;font-weight:400!important;letter-spacing:-3px!important;
+}
+.topMovieLogo>b{font-size:27px!important;color:#b57908!important}
+.topMovieLogo>i{font-size:29px!important}
+.topMovieLogo>em{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:45px!important;color:#b57908!important;font-weight:400!important;
+}
+.topMovieLogo>small{
+  top:44px!important;font-size:5.5px!important;letter-spacing:3px!important;
+}
+
+.finalHero{
+  margin-top:6px;
+  border-top:1px solid #817a70;
+  border-bottom:1px solid #111;
+}
+.finalStrip{
+  height:34px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5px;
+  border-bottom:1px solid #8e877d;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:7px;font-weight:700;letter-spacing:3px;color:#38342f;
+}
+.finalHeroBody{
+  position:relative;
+  height:255px;
+  overflow:hidden;
+  background:#f3efe6;
+}
+.finalHeroImage{
+  position:absolute;
+  inset:0 0 0 25%;
+  background:
+    linear-gradient(90deg,
+      #f3efe6 0%,
+      rgba(243,239,230,.99) 7%,
+      rgba(243,239,230,.93) 15%,
+      rgba(243,239,230,.73) 24%,
+      rgba(243,239,230,.40) 34%,
+      rgba(243,239,230,.12) 44%,
+      rgba(243,239,230,0) 54%
+    ),
+    url("/brand/cinema-review-desk.jpg");
+  background-size:cover;
+  background-position:center 58%;
+  background-repeat:no-repeat;
+}
+.finalHeroCopy{
+  position:relative;
+  z-index:2;
+  width:48%;
+  height:100%;
+  padding:20px 18px 10px 6px;
+}
+.finalHeroCopy h1{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:46px;
+  line-height:.89;
+  letter-spacing:-3.5px;
+  font-weight:400;
+}
+.finalHeroCopy h1 em{
+  display:block;
+  margin-top:2px;
+  color:#b57908;
+  font-weight:400;
+  font-style:italic;
+}
+.finalDek{
+  margin:14px 0 0;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:6.5px;
+  font-weight:700;
+  letter-spacing:3.2px;
+  color:#504a43;
+}
+.finalQuote{
+  margin-top:17px;
+  padding-left:18px;
+  border-left:1px solid #888178;
+}
+.finalQuote>b{
+  display:block;
+  height:25px;
+  font-family:Georgia,serif;
+  font-size:29px;
+  line-height:1;
+  color:#b57908;
+}
+.finalQuote p{
+  margin:2px 0 7px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  line-height:1.16;
+}
+.finalQuote p em{font-style:italic}
+.finalQuote>span{
+  display:block;width:34px;border-top:2px solid #b57908;margin-bottom:6px;
+}
+.finalQuote>small{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:5.8px;font-weight:800;letter-spacing:2.3px;color:#403b35;
+}
+
+/* Make sure Featured Review begins immediately below the hero */
+.featureWrap{padding-top:11px!important}
+.featureWrap .sectionLabel{margin-top:0!important;margin-bottom:10px!important}
+
+@media(max-width:1050px){
+  .finalHeroBody{height:240px}
+  .finalHeroCopy h1{font-size:42px}
+  .finalHeroImage{inset:0 0 0 20%}
+}
+@media(max-width:760px){
+  .topMovieLogo{padding-bottom:0!important}
+  .topMovieLogo>span{font-size:32px!important}
+  .topMovieLogo>b{font-size:22px!important}
+  .topMovieLogo>i{font-size:24px!important}
+  .topMovieLogo>em{font-size:35px!important}
+  .topMovieLogo>small{display:none}
+  .finalStrip span:last-child{display:none}
+  .finalHeroBody{height:390px}
+  .finalHeroCopy{width:100%;height:auto;padding:18px 5px 12px}
+  .finalHeroCopy h1{font-size:41px;letter-spacing:-3px}
+  .finalHeroImage{
+    inset:165px 0 0 0;
+    background:
+      linear-gradient(180deg,#f3efe6 0%,rgba(243,239,230,.70) 18%,transparent 42%),
+      url("/brand/cinema-review-desk.jpg");
+    background-size:cover;
+    background-position:center;
+  }
+}
+
+/* FIX — show the complete cinema artwork without cropping */
+.finalHeroBody{
+  height:285px !important;
+}
+
+.finalHeroImage{
+  inset:0 0 0 34% !important;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #f3efe6 0%,
+      rgba(243,239,230,.97) 5%,
+      rgba(243,239,230,.78) 13%,
+      rgba(243,239,230,.38) 22%,
+      rgba(243,239,230,.08) 31%,
+      transparent 40%
+    ),
+    url("/brand/cinema-review-desk.jpg") !important;
+
+  background-size:contain !important;
+  background-position:right center !important;
+  background-repeat:no-repeat !important;
+}
+
+.finalHeroCopy{
+  width:46% !important;
+}
+
+@media(max-width:1050px){
+  .finalHeroBody{
+    height:270px !important;
+  }
+}
+
+
+/* FINAL plain editorial hero */
+.finalHeroImage,
+.approvedCinema,
+.cinemaStill,
+.refReel {
+  display: none !important;
+}
+
+.finalHeroBody {
+  display: block !important;
+  height: 335px !important;
+  background: #f3efe6 !important;
+}
+
+.finalHeroCopy {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 35px 0 20px 6px !important;
+}
+
+.finalHeroCopy h1 {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 68px !important;
+  line-height: .9 !important;
+  letter-spacing: -5px !important;
+  font-weight: 400 !important;
+  max-width: 900px;
+}
+
+.finalHeroCopy h1 em {
+  display: block;
+  color: #b57908 !important;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.finalDek {
+  margin-top: 25px !important;
+  font-size: 8px !important;
+  letter-spacing: 4px !important;
+}
+
+.finalQuote {
+  position: absolute;
+  right: 12%;
+  top: 38px;
+  width: 270px;
+  border-left: 1px solid #aaa195;
+  padding: 0 0 0 42px !important;
+  margin: 0 !important;
+}
+
+.finalQuote b {
+  font-size: 42px !important;
+}
+
+.finalQuote p {
+  font-size: 21px !important;
+  line-height: 1.25 !important;
+  margin: 14px 0 !important;
+}
+
+/* Movie....🤔hmm masthead */
+.topMovieLogo > span {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  letter-spacing: -4px !important;
+}
+
+.topMovieLogo > b {
+  font-size: 31px !important;
+  color: #b57908 !important;
+  letter-spacing: -2px !important;
+}
+
+.topMovieLogo > i {
+  font-size: 36px !important;
+  margin: 0 2px !important;
+}
+
+.topMovieLogo > em {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 59px !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  color: #b57908 !important;
+  letter-spacing: -4px !important;
+}
+
+.topMovieLogo > small {
+  top: 57px !important;
+  left: 5px !important;
+  font-size: 6px !important;
+  letter-spacing: 4px !important;
+}
+
+@media (max-width: 760px) {
+  .finalHeroBody {
+    height: auto !important;
+  }
+
+  .finalHeroCopy {
+    padding: 25px 5px !important;
+  }
+
+  .finalHeroCopy h1 {
+    font-size: 48px !important;
+    letter-spacing: -3px !important;
+  }
+
+  .finalQuote {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 28px !important;
+  }
+}
+
+
+/* Remove empty hero space */
+.finalHeroBody {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.finalHeroCopy {
+  height: auto !important;
+  min-height: 245px !important;
+  padding: 32px 0 28px 6px !important;
+}
+
+.finalHero {
+  padding-bottom: 0 !important;
+}
+
+.featureWrap {
+  padding-top: 16px !important;
+}
+

@@ -442,212 +442,183 @@ body{background:#f3efe6}
   }
 }
 
-/* FIX — show the complete cinema artwork without cropping */
+/* v23 FINAL PLAIN EDITORIAL TOP — no AI hero image */
+.finalHeroImage,.approvedCinema,.cinemaStill,.refReel{display:none!important}
 .finalHeroBody{
-  height:285px !important;
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  background:#f3efe6!important;
 }
-
-.finalHeroImage{
-  inset:0 0 0 34% !important;
-
-  background-image:
-    linear-gradient(
-      90deg,
-      #f3efe6 0%,
-      rgba(243,239,230,.97) 5%,
-      rgba(243,239,230,.78) 13%,
-      rgba(243,239,230,.38) 22%,
-      rgba(243,239,230,.08) 31%,
-      transparent 40%
-    ),
-    url("/brand/cinema-review-desk.jpg") !important;
-
-  background-size:contain !important;
-  background-position:right center !important;
-  background-repeat:no-repeat !important;
-}
-
 .finalHeroCopy{
-  width:46% !important;
+  position:relative!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:245px!important;
+  padding:32px 0 28px 6px!important;
+  background:transparent!important;
+}
+.finalHeroCopy h1{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:68px!important;
+  line-height:.9!important;
+  letter-spacing:-5px!important;
+  font-weight:400!important;
+  max-width:900px!important;
+}
+.finalHeroCopy h1 em{
+  display:block!important;
+  color:#b57908!important;
+  font-style:italic!important;
+  font-weight:400!important;
+}
+.finalDek{margin-top:25px!important;font-size:8px!important;letter-spacing:4px!important}
+.finalQuote{
+  position:absolute!important;
+  right:12%!important;
+  top:38px!important;
+  width:270px!important;
+  border-left:1px solid #aaa195!important;
+  padding:0 0 0 42px!important;
+  margin:0!important;
+}
+.finalQuote b{font-size:42px!important}
+.finalQuote p{font-size:21px!important;line-height:1.25!important;margin:14px 0!important}
+.finalHero{padding-bottom:0!important}
+.featureWrap{padding-top:16px!important}
+
+/* Main masthead */
+.topMovieLogo>span{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:55px!important;font-weight:400!important;letter-spacing:-4px!important;
+}
+.topMovieLogo>b{font-size:31px!important;color:#b57908!important;letter-spacing:-2px!important}
+.topMovieLogo>i{font-size:36px!important;margin:0 2px!important}
+.topMovieLogo>em{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:59px!important;font-weight:400!important;font-style:italic!important;
+  color:#b57908!important;letter-spacing:-4px!important;
+}
+.topMovieLogo>small{top:57px!important;left:5px!important;font-size:6px!important;letter-spacing:4px!important}
+
+/* Matching footer masthead */
+.footerMovieLogo{display:flex;align-items:baseline;gap:0}
+.footerMovieLogo span{font-family:Georgia,"Times New Roman",serif;font-size:32px;letter-spacing:-2px}
+.footerMovieLogo b{font-family:Georgia,serif;font-size:20px;color:#b57908}
+.footerMovieLogo i{font-style:normal;font-size:20px}
+.footerMovieLogo em{font-family:Georgia,"Times New Roman",serif;font-size:34px;font-style:italic;color:#b57908;letter-spacing:-2px}
+
+@media(max-width:760px){
+ .finalHeroBody{height:auto!important}
+ .finalHeroCopy{padding:25px 5px!important;min-height:0!important}
+ .finalHeroCopy h1{font-size:48px!important;letter-spacing:-3px!important}
+ .finalQuote{position:relative!important;right:auto!important;top:auto!important;width:100%!important;margin-top:28px!important}
 }
 
-@media(max-width:1050px){
-  .finalHeroBody{
-    height:270px !important;
-  }
-}
-
-
-/* FINAL plain editorial hero */
-.finalHeroImage,
-.approvedCinema,
-.cinemaStill,
-.refReel {
-  display: none !important;
-}
-
-.finalHeroBody {
-  display: block !important;
-  height: 335px !important;
-  background: #f3efe6 !important;
-}
-
-.finalHeroCopy {
-  width: 100% !important;
-  height: 100% !important;
-  padding: 35px 0 20px 6px !important;
-}
-
-.finalHeroCopy h1 {
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: 68px !important;
-  line-height: .9 !important;
-  letter-spacing: -5px !important;
-  font-weight: 400 !important;
-  max-width: 900px;
-}
-
-.finalHeroCopy h1 em {
-  display: block;
-  color: #b57908 !important;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.finalDek {
-  margin-top: 25px !important;
-  font-size: 8px !important;
-  letter-spacing: 4px !important;
-}
-
-.finalQuote {
-  position: absolute;
-  right: 12%;
-  top: 38px;
-  width: 270px;
-  border-left: 1px solid #aaa195;
-  padding: 0 0 0 42px !important;
-  margin: 0 !important;
-}
-
-.finalQuote b {
-  font-size: 42px !important;
-}
-
-.finalQuote p {
-  font-size: 21px !important;
-  line-height: 1.25 !important;
-  margin: 14px 0 !important;
-}
-
-/* Movie....🤔hmm masthead */
-.topMovieLogo > span {
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  letter-spacing: -4px !important;
-}
-
-.topMovieLogo > b {
-  font-size: 31px !important;
-  color: #b57908 !important;
-  letter-spacing: -2px !important;
-}
-
-.topMovieLogo > i {
-  font-size: 36px !important;
-  margin: 0 2px !important;
-}
-
-.topMovieLogo > em {
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: 59px !important;
-  font-weight: 400 !important;
-  font-style: italic !important;
-  color: #b57908 !important;
-  letter-spacing: -4px !important;
-}
-
-.topMovieLogo > small {
-  top: 57px !important;
-  left: 5px !important;
-  font-size: 6px !important;
-  letter-spacing: 4px !important;
-}
-
-@media (max-width: 760px) {
-  .finalHeroBody {
-    height: auto !important;
-  }
-
-  .finalHeroCopy {
-    padding: 25px 5px !important;
-  }
-
-  .finalHeroCopy h1 {
-    font-size: 48px !important;
-    letter-spacing: -3px !important;
-  }
-
-  .finalQuote {
-    position: relative;
-    right: auto;
-    top: auto;
-    width: 100%;
-    margin-top: 28px !important;
-  }
-}
-
-
-/* Remove empty hero space */
-.finalHeroBody {
-  height: auto !important;
-  min-height: 0 !important;
-}
-
-.finalHeroCopy {
-  height: auto !important;
-  min-height: 245px !important;
-  padding: 32px 0 28px 6px !important;
-}
-
-.finalHero {
-  padding-bottom: 0 !important;
-}
-
-.featureWrap {
-  padding-top: 16px !important;
-}
-
-
-.footerMovieLogo {
-  display:flex;
-  align-items:baseline;
+/* v24 — two lead reviews adjacent: DTTT left, Thella right */
+.dualFeature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:0;
+  border-top:1px solid #aaa195;
+  border-bottom:1px solid #aaa195;
 }
-
-.footerMovieLogo span {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:32px;
-  letter-spacing:-2px;
+.dualFeatureCard{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:24px;
+  padding:28px 28px 28px 0;
+  color:inherit;
+  text-decoration:none;
+  min-height:330px;
 }
-
-.footerMovieLogo b {
-  font-family:Georgia,serif;
-  font-size:20px;
-  color:#b57908;
+.dualFeatureCard+ .dualFeatureCard{
+  border-left:1px solid #aaa195;
+  padding-left:28px;
+  padding-right:0;
 }
-
-.footerMovieLogo i {
-  font-style:normal;
-  font-size:20px;
+.dualFeaturePoster{
+  width:190px;
+  height:285px;
+  object-fit:cover;
+  display:block;
+  box-shadow:8px 9px 0 rgba(80,70,55,.10);
 }
-
-.footerMovieLogo em {
+.dualFeatureCopy{display:flex;flex-direction:column;min-width:0}
+.dualFeatureCopy .meta{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  color:#6b645c;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.dualFeatureCopy h2{
   font-family:Georgia,"Times New Roman",serif;
   font-size:34px;
-  font-style:italic;
-  color:#b57908;
-  letter-spacing:-2px;
+  line-height:1;
+  letter-spacing:-1.7px;
+  font-weight:400;
+  margin:0 0 14px;
 }
-
+.dualFeatureCopy p{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:16px;
+  line-height:1.42;
+  margin:0 0 18px;
+}
+.dualFeatureBottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-top:auto;
+  padding-top:12px;
+  border-top:1px solid #c1baaf;
+}
+.dualFeatureBottom strong{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:16px;
+}
+.dualScore{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:50px;height:50px;
+  border:2px solid #111;
+  border-radius:50%;
+  font-family:Arial,sans-serif;
+  font-size:18px;
+  font-weight:800;
+  flex:0 0 auto;
+}
+.dualFeatureCopy .readLink{
+  display:inline-block;
+  width:max-content;
+  margin-top:15px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:2px;
+  border-bottom:2px solid #111;
+  padding-bottom:4px;
+}
+@media(max-width:1050px){
+  .dualFeatureCard{grid-template-columns:145px 1fr;gap:18px}
+  .dualFeaturePoster{width:145px;height:218px}
+  .dualFeatureCopy h2{font-size:28px}
+}
+@media(max-width:760px){
+  .dualFeature{grid-template-columns:1fr}
+  .dualFeatureCard,.dualFeatureCard+ .dualFeatureCard{
+    border-left:0;
+    padding:22px 0;
+    grid-template-columns:120px 1fr;
+    gap:16px;
+  }
+  .dualFeatureCard+ .dualFeatureCard{border-top:1px solid #aaa195}
+  .dualFeaturePoster{width:120px;height:180px}
+  .dualFeatureCopy h2{font-size:25px}
+  .dualFeatureCopy p{font-size:14px}
+}

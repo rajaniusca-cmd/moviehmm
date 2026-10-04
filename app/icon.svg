@@ -1,16 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="90" fill="#F3EFE6"/>
-  <circle cx="256" cy="256" r="205"
-          fill="none"
-          stroke="#B57908"
-          stroke-width="22"/>
-  <text x="256"
-        y="340"
-        text-anchor="middle"
-        font-family="Georgia, Times New Roman, serif"
-        font-size="330"
-        font-style="italic"
-        font-weight="bold"
-        fill="#11100E">h</text>
-  <circle cx="390" cy="115" r="25" fill="#B57908"/>
+  <rect width="512" height="512" rx="92" fill="#F3EFE6"/>
+  <rect x="30" y="30" width="452" height="452" rx="70" fill="none" stroke="#B57908" stroke-width="14"/>
+  <text x="256" y="205" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="112" fill="#11100E">Movie</text>
+  <text x="256" y="350" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="158" font-style="italic" font-weight="bold" fill="#B57908">hmm</text>
 </svg>

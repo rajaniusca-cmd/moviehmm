@@ -34,7 +34,9 @@ export default function Home(){const reviews=getAllReviews();const featured=getF
       if (!movie) return null;
       return (
         <Link href={`/reviews/${movie.slug}`} className="dualFeatureCard" key={movie.slug}>
-          <img src={movie.poster} alt={`${movie.title} poster`} className={`dualFeaturePoster ${movie.slug === "drishyam-the-conclusion" ? "dualFeaturePosterLandscape" : ""}`} />
+          <div className="dualFeaturePosterWrap">
+            <img src={movie.poster} alt={`${movie.title} poster`} className="dualFeaturePoster" />
+          </div>
           <div className="dualFeatureCopy">
             <div className="meta">{movie.language} · {movie.year}</div>
             <h2>{movie.title}</h2>

@@ -2,30 +2,48 @@ import Link from"next/link";import{getAllReviews}from"@/lib/reviews";import Home
 import {getAllCrystalBalls} from "@/lib/crystalBall";
 const leads=["drishyam-the-conclusion","dont-trouble-the-trouble","thella-kaagitham","bethlehem-kudumba-unit"];
 export default function Home(){const crystalBalls=getAllCrystalBalls();const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=reviews.filter(r=>!leads.includes(r.slug));return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
-  <div className="mhEditionBar">
+  <div className="classicHeroStrip">
+    <span>INDEPENDENT MOVIE REVIEWS</span>
+    <span>NO HYPE. NO HATE. JUST THE MOVIE.</span>
+  </div>
 
-    <div className="mhEditionLead">
-      <span>THE INDEPENDENT TAKE</span>
-      <strong>No hype. No hate.</strong>
-      <em>Just the movie.</em>
-    </div>
+  <div className="classicHeroBody">
 
-    <div className="mhEditionRule">
-      <strong>WATCH.</strong>
-      <strong>THINK.</strong>
-      <strong>TALK.</strong>
-    </div>
+    <div className="classicHeroMain">
+      <h1>
+        No hype. No hate.
+        <em>Just the movie.</em>
+      </h1>
 
-    <div className="mhEditionQuote">
-      <b>“</b>
       <p>
-        Same movie. A different take.
-        <em>That’s the point.</em>
+        HONEST REVIEWS FOR PEOPLE WHO ACTUALLY WATCH.
       </p>
     </div>
 
-  </div>
+    <div className="classicHeroQuote">
+      <b>“</b>
 
+      <h2>
+        Same movie.<br/>
+        A different take.<br/>
+        <em>That’s the point.</em>
+      </h2>
+
+      <i></i>
+
+      <small>MOVIE....🤔HMM</small>
+    </div>
+
+  </div>
+</section><section className="visitorNote shell">
+  <p>
+    Thanks for dropping in. Agree with me, argue with me —
+    just don't leave the movie without an opinion. 🤔
+  </p>
+
+  <small>
+    I watched it. I thought about it. The rest is between us.
+  </small>
 </section>
 
 <div id="spotlight"><HomeSpotlight movies={f}/></div><section id="trending" className="dhSection shell"><div className="dhHead"><strong>TRENDING REVIEWS</strong><small>START HERE</small></div><div className="dhPosters">{f.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><div><img src={m.poster} alt={m.title}/><span>{String(i+1).padStart(2,"0")}</span></div><small>{m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>READ THE TAKE →</b></Link>)}</div></section>
@@ -34,28 +52,12 @@ export default function Home(){const crystalBalls=getAllCrystalBalls();const rev
   <div className="cbHead">
     <div>
       <span>🔮</span>
-      <strong>UPCOMING MOVIE HOROSCOPE</strong>
+      <strong>Movie....🤔hmm CRYSTAL BALL</strong>
     </div>
 
     <small>
-      Reading the signs before the first show.
+      Predicting movies before they get the chance to prove me wrong.
     </small>
-  </div>
-
-  <div className="horoscopeIntro">
-    <div>
-      <span>🔮 BEFORE I WATCH</span>
-      <p>
-        Cast. Director. Music. Genre. Buzz. Track record.
-        I read the signs and predict what may work, what may not,
-        and where the movie could surprise us.
-      </p>
-    </div>
-
-    <strong>
-      NO RATING.
-      <em>I haven't watched it yet.</em>
-    </strong>
   </div>
 
   <div className="cbRail">
@@ -88,7 +90,7 @@ export default function Home(){const crystalBalls=getAllCrystalBalls();const rev
           <p>{x.hook}</p>
 
           <span>
-            READ THE HOROSCOPE →
+            SEE MY PREDICTION →
           </span>
 
         </div>
@@ -106,41 +108,4 @@ export default function Home(){const crystalBalls=getAllCrystalBalls();const rev
 
 </section>
 
-<section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{reviews.slice(0,4).map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster} alt={m.title}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section>
-
-<section id="shelf" className="dhSection shell">
-  <div className="dhHead">
-    <strong>FROM THE REVIEW SHELF</strong>
-    <small>A FEW MORE BEFORE YOU GO</small>
-  </div>
-
-  <div className="dhShelf">
-    {shelf.slice(0,4).map(m=>
-      <Link href={`/reviews/${m.slug}`} key={m.slug}>
-        <img src={m.poster} alt={m.title}/>
-        <div>
-          <small>{m.language} · {m.year}</small>
-          <h3>{m.title}</h3>
-          <p>{m.dek}</p>
-          <b>TAKE IT OFF THE SHELF →</b>
-        </div>
-      </Link>
-    )}
-  </div>
-
-  <div className="fullShelfCallout">
-    <div>
-      <small>THE ARCHIVE</small>
-      <h2>Still looking for something to watch?</h2>
-      <p>
-        Every movie I've reviewed lives on the full shelf —
-        the good, the bad, and the ones that made me go hmm. 🤔
-      </p>
-    </div>
-
-    <Link href="/reviews">
-      VIEW THE FULL SHELF
-      <span>→</span>
-    </Link>
-  </div>
-</section></main></>}
+<section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{reviews.slice(0,6).map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section><section id="shelf" className="dhSection shell"><div className="dhHead"><strong>FROM THE REVIEW SHELF</strong><small>{reviews.length} REVIEWS AND COUNTING</small></div><div className="dhShelf">{shelf.map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster}/><div><h3>{m.title}</h3><p>{m.dek}</p><b>TAKE IT OFF THE SHELF →</b></div></Link>)}</div></section><section className="dhIndex shell"><div className="dhHead"><strong>ALL REVIEWS</strong><small>THE Movie....🤔hmm INDEX</small></div>{reviews.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><span>{String(i+1).padStart(2,"0")}</span><h3>{m.title}</h3><b>READ →</b></Link>)}</section></main></>}

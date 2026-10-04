@@ -1,0 +1,147 @@
+import Link from"next/link";import{getAllReviews}from"@/lib/reviews";import HomeSpotlight from"@/components/HomeSpotlight";
+import {getAllCrystalBalls} from "@/lib/crystalBall";
+const leads=["drishyam-the-conclusion","dont-trouble-the-trouble","thella-kaagitham","bethlehem-kudumba-unit"];
+export default function Home(){const crystalBalls=getAllCrystalBalls();const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=reviews.filter(r=>!leads.includes(r.slug));return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
+  <div className="classicHeroStrip">
+    <span>INDEPENDENT MOVIE REVIEWS</span>
+    <span>NO HYPE. NO HATE. JUST THE MOVIE.</span>
+  </div>
+
+  <div className="editorialHero">
+
+    <div className="editorialHeadline">
+      <span className="editionMark">THE INDEPENDENT TAKE</span>
+
+      <h1>
+        No hype.<br/>
+        No hate.
+        <em>Just the movie.</em>
+      </h1>
+    </div>
+
+    <aside className="editorialManifesto">
+
+      <span className="quoteMark">“</span>
+
+      <h2>
+        Same movie.<br/>
+        A different take.
+      </h2>
+
+      <p>
+        That’s the point.
+      </p>
+
+      <div className="editorialSignature">
+        Movie....🤔<em>hmm</em>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <div className="editorialDeck">
+
+    <div>
+      <span>01</span>
+      <strong>WATCH FIRST.</strong>
+      <p>
+        No trailers disguised as opinions.
+        The movie gets its chance first.
+      </p>
+    </div>
+
+    <div>
+      <span>02</span>
+      <strong>THINK AFTER.</strong>
+      <p>
+        Stars, fandom and opening-weekend noise
+        don’t decide the take.
+      </p>
+    </div>
+
+    <div>
+      <span>03</span>
+      <strong>THEN WE TALK.</strong>
+      <p>
+        Agree with me. Argue with me.
+        Just don’t leave without an opinion.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<div className="editorialWelcome shell">
+  <strong>THANKS FOR DROPPING IN.</strong>
+
+  <p>
+    I watched it. I thought about it.
+    <em> The rest is between us. 🤔</em>
+  </p>
+</div>
+
+<div id="spotlight"><HomeSpotlight movies={f}/></div><section id="trending" className="dhSection shell"><div className="dhHead"><strong>TRENDING REVIEWS</strong><small>START HERE</small></div><div className="dhPosters">{f.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><div><img src={m.poster} alt={m.title}/><span>{String(i+1).padStart(2,"0")}</span></div><small>{m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>READ THE TAKE →</b></Link>)}</div></section>
+<section id="crystal-ball" className="cbHome shell">
+
+  <div className="cbHead">
+    <div>
+      <span>🔮</span>
+      <strong>Movie....🤔hmm CRYSTAL BALL</strong>
+    </div>
+
+    <small>
+      Predicting movies before they get the chance to prove me wrong.
+    </small>
+  </div>
+
+  <div className="cbRail">
+
+    {crystalBalls.slice(0,4).map((x) => (
+
+      <Link
+        href={`/crystal-ball/${x.slug}`}
+        className="cbCard"
+        key={x.slug}
+      >
+
+        <img
+          src={x.poster}
+          alt={`${x.title} Movie....🤔hmm prediction`}
+        />
+
+        <div>
+
+          <small>
+            {x.language} · {x.releaseDate}
+          </small>
+
+          <h3>{x.title}</h3>
+
+          <b>
+            {x.emoji} {x.call}
+          </b>
+
+          <p>{x.hook}</p>
+
+          <span>
+            SEE MY PREDICTION →
+          </span>
+
+        </div>
+
+      </Link>
+
+    ))}
+
+  </div>
+
+  <p className="cbDisclaimer">
+    No ratings here. I haven't watched them yet —
+    I'm judging the ingredients, not the meal. 🔮
+  </p>
+
+</section>
+
+<section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{reviews.slice(0,6).map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section><section id="shelf" className="dhSection shell"><div className="dhHead"><strong>FROM THE REVIEW SHELF</strong><small>{reviews.length} REVIEWS AND COUNTING</small></div><div className="dhShelf">{shelf.map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster}/><div><h3>{m.title}</h3><p>{m.dek}</p><b>TAKE IT OFF THE SHELF →</b></div></Link>)}</div></section><section className="dhIndex shell"><div className="dhHead"><strong>ALL REVIEWS</strong><small>THE Movie....🤔hmm INDEX</small></div>{reviews.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><span>{String(i+1).padStart(2,"0")}</span><h3>{m.title}</h3><b>READ →</b></Link>)}</section></main></>}

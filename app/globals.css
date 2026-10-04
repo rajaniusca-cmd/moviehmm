@@ -1428,3 +1428,6949 @@ body{background:#f3efe6}
   }
 }
 
+
+/* =========================================================
+   MOVIEHMM DEV REFINEMENT
+   Editorial + warm + contemporary
+   ========================================================= */
+
+/* ---------- HEADER ---------- */
+
+.header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 40px !important;
+  padding-top: 26px !important;
+  padding-bottom: 26px !important;
+}
+
+.topMovieLogo {
+  display: grid !important;
+  grid-template-columns: auto auto auto auto !important;
+  align-items: baseline !important;
+  width: max-content !important;
+  text-decoration: none !important;
+  color: #111 !important;
+}
+
+.topMovieLogo > span {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 52px !important;
+  line-height: .9 !important;
+  letter-spacing: -3px !important;
+}
+
+.topMovieLogo > b {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 25px !important;
+  color: #b57908 !important;
+  letter-spacing: -2px !important;
+}
+
+.topMovieLogo > i {
+  font-style: normal !important;
+  font-size: 27px !important;
+  margin: 0 3px !important;
+}
+
+.topMovieLogo > em {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 49px !important;
+  line-height: .9 !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+  color: #b57908 !important;
+}
+
+.topMovieLogo > small {
+  grid-column: 1 / -1 !important;
+  margin-top: 7px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 800 !important;
+  letter-spacing: 5px !important;
+
+  color: #4f4a43 !important;
+}
+
+.nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 38px !important;
+}
+
+.nav a {
+  position: relative !important;
+
+  color: #111 !important;
+  text-decoration: none !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: .8px !important;
+}
+
+.nav a::after {
+  content: "" !important;
+
+  position: absolute !important;
+  left: 0 !important;
+  right: 100% !important;
+  bottom: -7px !important;
+
+  height: 2px !important;
+  background: #b57908 !important;
+
+  transition: right .18s ease !important;
+}
+
+.nav a:hover::after {
+  right: 0 !important;
+}
+
+
+/* ---------- REVIEW HERO ---------- */
+
+.article {
+  max-width: 1240px !important;
+}
+
+.reviewHero {
+  display: grid !important;
+  grid-template-columns: minmax(250px, 340px) minmax(0, 1fr) !important;
+  gap: clamp(45px, 7vw, 90px) !important;
+  align-items: center !important;
+
+  margin-top: 55px !important;
+  margin-bottom: 50px !important;
+}
+
+.reviewPosterFrame {
+  width: 100% !important;
+  max-width: 340px !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+
+  box-shadow:
+    11px 13px 0 rgba(65, 54, 39, .08) !important;
+}
+
+.reviewPosterFrame img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+
+/* ---------- REVIEW TYPOGRAPHY ---------- */
+
+.reviewHero .meta {
+  margin-bottom: 22px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 3px !important;
+
+  color: #756e65 !important;
+}
+
+.reviewHero h1 {
+  max-width: 780px !important;
+
+  margin: 0 0 27px !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(48px, 6vw, 82px) !important;
+  font-weight: 500 !important;
+  line-height: .92 !important;
+  letter-spacing: -4px !important;
+
+  color: #111 !important;
+}
+
+.reviewHero .lead {
+  max-width: 720px !important;
+
+  margin: 28px 0 0 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(19px, 2vw, 25px) !important;
+  line-height: 1.42 !important;
+
+  color: #26221d !important;
+}
+
+
+/* ---------- ARTICLE SCORE ----------
+   Keep score color coding without turning
+   the entire score row into a gold rectangle.
+*/
+
+.articleScore {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 7px !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 17px 0 !important;
+
+  border-top: 1px solid #b8afa2 !important;
+  border-bottom: 1px solid #b8afa2 !important;
+  border-left: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.articleScore > strong {
+  display: inline !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 47px !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+}
+
+.articleScore > span {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+
+  color: #6c655c !important;
+}
+
+.articleScore > b {
+  margin-left: 18px !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+
+  color: #111 !important;
+}
+
+
+/* 5.x */
+
+.articleScore.score5 > strong {
+  color: #765f4a !important;
+}
+
+
+/* 6.x */
+
+.articleScore.score6 > strong {
+  color: #9b793c !important;
+}
+
+
+/* 7.x */
+
+.articleScore.score7 > strong {
+  color: #a86f06 !important;
+}
+
+
+/* 8.x */
+
+.articleScore.score8 {
+  padding-left: 0 !important;
+  background: transparent !important;
+  border-left: 0 !important;
+}
+
+.articleScore.score8 > strong {
+  color: #b57908 !important;
+}
+
+.articleScore.score8::before {
+  content: "VERY GOOD" !important;
+
+  align-self: center !important;
+
+  margin-right: 8px !important;
+  padding: 5px 8px !important;
+
+  border: 1px solid #b57908 !important;
+  border-radius: 999px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+
+  color: #8b5b00 !important;
+}
+
+
+/* 9+ */
+
+.articleScore.score9 {
+  padding: 17px 0 !important;
+  background: transparent !important;
+  color: #111 !important;
+  border-left: 0 !important;
+}
+
+.articleScore.score9 > strong {
+  color: #111 !important;
+}
+
+.articleScore.score9::before {
+  content: "EXCEPTIONAL" !important;
+
+  align-self: center !important;
+
+  margin-right: 8px !important;
+  padding: 5px 9px !important;
+
+  border-radius: 999px !important;
+
+  background: #111 !important;
+  color: #e4ad38 !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+}
+
+
+/* ---------- VERDICT ---------- */
+
+.finalVerdict {
+  margin: 45px 0 35px !important;
+  padding: 25px 28px !important;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(181,121,8,.075),
+      rgba(181,121,8,.018)
+    ) !important;
+
+  border-top: 2px solid #111 !important;
+  border-bottom: 1px solid #b7aea2 !important;
+
+  box-shadow: none !important;
+}
+
+.finalVerdict > strong {
+  font-family: Georgia, "Times New Roman", serif !important;
+}
+
+.finalVerdict.score8 > b {
+  color: #fff8e9 !important;
+  background: #b57908 !important;
+  border-color: #b57908 !important;
+}
+
+.finalVerdict.score9 {
+  background: #171512 !important;
+}
+
+
+/* ---------- HUMAN BIT ---------- */
+
+.humanNote {
+  border-left: 3px solid #b57908 !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(181,121,8,.055),
+      transparent
+    ) !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 760px) {
+
+  .header {
+    align-items: flex-start !important;
+    gap: 22px !important;
+  }
+
+  .topMovieLogo > span {
+    font-size: 39px !important;
+  }
+
+  .topMovieLogo > em {
+    font-size: 37px !important;
+  }
+
+  .topMovieLogo > i {
+    font-size: 22px !important;
+  }
+
+  .nav {
+    gap: 15px !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+  }
+
+  .nav a {
+    font-size: 10px !important;
+  }
+
+  .reviewHero {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .reviewPosterFrame {
+    max-width: 270px !important;
+  }
+
+  .reviewHero h1 {
+    font-size: 48px !important;
+    letter-spacing: -2.5px !important;
+  }
+
+  .articleScore > strong {
+    font-size: 39px !important;
+  }
+
+  .articleScore > b {
+    margin-left: 8px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM REVIEW PAGE — FINAL RESPONSIVE ALIGNMENT
+   DEV
+   ========================================================= */
+
+.article {
+  width: min(92%, 1280px) !important;
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ---------- HERO ---------- */
+
+.reviewHero {
+  display: grid !important;
+  grid-template-columns: 330px minmax(0, 1fr) !important;
+  gap: 72px !important;
+
+  align-items: start !important;
+
+  margin-top: 55px !important;
+  margin-bottom: 62px !important;
+}
+
+.reviewPosterFrame {
+  width: 330px !important;
+  max-width: 330px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  align-self: start !important;
+
+  background: transparent !important;
+
+  box-shadow:
+    10px 12px 0 rgba(65,54,39,.08) !important;
+}
+
+.reviewPosterFrame img {
+  width: 100% !important;
+  height: auto !important;
+
+  display: block !important;
+
+  object-fit: contain !important;
+}
+
+/* Right hero column */
+
+.reviewHero > div:last-child {
+  min-width: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  padding-top: 4px !important;
+}
+
+/* Meta */
+
+.reviewHero .meta {
+  margin: 0 0 24px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+
+  letter-spacing: 3px !important;
+
+  color: #746d64 !important;
+}
+
+/* Movie title */
+
+.reviewHero h1 {
+  max-width: 760px !important;
+
+  margin: 0 0 30px !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+
+  font-size: clamp(54px, 5.6vw, 78px) !important;
+  font-weight: 500 !important;
+  line-height: .96 !important;
+
+  letter-spacing: -3.5px !important;
+
+  color: #111 !important;
+}
+
+/* Score row */
+
+.articleScore {
+  width: 100% !important;
+
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+
+  gap: 8px 10px !important;
+
+  margin: 0 !important;
+  padding: 18px 0 !important;
+
+  border-top: 1px solid #aaa195 !important;
+  border-bottom: 1px solid #aaa195 !important;
+
+  background: transparent !important;
+}
+
+.articleScore > strong {
+  font-size: 44px !important;
+  line-height: 1 !important;
+}
+
+.articleScore > span {
+  margin-right: 12px !important;
+}
+
+.articleScore > b {
+  margin-left: 0 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+}
+
+/* Intro */
+
+.reviewHero .lead {
+  width: 100% !important;
+  max-width: 760px !important;
+
+  margin: 29px 0 0 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+
+  font-size: 22px !important;
+  line-height: 1.45 !important;
+
+  letter-spacing: -.25px !important;
+
+  color: #211e1a !important;
+}
+
+
+/* ---------- THE TAKE ---------- */
+
+.reviewSectionHead {
+  width: 100% !important;
+
+  margin: 0 0 28px !important;
+  padding-bottom: 12px !important;
+
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+
+  border-bottom: 1px solid #111 !important;
+}
+
+
+/* Main review paragraphs */
+
+.article > p {
+  width: min(100%, 820px) !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 26px !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+
+  font-size: 20px !important;
+  line-height: 1.65 !important;
+
+  letter-spacing: -.15px !important;
+
+  color: #211e1a !important;
+}
+
+
+/* ---------- PROS / CONS ---------- */
+
+.prosCons {
+  width: min(100%, 900px) !important;
+
+  margin: 48px auto 0 !important;
+}
+
+
+/* ---------- VERDICT / HUMAN / REACTIONS ---------- */
+
+.finalVerdict,
+.humanNote,
+.readerReaction,
+.reviewReaction {
+  width: min(100%, 900px) !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  .article {
+    width: min(92%, 900px) !important;
+  }
+
+  .reviewHero {
+    grid-template-columns: 260px minmax(0, 1fr) !important;
+    gap: 42px !important;
+  }
+
+  .reviewPosterFrame {
+    width: 260px !important;
+    max-width: 260px !important;
+  }
+
+  .reviewHero h1 {
+    font-size: clamp(44px, 7vw, 62px) !important;
+    letter-spacing: -2.5px !important;
+  }
+
+  .reviewHero .lead {
+    font-size: 19px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — SINGLE COLUMN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .article {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+  }
+
+  .back {
+    display: inline-block !important;
+
+    margin-top: 24px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .reviewHero {
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 28px !important;
+
+    margin-top: 28px !important;
+    margin-bottom: 42px !important;
+  }
+
+  .reviewPosterFrame {
+    width: min(78vw, 310px) !important;
+    max-width: 310px !important;
+
+    margin: 0 auto !important;
+
+    box-shadow:
+      7px 8px 0 rgba(65,54,39,.08) !important;
+  }
+
+  .reviewHero > div:last-child {
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  .reviewHero .meta {
+    margin-bottom: 14px !important;
+
+    font-size: 8px !important;
+    letter-spacing: 2px !important;
+
+    text-align: left !important;
+  }
+
+  .reviewHero h1 {
+    width: 100% !important;
+
+    margin-bottom: 22px !important;
+
+    font-size: clamp(42px, 13vw, 58px) !important;
+    line-height: .96 !important;
+
+    letter-spacing: -2.3px !important;
+  }
+
+  .articleScore {
+    gap: 6px 8px !important;
+
+    padding: 14px 0 !important;
+  }
+
+  .articleScore > strong {
+    font-size: 37px !important;
+  }
+
+  .articleScore > span {
+    font-size: 13px !important;
+    margin-right: 5px !important;
+  }
+
+  .articleScore > b {
+    flex-basis: 100% !important;
+
+    margin-top: 5px !important;
+
+    font-size: 17px !important;
+  }
+
+  .articleScore.score8::before,
+  .articleScore.score9::before {
+    font-size: 6px !important;
+    padding: 4px 6px !important;
+  }
+
+  .reviewHero .lead {
+    margin-top: 22px !important;
+
+    font-size: 19px !important;
+    line-height: 1.5 !important;
+  }
+
+  .reviewSectionHead {
+    margin-bottom: 24px !important;
+  }
+
+  .reviewSectionHead small {
+    font-size: 7px !important;
+    letter-spacing: 1.4px !important;
+  }
+
+  .article > p {
+    width: 100% !important;
+
+    margin-bottom: 23px !important;
+
+    font-size: 18px !important;
+    line-height: 1.62 !important;
+  }
+
+  .prosCons {
+    width: 100% !important;
+
+    grid-template-columns: 1fr !important;
+
+    margin-top: 38px !important;
+  }
+
+  .finalVerdict,
+  .humanNote,
+  .readerReaction,
+  .reviewReaction {
+    width: 100% !important;
+  }
+
+  .finalVerdict {
+    grid-template-columns: 1fr auto !important;
+
+    padding: 20px !important;
+  }
+
+  .finalVerdict > strong {
+    font-size: 29px !important;
+    line-height: 1.05 !important;
+  }
+
+  .finalVerdict > b {
+    width: 68px !important;
+    height: 68px !important;
+
+    font-size: 16px !important;
+  }
+
+  .humanNote {
+    padding: 19px 18px !important;
+  }
+
+  .humanNote p {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .article {
+    width: calc(100% - 28px) !important;
+  }
+
+  .reviewPosterFrame {
+    width: min(82vw, 285px) !important;
+  }
+
+  .reviewHero h1 {
+    font-size: 40px !important;
+  }
+
+  .article > p {
+    font-size: 17px !important;
+  }
+
+  .finalVerdict {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "label"
+      "verdict"
+      "score" !important;
+
+    row-gap: 13px !important;
+  }
+
+  .finalVerdict > b {
+    width: auto !important;
+    height: auto !important;
+
+    justify-self: start !important;
+
+    padding: 10px 14px !important;
+
+    border-radius: 999px !important;
+  }
+}
+
+.dhHeader,.dhMast,.dhSpot,.dhSection,.dhIndex{width:min(94%,1460px)!important;max-width:1460px!important;margin-inline:auto!important}.dhHeader{padding:28px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #aaa195}.dhBrand{font:500 46px Georgia;color:#111;text-decoration:none}.dhBrand em{color:#b57908}.dhBrand small{display:block;font:800 7px Arial;letter-spacing:4px}.dhHeader nav{display:flex;gap:28px}.dhHeader nav a{font:800 11px Arial;color:#111;text-decoration:none}.dhMast{padding:25px 5px 45px;border-bottom:2px solid #111}.dhMast>small{font:900 8px Arial;letter-spacing:3px}.dhMast h1{margin:35px 0 8px;font:500 clamp(55px,7vw,100px)/.88 Georgia;letter-spacing:-5px}.dhMast h1 em{display:block;color:#b57908}.dhMast p{font:italic 20px Georgia}.dhHead{min-height:62px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #aaa195}.dhHead strong{border-left:4px solid #b57908;padding-left:10px;font:900 13px Arial;letter-spacing:2px}.dhHead small{font:800 8px Arial;letter-spacing:2px}.dhSpot,.dhSection{padding-top:48px}.dhHero{display:grid;grid-template-columns:.8fr 1.2fr;min-height:420px;color:#111;text-decoration:none}.dhHero>img{width:100%;height:420px;object-fit:cover}.dhHero>div{padding:45px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(110deg,rgba(181,121,8,.06),transparent)}.dhHero h2{margin:10px 0 20px;font:500 clamp(42px,5vw,70px)/.94 Georgia}.dhHero blockquote{margin:0 0 25px;padding-left:18px;border-left:2px solid #b57908;font:italic 21px/1.45 Georgia}.dhHero b{font:900 8px Arial;letter-spacing:2px}.dhDots{height:38px;display:flex;justify-content:center;align-items:center;gap:8px}.dhDots button{width:8px;height:8px;border:1px solid #888;border-radius:50%;background:transparent}.dhDots .active{width:25px;border-radius:10px;background:#b57908}.dhPosters{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-top:24px}.dhPosters>a{color:#111;text-decoration:none}.dhPosters>a>div{position:relative;aspect-ratio:2/3}.dhPosters img{width:100%;height:100%;object-fit:cover}.dhPosters span{position:absolute;right:8px;bottom:6px;font:700 40px Georgia;color:white;text-shadow:0 2px 10px #000}.dhPosters h3,.dhLatest h3,.dhShelf h3{margin:7px 0;font:600 24px Georgia}.dhPosters p,.dhLatest p,.dhShelf p{font:15px/1.4 Georgia}.dhPosters b,.dhLatest b,.dhShelf b{font:900 8px Arial;color:#8f5d00}.dhLatest{display:grid;grid-template-columns:1fr 1fr}.dhLatest>a{padding:24px;display:grid;grid-template-columns:130px 1fr;gap:18px;color:#111;text-decoration:none;border-bottom:1px solid #bbb}.dhLatest img{width:130px;height:195px;object-fit:cover}.dhShelf{display:flex;gap:18px;overflow-x:auto;padding:24px 0}.dhShelf>a{min-width:340px;display:grid;grid-template-columns:105px 1fr;gap:15px;color:#111;text-decoration:none}.dhShelf img{width:105px;height:158px;object-fit:cover}.dhIndex{padding-top:45px}.dhIndex>a{min-height:70px;display:grid;grid-template-columns:45px 1fr auto;align-items:center;border-bottom:1px solid #bbb;color:#111;text-decoration:none}.dhIndex>a>span{color:#b57908;font:700 18px Georgia}.dhIndex h3{font:600 20px Georgia}.dhIndex b{font:900 7px Arial}@media(max-width:760px){.dhHeader{display:block}.dhHeader nav{margin-top:20px;gap:12px;flex-wrap:wrap}.dhMast h1{font-size:50px}.dhHero{grid-template-columns:1fr}.dhHero>img{height:430px;object-fit:contain;background:#111}.dhHero>div{padding:28px 20px}.dhPosters{display:flex;overflow-x:auto}.dhPosters>a{min-width:220px}.dhLatest{grid-template-columns:1fr}.dhLatest>a{padding-inline:0}.dhHead small{display:none}}
+/* =========================================================
+   MOVIEHMM DISCOVERY HOME — COMPACT PASS
+   ========================================================= */
+
+
+/* ---------- TOP INTRO: MUCH SHORTER ---------- */
+
+.dhMast {
+  padding-top: 12px !important;
+}
+
+.dhMast > small {
+  display: block !important;
+  margin: 0 !important;
+  padding: 10px 4px !important;
+
+  border-bottom: 1px solid #aaa195 !important;
+
+  font-size: 7px !important;
+}
+
+.dhMast h1 {
+  margin: 24px 0 8px !important;
+
+  font-size: clamp(48px, 5.6vw, 76px) !important;
+  line-height: .9 !important;
+  letter-spacing: -4px !important;
+}
+
+.dhMast h1 em {
+  display: inline !important;
+  margin-left: 12px !important;
+}
+
+.dhMast p {
+  margin: 15px 0 24px !important;
+
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+}
+
+.dhMast {
+  padding-bottom: 0 !important;
+}
+
+
+/* ---------- SPOTLIGHT STARTS CLOSER ---------- */
+
+.dhSpot {
+  padding-top: 28px !important;
+}
+
+.dhHead {
+  min-height: 48px !important;
+}
+
+.dhHead strong {
+  font-size: 11px !important;
+}
+
+.dhHead small {
+  font-size: 7px !important;
+}
+
+
+/* ---------- COMPACT SPOTLIGHT ---------- */
+
+.dhHero {
+  min-height: 315px !important;
+
+  grid-template-columns:
+    minmax(300px, .82fr)
+    minmax(0, 1.18fr) !important;
+
+  border-bottom: 1px solid #aaa195 !important;
+}
+
+
+/*
+   IMPORTANT:
+   Don't crop the poster itself.
+
+   The frame is landscape, but the original poster
+   stays completely visible inside it.
+*/
+
+.dhHero > img {
+  width: 100% !important;
+  height: 315px !important;
+
+  display: block !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #171512,
+      #29241e
+    ) !important;
+}
+
+
+/* ---------- SPOTLIGHT TEXT ---------- */
+
+.dhHero > div {
+  padding: 30px 38px !important;
+
+  justify-content: center !important;
+}
+
+.dhHero > div > small {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: 2px !important;
+
+  color: #716960 !important;
+}
+
+.dhHero h2 {
+  max-width: 680px !important;
+
+  margin: 8px 0 17px !important;
+
+  font-size: clamp(37px, 4vw, 56px) !important;
+  line-height: .94 !important;
+
+  letter-spacing: -2.5px !important;
+}
+
+.dhHero blockquote {
+  max-width: 700px !important;
+
+  margin: 0 0 19px !important;
+  padding-left: 16px !important;
+
+  font-size: 17px !important;
+  line-height: 1.42 !important;
+}
+
+.dhHero b {
+  font-size: 7px !important;
+  letter-spacing: 1.6px !important;
+
+  color: #8f5d00 !important;
+}
+
+
+/* ---------- SMALLER CAROUSEL DOT AREA ---------- */
+
+.dhDots {
+  height: 30px !important;
+}
+
+
+/* ---------- TRENDING CARDS ---------- */
+
+.dhSection {
+  padding-top: 34px !important;
+}
+
+.dhPosters {
+  gap: 18px !important;
+  padding-top: 19px !important;
+}
+
+
+/*
+   Posters in Trending should remain 2:3.
+   Never stretch them.
+*/
+
+.dhPosters > a > div {
+  aspect-ratio: 2 / 3 !important;
+
+  overflow: hidden !important;
+
+  background: #ddd5c8 !important;
+}
+
+.dhPosters img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+
+/* ---------- NEW REVIEWS ---------- */
+
+.dhLatest > a {
+  min-height: 195px !important;
+}
+
+.dhLatest img {
+  width: 118px !important;
+  height: 177px !important;
+
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+.dhLatest > a {
+  grid-template-columns: 118px 1fr !important;
+}
+
+
+/* ---------- REVIEW SHELF ---------- */
+
+.dhShelf > a {
+  min-width: 310px !important;
+
+  grid-template-columns: 92px 1fr !important;
+}
+
+.dhShelf img {
+  width: 92px !important;
+  height: 138px !important;
+
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .dhMast h1 {
+    font-size: 54px !important;
+  }
+
+  .dhMast h1 em {
+    display: block !important;
+    margin-left: 0 !important;
+    margin-top: 5px !important;
+  }
+
+  .dhHero {
+    grid-template-columns: .9fr 1.1fr !important;
+  }
+
+  .dhHero > div {
+    padding: 25px !important;
+  }
+
+  .dhHero h2 {
+    font-size: 40px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .dhMast {
+    padding-top: 8px !important;
+  }
+
+  .dhMast h1 {
+    margin-top: 20px !important;
+
+    font-size: 43px !important;
+    line-height: .94 !important;
+
+    letter-spacing: -2.5px !important;
+  }
+
+  .dhMast h1 em {
+    display: block !important;
+
+    margin-left: 0 !important;
+    margin-top: 5px !important;
+  }
+
+  .dhMast p {
+    margin: 13px 0 20px !important;
+
+    font-size: 15px !important;
+  }
+
+  .dhSpot {
+    padding-top: 20px !important;
+  }
+
+  .dhHero {
+    display: block !important;
+
+    min-height: 0 !important;
+  }
+
+  .dhHero > img {
+    width: 100% !important;
+    height: min(58vh, 440px) !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    background: #171512 !important;
+  }
+
+  .dhHero > div {
+    padding: 23px 18px 25px !important;
+  }
+
+  .dhHero h2 {
+    margin: 8px 0 15px !important;
+
+    font-size: 37px !important;
+    line-height: .98 !important;
+
+    letter-spacing: -2px !important;
+  }
+
+  .dhHero blockquote {
+    margin-bottom: 17px !important;
+
+    font-size: 17px !important;
+    line-height: 1.42 !important;
+  }
+
+  .dhDots {
+    height: 28px !important;
+  }
+
+  .dhPosters {
+    gap: 14px !important;
+  }
+
+  .dhPosters > a {
+    min-width: 205px !important;
+  }
+
+  .dhLatest > a {
+    grid-template-columns: 100px 1fr !important;
+
+    gap: 15px !important;
+  }
+
+  .dhLatest img {
+    width: 100px !important;
+    height: 150px !important;
+  }
+
+  .dhShelf > a {
+    min-width: 285px !important;
+
+    grid-template-columns: 82px 1fr !important;
+  }
+
+  .dhShelf img {
+    width: 82px !important;
+    height: 123px !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .dhMast h1 {
+    font-size: 38px !important;
+  }
+
+  .dhHero > img {
+    height: 390px !important;
+  }
+
+  .dhHero h2 {
+    font-size: 33px !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM — RESTORED ORIGINAL HERO
+   ========================================================= */
+
+.dhMast {
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.classicHeroStrip {
+  min-height: 48px;
+
+  padding: 0 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 4px;
+
+  color: #5d5750;
+}
+
+.classicHeroBody {
+  min-height: 330px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.75fr)
+    minmax(270px, .58fr);
+
+  align-items: center;
+
+  gap: 60px;
+
+  padding: 42px 8px 45px;
+
+  border-bottom: 3px solid #111;
+}
+
+.classicHeroMain h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(58px, 7vw, 100px);
+  font-weight: 500;
+  line-height: .9;
+
+  letter-spacing: -5px;
+
+  color: #111;
+}
+
+.classicHeroMain h1 em {
+  display: block;
+
+  margin-top: 7px;
+
+  font-weight: 500;
+
+  color: #b57908;
+}
+
+.classicHeroMain > p {
+  margin: 31px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  color: #605a53;
+}
+
+
+/* Quote */
+
+.classicHeroQuote {
+  min-height: 220px;
+
+  padding-left: 45px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-left: 1px solid #aaa195;
+}
+
+.classicHeroQuote > b {
+  margin-bottom: 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  line-height: .55;
+
+  color: #b57908;
+}
+
+.classicHeroQuote h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.15;
+
+  color: #111;
+}
+
+.classicHeroQuote h2 em {
+  font-weight: 500;
+}
+
+.classicHeroQuote > i {
+  width: 42px;
+  height: 3px;
+
+  margin: 23px 0 18px;
+
+  display: block;
+
+  background: #b57908;
+}
+
+.classicHeroQuote > small {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   SPOTLIGHT — PROPER POSTER FIT
+   No face/head cropping.
+   ========================================================= */
+
+.dhSpot {
+  padding-top: 30px !important;
+}
+
+.dhHero {
+  min-height: 340px !important;
+
+  grid-template-columns:
+    minmax(250px, 420px)
+    minmax(0, 1fr) !important;
+
+  background: #eee8dd !important;
+}
+
+
+/*
+   Poster stage:
+   Keep original artwork intact.
+*/
+
+.dhHero > img {
+  width: 100% !important;
+  height: 340px !important;
+
+  padding: 14px !important;
+
+  box-sizing: border-box !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #342f28 0%,
+      #1a1815 72%
+    ) !important;
+}
+
+
+/* Spotlight copy */
+
+.dhHero > div {
+  padding: 32px 44px !important;
+}
+
+.dhHero h2 {
+  max-width: 700px !important;
+
+  margin: 9px 0 17px !important;
+
+  font-size: clamp(38px, 4.2vw, 60px) !important;
+}
+
+.dhHero blockquote {
+  max-width: 720px !important;
+
+  margin-bottom: 20px !important;
+
+  font-size: 18px !important;
+}
+
+
+/* =========================================================
+   TRENDING POSTERS
+   True 2:3 poster frames
+   ========================================================= */
+
+.dhPosters > a > div {
+  aspect-ratio: 2 / 3 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+  background: #e4ddd1 !important;
+}
+
+.dhPosters img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  background: #171512 !important;
+}
+
+
+/* New review images */
+
+.dhLatest img {
+  object-fit: contain !important;
+  object-position: center !important;
+
+  background: #171512 !important;
+}
+
+
+/* Shelf images */
+
+.dhShelf img {
+  object-fit: contain !important;
+  object-position: center !important;
+
+  background: #171512 !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .classicHeroBody {
+    grid-template-columns: 1.45fr .65fr;
+
+    gap: 35px;
+  }
+
+  .classicHeroMain h1 {
+    font-size: 62px;
+  }
+
+  .classicHeroQuote {
+    padding-left: 28px;
+  }
+
+  .classicHeroQuote h2 {
+    font-size: 21px;
+  }
+
+  .dhHero {
+    grid-template-columns: 300px 1fr !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .classicHeroStrip {
+    min-height: 42px;
+
+    padding: 0;
+
+    font-size: 6px;
+    letter-spacing: 2px;
+  }
+
+  .classicHeroStrip span:last-child {
+    display: none;
+  }
+
+  .classicHeroBody {
+    min-height: 0;
+
+    display: block;
+
+    padding: 31px 0 34px;
+  }
+
+  .classicHeroMain h1 {
+    font-size: clamp(46px, 14vw, 62px);
+    line-height: .92;
+
+    letter-spacing: -3px;
+  }
+
+  .classicHeroMain h1 em {
+    margin-top: 5px;
+  }
+
+  .classicHeroMain > p {
+    margin-top: 23px;
+
+    font-size: 7px;
+    line-height: 1.6;
+
+    letter-spacing: 3px;
+  }
+
+  .classicHeroQuote {
+    min-height: 0;
+
+    margin-top: 31px;
+    padding: 23px 0 0 20px;
+
+    border-left: 2px solid #b57908;
+    border-top: 1px solid #c7c0b5;
+  }
+
+  .classicHeroQuote > b {
+    font-size: 37px;
+  }
+
+  .classicHeroQuote h2 {
+    font-size: 20px;
+  }
+
+  .classicHeroQuote > i {
+    margin: 18px 0 14px;
+  }
+
+
+  /* Spotlight mobile */
+
+  .dhSpot {
+    padding-top: 22px !important;
+  }
+
+  .dhHero {
+    display: block !important;
+
+    min-height: 0 !important;
+  }
+
+  .dhHero > img {
+    width: 100% !important;
+    height: 400px !important;
+
+    padding: 15px !important;
+
+    object-fit: contain !important;
+  }
+
+  .dhHero > div {
+    padding: 24px 19px 26px !important;
+  }
+
+  .dhHero h2 {
+    font-size: 38px !important;
+  }
+
+  .dhHero blockquote {
+    font-size: 17px !important;
+  }
+}
+
+
+/* Small phone */
+
+@media (max-width: 420px) {
+
+  .classicHeroMain h1 {
+    font-size: 43px;
+  }
+
+  .dhHero > img {
+    height: 360px !important;
+  }
+
+  .dhHero h2 {
+    font-size: 34px !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM SPOTLIGHT — FINAL COMPACT FIT
+   ========================================================= */
+
+/* Reduce gap after classic hero */
+
+.classicHeroBody {
+  min-height: 285px !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+.dhSpot {
+  padding-top: 14px !important;
+}
+
+.dhHead {
+  min-height: 44px !important;
+}
+
+
+/* Spotlight itself */
+
+.dhHero {
+  min-height: 300px !important;
+  height: 300px !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(420px, .95fr)
+    minmax(0, 1.45fr) !important;
+
+  overflow: hidden !important;
+
+  background: #eee8dd !important;
+}
+
+
+/* Dedicated 16:9 artwork */
+
+.dhHero > img {
+  width: 100% !important;
+  height: 300px !important;
+
+  padding: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  background: #171512 !important;
+}
+
+
+/* Compact editorial copy */
+
+.dhHero > div {
+  min-width: 0 !important;
+
+  padding: 25px 36px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.dhHero > div > small {
+  font-size: 7px !important;
+  letter-spacing: 2px !important;
+}
+
+.dhHero h2 {
+  max-width: 760px !important;
+
+  margin: 7px 0 14px !important;
+
+  font-size: clamp(34px, 3.7vw, 52px) !important;
+  line-height: .95 !important;
+
+  letter-spacing: -2px !important;
+}
+
+.dhHero blockquote {
+  max-width: 760px !important;
+
+  margin: 0 0 16px !important;
+  padding-left: 15px !important;
+
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+}
+
+.dhHero b {
+  font-size: 7px !important;
+  letter-spacing: 1.4px !important;
+}
+
+
+/* Less space under spotlight */
+
+.dhDots {
+  height: 25px !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .dhHero {
+    grid-template-columns:
+      minmax(330px, .9fr)
+      minmax(0, 1.1fr) !important;
+  }
+
+  .dhHero > div {
+    padding: 22px 27px !important;
+  }
+
+  .dhHero h2 {
+    font-size: 38px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .classicHeroBody {
+    padding-top: 25px !important;
+    padding-bottom: 26px !important;
+  }
+
+  .dhSpot {
+    padding-top: 10px !important;
+  }
+
+  .dhHero {
+    height: auto !important;
+    min-height: 0 !important;
+
+    display: block !important;
+  }
+
+  .dhHero > img {
+    width: 100% !important;
+    height: auto !important;
+
+    aspect-ratio: 16 / 9 !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .dhHero > div {
+    padding: 21px 18px 23px !important;
+  }
+
+  .dhHero h2 {
+    margin: 7px 0 13px !important;
+
+    font-size: 34px !important;
+    line-height: .97 !important;
+  }
+
+  .dhHero blockquote {
+    margin-bottom: 15px !important;
+
+    font-size: 16px !important;
+  }
+
+  .dhDots {
+    height: 24px !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM SPOTLIGHT V2
+   Poster-first. No blur. No fake landscape.
+   ========================================================= */
+
+.dhSpot {
+  padding-top: 12px !important;
+}
+
+
+/* Kill old spotlight layout */
+
+.dhHero,
+.dhDots {
+  display: none !important;
+}
+
+
+/* Main stage */
+
+.spotlightStage {
+  position: relative;
+
+  min-height: 390px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(240px, 310px)
+    minmax(0, 1fr);
+
+  gap: 0;
+
+  background: #eee8dd;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+
+/* Poster column */
+
+.spotlightPoster {
+  position: relative;
+
+  height: 390px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  background: #171512;
+
+  text-decoration: none;
+
+  overflow: hidden;
+}
+
+.spotlightPoster img {
+  width: auto;
+  max-width: 100%;
+
+  height: 100%;
+  max-height: 354px;
+
+  display: block;
+
+  object-fit: contain;
+
+  box-shadow:
+    7px 9px 0 rgba(255,255,255,.07);
+}
+
+
+/* Featured label */
+
+.spotlightPoster > span {
+  position: absolute;
+
+  left: 28px;
+  top: 27px;
+
+  padding: 6px 9px;
+
+  background: #f3efe6;
+
+  border-left: 3px solid #b57908;
+
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6px;
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+
+/* Editorial story */
+
+.spotlightStory {
+  min-width: 0;
+
+  padding: 43px 65px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #111;
+
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(181,121,8,.055),
+      rgba(181,121,8,.008)
+    );
+}
+
+.spotlightMeta {
+  margin-bottom: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 2.3px;
+
+  color: #70685f;
+}
+
+.spotlightStory h2 {
+  max-width: 760px;
+
+  margin: 0 0 21px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 4.6vw, 68px);
+  font-weight: 500;
+  line-height: .94;
+
+  letter-spacing: -3px;
+}
+
+.spotlightStory blockquote {
+  max-width: 760px;
+
+  margin: 0 0 27px;
+  padding-left: 18px;
+
+  border-left: 2px solid #b57908;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.45;
+
+  color: #302a23;
+}
+
+
+/* CTA */
+
+.spotlightCTA {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spotlightCTA strong {
+  padding-bottom: 5px;
+
+  border-bottom: 2px solid #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+.spotlightCTA span {
+  color: #9b6500;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* Previous / next */
+
+.spotlightArrow {
+  position: absolute;
+
+  top: 50%;
+
+  width: 45px;
+  height: 64px;
+
+  transform: translateY(-50%);
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(243,239,230,.75);
+
+  background: rgba(17,17,17,.72);
+
+  color: #f3efe6;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background .15s ease,
+    color .15s ease;
+}
+
+.spotlightArrow:hover {
+  background: #111;
+  color: #d69819;
+}
+
+.spotlightPrev {
+  left: 12px;
+}
+
+.spotlightNext {
+  right: 12px;
+}
+
+
+/* Bottom controls */
+
+.spotlightFooter {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5px;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.spotlightCounter {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.spotlightCounter strong {
+  color: #b57908;
+
+  font-size: 18px;
+}
+
+.spotlightCounter span,
+.spotlightCounter small {
+  color: #777067;
+
+  font-size: 10px;
+}
+
+.spotlightDots {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.spotlightDots button {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 1px solid #8e867c;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.spotlightDots button.active {
+  width: 24px;
+
+  border-color: #b57908;
+  border-radius: 20px;
+
+  background: #b57908;
+}
+
+
+/* =========================================================
+   HERO GAP
+   ========================================================= */
+
+.classicHeroBody {
+  min-height: 250px !important;
+
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+.classicHeroMain h1 {
+  font-size: clamp(54px, 6.4vw, 88px) !important;
+}
+
+.classicHeroMain > p {
+  margin-top: 22px !important;
+}
+
+.dhSpot {
+  padding-top: 10px !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .spotlightStage {
+    grid-template-columns:
+      260px
+      minmax(0, 1fr);
+  }
+
+  .spotlightStory {
+    padding: 34px 38px;
+  }
+
+  .spotlightStory h2 {
+    font-size: 44px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .classicHeroBody {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+
+  .spotlightStage {
+    display: block;
+
+    min-height: 0;
+  }
+
+  .spotlightPoster {
+    width: 100%;
+    height: 370px;
+
+    padding: 15px;
+  }
+
+  .spotlightPoster img {
+    max-height: 340px;
+  }
+
+  .spotlightStory {
+    padding: 25px 19px 27px;
+  }
+
+  .spotlightStory h2 {
+    margin-bottom: 16px;
+
+    font-size: 37px;
+    line-height: .97;
+
+    letter-spacing: -2px;
+  }
+
+  .spotlightStory blockquote {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+  }
+
+  .spotlightCTA {
+    display: block;
+  }
+
+  .spotlightCTA span {
+    display: block;
+
+    margin-top: 12px;
+  }
+
+  .spotlightArrow {
+    top: 185px;
+
+    width: 38px;
+    height: 55px;
+
+    transform: translateY(-50%);
+
+    font-size: 36px;
+  }
+
+  .spotlightPrev {
+    left: 7px;
+  }
+
+  .spotlightNext {
+    right: 7px;
+  }
+}
+
+
+/* Small phones */
+
+@media (max-width: 420px) {
+
+  .spotlightPoster {
+    height: 335px;
+  }
+
+  .spotlightPoster img {
+    max-height: 305px;
+  }
+
+  .spotlightArrow {
+    top: 167px;
+  }
+
+  .spotlightStory h2 {
+    font-size: 33px;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM — WELCOME NOTE
+   ========================================================= */
+
+.visitorNote {
+  width: min(94%, 1460px) !important;
+
+  margin: 15px auto 0 !important;
+  padding: 15px 5px 17px !important;
+
+  display: grid !important;
+  grid-template-columns: 150px minmax(0, 1.5fr) minmax(260px, .8fr) !important;
+  align-items: center !important;
+
+  gap: 25px !important;
+
+  border-bottom: 1px solid #aaa195 !important;
+}
+
+.visitorNote > span {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 2px !important;
+
+  color: #9b6500 !important;
+}
+
+.visitorNote > p {
+  margin: 0 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+
+  color: #211e1a !important;
+}
+
+.visitorNote > small {
+  padding-left: 20px !important;
+
+  border-left: 2px solid #b57908 !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 8px !important;
+  line-height: 1.55 !important;
+
+  letter-spacing: .5px !important;
+
+  color: #716960 !important;
+}
+
+
+/* =========================================================
+   COMPACT SPOTLIGHT
+   ========================================================= */
+
+.dhSpot {
+  padding-top: 8px !important;
+}
+
+.dhSpot .dhHead {
+  min-height: 39px !important;
+}
+
+
+/* Entire feature */
+
+.spotlightStage {
+  min-height: 250px !important;
+  height: 250px !important;
+
+  grid-template-columns:
+    190px
+    minmax(0, 1fr) !important;
+}
+
+
+/* Poster */
+
+.spotlightPoster {
+  width: 190px !important;
+  height: 250px !important;
+
+  padding: 11px !important;
+}
+
+.spotlightPoster img {
+  width: auto !important;
+  max-width: 100% !important;
+
+  height: 100% !important;
+  max-height: 228px !important;
+
+  object-fit: contain !important;
+
+  box-shadow:
+    5px 6px 0 rgba(255,255,255,.07) !important;
+}
+
+.spotlightPoster > span {
+  left: 18px !important;
+  top: 17px !important;
+
+  padding: 5px 7px !important;
+
+  font-size: 5px !important;
+}
+
+
+/* Story */
+
+.spotlightStory {
+  padding: 23px 42px !important;
+}
+
+.spotlightMeta {
+  margin-bottom: 7px !important;
+
+  font-size: 6px !important;
+}
+
+.spotlightStory h2 {
+  max-width: 900px !important;
+
+  margin: 0 0 13px !important;
+
+  font-size: clamp(32px, 3.4vw, 48px) !important;
+  line-height: .96 !important;
+
+  letter-spacing: -2px !important;
+}
+
+.spotlightStory blockquote {
+  max-width: 850px !important;
+
+  margin: 0 0 16px !important;
+  padding-left: 14px !important;
+
+  font-size: 15px !important;
+  line-height: 1.38 !important;
+}
+
+.spotlightCTA strong {
+  font-size: 7px !important;
+}
+
+.spotlightCTA span {
+  font-size: 6px !important;
+}
+
+
+/* Arrows */
+
+.spotlightArrow {
+  width: 34px !important;
+  height: 50px !important;
+
+  font-size: 31px !important;
+}
+
+.spotlightPrev {
+  left: 7px !important;
+}
+
+.spotlightNext {
+  right: 7px !important;
+}
+
+
+/* Footer */
+
+.spotlightFooter {
+  height: 31px !important;
+}
+
+.spotlightCounter strong {
+  font-size: 14px !important;
+}
+
+
+/* =========================================================
+   REDUCE HERO → CONTENT GAP
+   ========================================================= */
+
+.classicHeroBody {
+  min-height: 220px !important;
+
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
+.classicHeroMain h1 {
+  font-size: clamp(50px, 5.8vw, 80px) !important;
+}
+
+.classicHeroMain > p {
+  margin-top: 17px !important;
+}
+
+.classicHeroQuote {
+  min-height: 175px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .visitorNote {
+    margin-top: 10px !important;
+
+    padding: 14px 0 16px !important;
+
+    display: block !important;
+  }
+
+  .visitorNote > span {
+    display: block !important;
+
+    margin-bottom: 8px !important;
+  }
+
+  .visitorNote > p {
+    font-size: 15px !important;
+  }
+
+  .visitorNote > small {
+    display: block !important;
+
+    margin-top: 12px !important;
+    padding: 10px 0 0 13px !important;
+
+    border-left: 2px solid #b57908 !important;
+  }
+
+
+  .spotlightStage {
+    height: auto !important;
+    min-height: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: 115px minmax(0, 1fr) !important;
+  }
+
+  .spotlightPoster {
+    width: 115px !important;
+    height: 175px !important;
+
+    padding: 7px !important;
+  }
+
+  .spotlightPoster img {
+    max-height: 161px !important;
+  }
+
+  .spotlightPoster > span {
+    display: none !important;
+  }
+
+  .spotlightStory {
+    padding: 16px 15px !important;
+  }
+
+  .spotlightMeta {
+    font-size: 5px !important;
+  }
+
+  .spotlightStory h2 {
+    margin-bottom: 9px !important;
+
+    font-size: clamp(24px, 8vw, 33px) !important;
+  }
+
+  .spotlightStory blockquote {
+    margin-bottom: 10px !important;
+
+    font-size: 13px !important;
+
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+
+    overflow: hidden !important;
+  }
+
+  .spotlightCTA span {
+    display: none !important;
+  }
+
+  .spotlightArrow {
+    width: 27px !important;
+    height: 42px !important;
+
+    top: 87px !important;
+
+    font-size: 26px !important;
+  }
+
+  .spotlightPrev {
+    left: 3px !important;
+  }
+
+  .spotlightNext {
+    right: 3px !important;
+  }
+
+  .classicHeroBody {
+    min-height: 0 !important;
+
+    padding-top: 19px !important;
+    padding-bottom: 19px !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM — EDITORIAL BALANCE PASS
+   ========================================================= */
+
+
+/* Personal note: not another section */
+
+.visitorNote {
+  width: min(92%, 1180px) !important;
+
+  margin: 11px auto 5px !important;
+  padding: 9px 0 11px !important;
+
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+
+  gap: 35px !important;
+
+  border: 0 !important;
+}
+
+.visitorNote > p {
+  margin: 0 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 14px !important;
+  font-style: italic !important;
+  line-height: 1.4 !important;
+
+  color: #38322c !important;
+}
+
+.visitorNote > small {
+  flex: 0 0 auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 700 !important;
+
+  letter-spacing: 1px !important;
+
+  color: #9b6500 !important;
+}
+
+
+/* Spotlight section gets breathing room,
+   but no giant empty canvas */
+
+.dhSpot {
+  width: min(92%, 1180px) !important;
+  max-width: 1180px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-top: 5px !important;
+}
+
+.dhSpot .dhHead {
+  min-height: 42px !important;
+}
+
+
+/* Compact centered feature */
+
+.spotlightStage {
+  width: 100% !important;
+
+  height: 270px !important;
+  min-height: 270px !important;
+
+  grid-template-columns:
+    205px
+    minmax(0, 1fr) !important;
+
+  border-top: 1px solid #aaa195 !important;
+  border-bottom: 1px solid #aaa195 !important;
+
+  background:
+    linear-gradient(
+      105deg,
+      #171512 0,
+      #171512 205px,
+      #eee8dd 205px,
+      #f3efe6 100%
+    ) !important;
+}
+
+
+/* Poster */
+
+.spotlightPoster {
+  width: 205px !important;
+  height: 270px !important;
+
+  padding: 10px !important;
+
+  background: transparent !important;
+}
+
+.spotlightPoster img {
+  width: auto !important;
+  max-width: 100% !important;
+
+  height: 100% !important;
+  max-height: 250px !important;
+
+  object-fit: contain !important;
+
+  box-shadow: none !important;
+}
+
+.spotlightPoster > span {
+  left: 16px !important;
+  top: 15px !important;
+}
+
+
+/* Story fills available area instead of leaving dead space */
+
+.spotlightStory {
+  min-height: 270px !important;
+
+  padding: 25px 50px !important;
+
+  justify-content: center !important;
+
+  background: transparent !important;
+}
+
+.spotlightMeta {
+  margin-bottom: 7px !important;
+}
+
+.spotlightStory h2 {
+  max-width: 760px !important;
+
+  margin: 0 0 13px !important;
+
+  font-size: clamp(34px, 3.5vw, 50px) !important;
+  line-height: .96 !important;
+}
+
+.spotlightStory blockquote {
+  max-width: 720px !important;
+
+  margin: 0 0 17px !important;
+
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+}
+
+.spotlightCTA {
+  gap: 13px !important;
+}
+
+
+/* Navigation arrows visually attached to feature */
+
+.spotlightArrow {
+  width: 31px !important;
+  height: 47px !important;
+
+  font-size: 28px !important;
+
+  border-color: rgba(255,255,255,.55) !important;
+}
+
+.spotlightPrev {
+  left: 5px !important;
+}
+
+.spotlightNext {
+  right: 5px !important;
+}
+
+
+/* Tiny navigation footer */
+
+.spotlightFooter {
+  height: 28px !important;
+
+  padding: 0 2px !important;
+}
+
+
+/* Trending should visually dominate discovery */
+
+#trending.dhSection {
+  padding-top: 32px !important;
+}
+
+#trending .dhHead {
+  min-height: 47px !important;
+}
+
+.dhPosters {
+  padding-top: 17px !important;
+}
+
+
+/* Slightly stronger poster titles */
+
+.dhPosterCard h3 {
+  font-size: 22px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .visitorNote {
+    width: calc(100% - 34px) !important;
+
+    margin-top: 8px !important;
+    padding: 8px 0 10px !important;
+
+    display: block !important;
+  }
+
+  .visitorNote > p {
+    font-size: 14px !important;
+  }
+
+  .visitorNote > small {
+    display: block !important;
+
+    margin-top: 6px !important;
+  }
+
+
+  .dhSpot {
+    width: calc(100% - 28px) !important;
+  }
+
+  .spotlightStage {
+    height: auto !important;
+    min-height: 0 !important;
+
+    display: block !important;
+
+    background: #f3efe6 !important;
+  }
+
+  .spotlightPoster {
+    width: 100% !important;
+    height: 260px !important;
+
+    padding: 10px !important;
+
+    background: #171512 !important;
+  }
+
+  .spotlightPoster img {
+    max-height: 240px !important;
+  }
+
+  .spotlightStory {
+    min-height: 0 !important;
+
+    padding: 20px 17px 22px !important;
+  }
+
+  .spotlightStory h2 {
+    font-size: 32px !important;
+  }
+
+  .spotlightStory blockquote {
+    font-size: 15px !important;
+  }
+
+  .spotlightArrow {
+    top: 130px !important;
+  }
+
+  .spotlightCTA span {
+    display: inline !important;
+  }
+}
+
+.cbHome{width:min(94%,1460px)!important;margin:42px auto 0!important}.cbHead{min-height:58px;display:flex;align-items:center;justify-content:space-between;border-block:1px solid #aaa195}.cbHead>div{display:flex;gap:10px;align-items:center}.cbHead>div span{font-size:21px}.cbHead strong{font:900 13px Arial;letter-spacing:2px}.cbHead small{font:italic 13px Georgia;color:#655e56}.cbRail{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:22px 0}.cbCard{text-decoration:none;color:#111}.cbCard>img{width:100%;aspect-ratio:2/3;object-fit:cover;background:#171512}.cbCard>div{padding-top:12px}.cbCard small{font:800 7px Arial;letter-spacing:2px;color:#746d64}.cbCard h3{margin:7px 0 9px;font:600 24px/1 Georgia}.cbCard b{display:inline-block;padding:5px 8px;border:1px solid #b57908;border-radius:20px;font:900 7px Arial;letter-spacing:1.3px;color:#8f5d00}.cbCard p{min-height:59px;font:15px/1.4 Georgia}.cbCard span{font:900 7px Arial;letter-spacing:1.5px;border-bottom:2px solid #b57908;padding-bottom:4px}.cbDisclaimer{margin:0;padding:12px 0 16px;border-top:1px solid #c7c0b6;font:italic 13px Georgia;color:#655e56}.cbArticle{max-width:1080px!important}.cbArticleHero{margin:50px 0;display:grid;grid-template-columns:300px 1fr;gap:55px;align-items:center}.cbArticleHero>img{width:300px;aspect-ratio:2/3;object-fit:cover}.cbArticleHero span{font:900 9px Arial;letter-spacing:2px;color:#9b6500}.cbArticleHero small{display:block;margin:12px 0;font:800 7px Arial;letter-spacing:2px;color:#746d64}.cbArticleHero h1{margin:0 0 20px;font:500 64px/.95 Georgia;letter-spacing:-3px}.cbArticleHero p{font:21px/1.45 Georgia}.cbCall{display:inline-block;padding:8px 12px;border:1px solid #b57908;border-radius:30px;font:900 9px Arial;letter-spacing:1.5px}.cbArticle>section{max-width:780px;margin:auto}.cbArticle>section h2{margin:38px 0 10px;border-bottom:1px solid #aaa195;padding-bottom:8px;font:600 27px Georgia}.cbArticle>section p{font:19px/1.65 Georgia}.cbFinal{max-width:780px;margin:45px auto;padding:25px;border-block:2px solid #111;background:rgba(181,121,8,.05)}.cbFinal span{font:900 8px Arial;letter-spacing:2px}.cbFinal strong{display:block;margin:10px 0;font:600 35px Georgia;color:#9b6500}.cbFinal p{font:italic 15px/1.5 Georgia}@media(max-width:760px){.cbHead small{display:none}.cbRail{display:flex;overflow-x:auto;gap:14px}.cbCard{min-width:230px}.cbArticleHero{grid-template-columns:1fr;gap:28px}.cbArticleHero>img{width:min(75vw,290px);margin:auto}.cbArticleHero h1{font-size:44px}.cbArticle>section p{font-size:17px}}
+/* =========================================================
+   MOVIEHMM SPOTLIGHT — CLEAN FINAL VERSION
+   ========================================================= */
+
+
+/* Remove all previous carousel Spotlight UI */
+
+.dhSpot,
+.spotlightStage,
+.spotlightFooter,
+.spotlightArrow,
+.spotlightDots,
+.dhHero,
+.dhDots {
+  display: none !important;
+}
+
+
+/* Spotlight container */
+
+.simpleSpotlight {
+  width: min(94%, 1460px) !important;
+
+  margin: 18px auto 0 !important;
+}
+
+
+/* Heading */
+
+.simpleSpotlightHead {
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-top: 1px solid #aaa195;
+  border-bottom: 1px solid #aaa195;
+}
+
+.simpleSpotlightHead > div {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.simpleSpotlightHead > div > span {
+  width: 4px;
+  height: 27px;
+
+  display: block;
+
+  background: #b57908;
+
+  border-radius: 3px;
+}
+
+.simpleSpotlightHead strong {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.simpleSpotlightHead > p {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 13px;
+  font-style: italic;
+
+  color: #5f5850;
+}
+
+.simpleSpotlightHead > p em {
+  color: #9b6500;
+}
+
+
+/* Four-card layout */
+
+.simpleSpotlightGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  padding: 19px 0 10px;
+}
+
+
+/* Individual review */
+
+.simpleSpotlightCard {
+  min-width: 0;
+
+  color: #111;
+
+  text-decoration: none;
+}
+
+
+/* Poster */
+
+.simpleSpotlightPoster {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+
+  background: #171512;
+
+  box-shadow:
+    0 5px 15px rgba(35,30,24,.08);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.simpleSpotlightPoster img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center top;
+}
+
+.simpleSpotlightCard:hover
+.simpleSpotlightPoster {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 11px 25px rgba(35,30,24,.15);
+}
+
+
+/* Overlay CTA */
+
+.simpleSpotlightPoster > span {
+  position: absolute;
+
+  left: 12px;
+  bottom: 12px;
+
+  padding: 7px 10px;
+
+  background: #f3efe6;
+
+  border-left: 3px solid #b57908;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 6px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* Text */
+
+.simpleSpotlightCopy {
+  padding: 13px 2px 8px;
+}
+
+.simpleSpotlightCopy > small {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #746d64;
+}
+
+.simpleSpotlightCopy h3 {
+  margin: 7px 0 9px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(21px, 2vw, 27px);
+  font-weight: 600;
+  line-height: 1;
+
+  letter-spacing: -1px;
+}
+
+
+/* Only a teaser — not the whole review */
+
+.simpleSpotlightCopy p {
+  min-height: 58px;
+
+  margin: 0 0 12px;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  color: #3d3832;
+}
+
+
+/* Curiosity hook */
+
+.simpleSpotlightCopy > b {
+  display: inline-block;
+
+  padding-bottom: 4px;
+
+  border-bottom: 2px solid #b57908;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.simpleSpotlightCopy > b em {
+  color: #9b6500;
+
+  font-style: normal;
+}
+
+
+/* =========================================================
+   MOBILE — SWIPE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .simpleSpotlight {
+    width: calc(100% - 28px) !important;
+
+    margin-top: 12px !important;
+  }
+
+  .simpleSpotlightHead {
+    min-height: 48px;
+  }
+
+  .simpleSpotlightHead > p {
+    display: none;
+  }
+
+  .simpleSpotlightGrid {
+    display: flex;
+
+    gap: 14px;
+
+    padding-top: 15px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+  }
+
+  .simpleSpotlightGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .simpleSpotlightCard {
+    flex: 0 0 72vw;
+
+    max-width: 280px;
+
+    scroll-snap-align: start;
+  }
+
+  .simpleSpotlightCopy h3 {
+    font-size: 23px;
+  }
+
+  .simpleSpotlightCopy p {
+    min-height: auto;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM — CINEMATIC SPOTLIGHT
+   ONE MOVIE. BIG SCREEN.
+   ========================================================= */
+
+.dhSpot,
+.simpleSpotlight,
+.spotlightStage,
+.spotlightFooter {
+  display: none !important;
+}
+
+.cinemaSpot {
+  width: min(94%, 1460px) !important;
+
+  margin: 17px auto 0 !important;
+}
+
+.cinemaSpotHead {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.cinemaSpotHead > div {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.cinemaSpotHead i {
+  width: 4px;
+  height: 27px;
+
+  display: block;
+
+  background: #b57908;
+}
+
+.cinemaSpotHead strong {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.cinemaSpotHead > span {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 13px;
+  font-style: italic;
+
+  color: #6b645b;
+}
+
+
+/* Main cinematic frame */
+
+.cinemaSpotStage {
+  position: relative;
+
+  width: 100%;
+  height: 430px;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+
+/*
+   THIS intentionally fills the whole area.
+   Spotlight is cinematic, unlike Trending.
+*/
+
+.cinemaSpotImage {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  overflow: hidden;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  background: #111;
+}
+
+.cinemaSpotImage > img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center 28%;
+
+  transform: scale(1.02);
+
+  transition:
+    transform 7s ease;
+}
+
+.cinemaSpotImage:hover > img {
+  transform: scale(1.06);
+}
+
+
+/* Dark cinematic readability */
+
+.cinemaSpotShade {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.86) 0%,
+      rgba(0,0,0,.63) 28%,
+      rgba(0,0,0,.18) 61%,
+      rgba(0,0,0,.10) 100%
+    );
+}
+
+
+/* Review information over image */
+
+.cinemaSpotContent {
+  position: absolute;
+
+  left: 72px;
+  bottom: 53px;
+
+  width: min(610px, 55%);
+
+  z-index: 2;
+}
+
+.cinemaSpotContent > small {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+
+  color: #e6d6b8;
+}
+
+.cinemaSpotContent h2 {
+  margin: 9px 0 16px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(43px, 5vw, 69px);
+  font-weight: 500;
+  line-height: .92;
+
+  letter-spacing: -3px;
+
+  color: #fff;
+}
+
+.cinemaSpotContent p {
+  max-width: 580px;
+
+  margin: 0 0 22px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.42;
+
+  color: #f2eee7;
+}
+
+.cinemaSpotCTA {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 10px 13px;
+
+  background: #f3efe6;
+
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+}
+
+.cinemaSpotCTA span {
+  color: #9b6500;
+}
+
+
+/* Arrows */
+
+.cinemaArrow {
+  position: absolute;
+
+  top: 50%;
+
+  width: 46px;
+  height: 66px;
+
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(255,255,255,.65);
+
+  background: rgba(0,0,0,.55);
+
+  color: #fff;
+
+  font-size: 43px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.cinemaArrow:hover {
+  background: #111;
+
+  color: #d69a1c;
+}
+
+.cinemaPrev {
+  left: 15px;
+}
+
+.cinemaNext {
+  right: 15px;
+}
+
+
+/* Navigation */
+
+.cinemaSpotNav {
+  height: 37px;
+
+  padding: 0 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.cinemaSpotNav > span {
+  color: #b57908;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cinemaSpotNav > span i {
+  margin: 0 5px;
+
+  color: #817970;
+
+  font-size: 10px;
+  font-style: normal;
+}
+
+.cinemaSpotNav > div {
+  display: flex;
+
+  gap: 7px;
+}
+
+.cinemaSpotNav button {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 1px solid #918a81;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.cinemaSpotNav button.active {
+  width: 27px;
+
+  border-color: #b57908;
+  border-radius: 20px;
+
+  background: #b57908;
+}
+
+
+/* =========================================================
+   CRYSTAL BALL — NEVER CROP POSTER TITLES
+   ========================================================= */
+
+.cbCard > img {
+  width: 100% !important;
+  height: auto !important;
+
+  aspect-ratio: 2 / 3 !important;
+
+  padding: 8px !important;
+
+  box-sizing: border-box !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  background: #171512 !important;
+}
+
+
+/* Equal title area */
+
+.cbCard h3 {
+  min-height: 54px !important;
+
+  margin-bottom: 8px !important;
+
+  line-height: 1.02 !important;
+}
+
+
+/* Equal description */
+
+.cbCard p {
+  min-height: 66px !important;
+
+  display: -webkit-box !important;
+
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .cinemaSpot {
+    width: calc(100% - 28px) !important;
+  }
+
+  .cinemaSpotHead > span {
+    display: none;
+  }
+
+  .cinemaSpotStage {
+    height: 390px;
+  }
+
+  .cinemaSpotImage > img {
+    object-position: center top;
+  }
+
+  .cinemaSpotShade {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(0,0,0,.92) 0%,
+        rgba(0,0,0,.64) 45%,
+        rgba(0,0,0,.10) 78%
+      );
+  }
+
+  .cinemaSpotContent {
+    left: 22px;
+    bottom: 29px;
+
+    width: calc(100% - 44px);
+  }
+
+  .cinemaSpotContent h2 {
+    font-size: 38px;
+  }
+
+  .cinemaSpotContent p {
+    font-size: 15px;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+  }
+
+  .cinemaSpotCTA span {
+    display: none;
+  }
+
+  .cinemaArrow {
+    width: 35px;
+    height: 54px;
+
+    font-size: 32px;
+  }
+
+  .cinemaPrev {
+    left: 7px;
+  }
+
+  .cinemaNext {
+    right: 7px;
+  }
+
+  .cbCard h3 {
+    min-height: auto !important;
+  }
+
+  .cbCard p {
+    min-height: auto !important;
+  }
+}
+
+
+/* =========================================================
+   FITTED ASSET PASS
+   ========================================================= */
+
+/* Spotlight now receives purpose-built 1600x620 artwork */
+
+.cinemaSpotStage {
+  height: 390px !important;
+}
+
+.cinemaSpotImage > img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+
+  transform: none !important;
+}
+
+.cinemaSpotImage:hover > img {
+  transform: scale(1.015) !important;
+}
+
+
+/* Keep the editorial overlay readable */
+
+.cinemaSpotShade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.82) 0%,
+      rgba(0,0,0,.61) 29%,
+      rgba(0,0,0,.23) 52%,
+      rgba(0,0,0,.04) 78%
+    ) !important;
+}
+
+.cinemaSpotContent {
+  left: 72px !important;
+  bottom: 43px !important;
+
+  width: min(610px, 48%) !important;
+}
+
+.cinemaSpotContent h2 {
+  font-size: clamp(41px, 4.5vw, 64px) !important;
+}
+
+
+/* Crystal Ball artwork is already normalized.
+   Don't crop or pad it again. */
+
+.cbCard > img {
+  width: 100% !important;
+  height: auto !important;
+
+  aspect-ratio: 2 / 3 !important;
+
+  padding: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+
+  background: #171512 !important;
+}
+
+
+/* Keep all four Crystal Ball titles aligned */
+
+.cbCard h3 {
+  min-height: 52px !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .cinemaSpotStage {
+    height: 340px !important;
+  }
+
+  .cinemaSpotContent {
+    left: 20px !important;
+    bottom: 24px !important;
+
+    width: calc(100% - 40px) !important;
+  }
+
+  .cinemaSpotContent h2 {
+    font-size: 36px !important;
+  }
+
+  .cinemaSpotShade {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(0,0,0,.93) 0%,
+        rgba(0,0,0,.63) 48%,
+        rgba(0,0,0,.08) 82%
+      ) !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM — CINEMARK-STYLE FINAL SPOTLIGHT
+   ========================================================= */
+
+.cinemaSpotStage {
+  height: 300px !important;
+
+  display: grid !important;
+  grid-template-columns: 50% 50% !important;
+
+  background: #f3efe6 !important;
+}
+
+
+/* LEFT HALF — artwork */
+
+.cinemaSpotImage {
+  position: relative !important;
+
+  grid-column: 1 !important;
+
+  width: 100% !important;
+  height: 300px !important;
+
+  overflow: hidden !important;
+
+  background: #171512 !important;
+}
+
+.cinemaSpotImage > img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  transform: none !important;
+
+  background: #171512 !important;
+}
+
+
+/* Remove dark full-screen overlay */
+
+.cinemaSpotShade {
+  display: none !important;
+}
+
+
+/* RIGHT HALF — MovieHmm take */
+
+.cinemaSpotContent {
+  position: absolute !important;
+
+  left: 50% !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  width: auto !important;
+
+  padding: 38px 55px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+
+  background: #f3efe6 !important;
+
+  color: #111 !important;
+}
+
+
+/* Do NOT repeat movie title */
+
+.cinemaSpotContent h2 {
+  display: none !important;
+}
+
+
+/* Language */
+
+.cinemaSpotContent > small {
+  color: #776f65 !important;
+
+  font-size: 7px !important;
+}
+
+
+/* Your take becomes the hero */
+
+.cinemaSpotContent p {
+  max-width: 580px !important;
+
+  margin: 15px 0 25px !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+
+  font-size: 24px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+
+  color: #171512 !important;
+}
+
+
+/* Small MovieHmm thought label */
+
+.cinemaSpotContent p::before {
+  content: "MY TAKE" !important;
+
+  display: block !important;
+
+  margin-bottom: 13px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 2px !important;
+
+  color: #b57908 !important;
+}
+
+
+/* CTA */
+
+.cinemaSpotCTA {
+  align-self: flex-start !important;
+
+  padding: 10px 13px !important;
+
+  background: #111 !important;
+
+  color: #f3efe6 !important;
+}
+
+.cinemaSpotCTA span {
+  color: #d8a43a !important;
+}
+
+
+/* Arrows */
+
+.cinemaPrev {
+  left: 10px !important;
+}
+
+.cinemaNext {
+  right: 10px !important;
+}
+
+.cinemaArrow {
+  width: 40px !important;
+  height: 56px !important;
+
+  font-size: 35px !important;
+}
+
+
+/* =========================================================
+   CRYSTAL BALL — TRUE UNIFORM POSTER FRAME
+   ========================================================= */
+
+.cbCard > img {
+  width: 100% !important;
+  height: auto !important;
+
+  aspect-ratio: 2 / 3 !important;
+
+  padding: 0 !important;
+
+  display: block !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  background: #171512 !important;
+
+  border: 1px solid #b57908 !important;
+}
+
+
+/* Proper title rhythm */
+
+.cbCard h3 {
+  min-height: 50px !important;
+
+  margin: 8px 0 10px !important;
+
+  font-size: 23px !important;
+  line-height: 1.02 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .cinemaSpotStage {
+    height: auto !important;
+
+    display: block !important;
+  }
+
+  .cinemaSpotImage {
+    width: 100% !important;
+    height: 220px !important;
+  }
+
+  .cinemaSpotContent {
+    position: relative !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    padding: 22px 18px 25px !important;
+  }
+
+  .cinemaSpotContent p {
+    margin-top: 10px !important;
+
+    font-size: 19px !important;
+  }
+
+  .cinemaArrow {
+    top: 110px !important;
+  }
+}
+
+
+/* =========================================================
+   SPOTLIGHT FIX ONLY — DO NOT TOUCH OTHER SECTIONS
+   ========================================================= */
+
+.cinemaSpot {
+  width: min(94%, 1460px) !important;
+  margin: 12px auto 0 !important;
+}
+
+.cinemaSpotHead {
+  min-height: 46px !important;
+}
+
+
+/* Cinemark-style compact 58/42 feature */
+
+.cinemaSpotStage {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 285px !important;
+  min-height: 285px !important;
+
+  display: block !important;
+
+  overflow: hidden !important;
+
+  background: #f3efe6 !important;
+
+  border-bottom: 1px solid #aaa195 !important;
+}
+
+
+/* LEFT IMAGE */
+
+.cinemaSpotImage {
+  position: absolute !important;
+
+  left: 0 !important;
+  top: 0 !important;
+
+  width: 58% !important;
+  height: 285px !important;
+
+  overflow: hidden !important;
+
+  background: #111 !important;
+}
+
+
+/*
+  Our spotlight files are already landscape.
+  Fill the complete image half.
+*/
+
+.cinemaSpotImage > img {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  transform: none !important;
+
+  background: #111 !important;
+}
+
+
+/* no overlays over artwork */
+
+.cinemaSpotShade {
+  display: none !important;
+}
+
+
+/* RIGHT EDITORIAL PANEL */
+
+.cinemaSpotContent {
+  position: absolute !important;
+
+  left: 58% !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  width: 42% !important;
+  height: 285px !important;
+
+  box-sizing: border-box !important;
+
+  padding: 31px 42px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+
+  background: #f3efe6 !important;
+
+  color: #111 !important;
+}
+
+
+/* movie title is already artwork — don't duplicate */
+
+.cinemaSpotContent h2 {
+  display: none !important;
+}
+
+
+/* language */
+
+.cinemaSpotContent > small {
+  margin: 0 0 12px !important;
+
+  color: #756d63 !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 2.5px !important;
+}
+
+
+/* MY TAKE */
+
+.cinemaSpotContent p::before {
+  content: "MY TAKE" !important;
+
+  display: block !important;
+
+  margin-bottom: 11px !important;
+
+  color: #b57908 !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 2px !important;
+}
+
+
+/* review hook */
+
+.cinemaSpotContent p {
+  width: 100% !important;
+  max-width: 480px !important;
+
+  margin: 0 0 21px !important;
+
+  color: #171512 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+
+  font-size: clamp(19px, 1.7vw, 26px) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+
+  line-height: 1.23 !important;
+
+  letter-spacing: -.3px !important;
+}
+
+
+/* CTA */
+
+.cinemaSpotCTA {
+  display: inline-flex !important;
+  align-items: center !important;
+
+  gap: 12px !important;
+
+  padding: 10px 13px !important;
+
+  background: #111 !important;
+
+  color: #f3efe6 !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 7px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 1.5px !important;
+}
+
+.cinemaSpotCTA span {
+  color: #d7a238 !important;
+}
+
+
+/* ARROWS */
+
+.cinemaArrow {
+  position: absolute !important;
+
+  top: 50% !important;
+
+  width: 38px !important;
+  height: 54px !important;
+
+  transform: translateY(-50%) !important;
+
+  z-index: 20 !important;
+
+  padding: 0 !important;
+
+  border: 1px solid rgba(255,255,255,.65) !important;
+
+  background: rgba(17,17,17,.72) !important;
+
+  color: white !important;
+
+  font-size: 34px !important;
+
+  cursor: pointer !important;
+}
+
+.cinemaPrev {
+  left: 10px !important;
+}
+
+.cinemaNext {
+  right: 10px !important;
+}
+
+
+/* compact controls */
+
+.cinemaSpotNav {
+  height: 30px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .cinemaSpotStage {
+    height: auto !important;
+    min-height: 0 !important;
+
+    display: block !important;
+  }
+
+  .cinemaSpotImage {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 210px !important;
+  }
+
+  .cinemaSpotContent {
+    position: relative !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    padding: 20px 18px 23px !important;
+  }
+
+  .cinemaSpotContent p {
+    max-width: none !important;
+
+    font-size: 19px !important;
+  }
+
+  .cinemaArrow {
+    top: 105px !important;
+
+    width: 34px !important;
+    height: 49px !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIEHMM SPOTLIGHT — FINAL LOCKED VERSION
+   70% ART / 30% TAKE
+   ========================================================= */
+
+/* kill previous spotlight experiments */
+.cinemaSpot,
+.simpleSpotlight,
+.dhSpot,
+.spotlightStage,
+.spotlightFooter {
+  display: none !important;
+}
+
+.mhFinalSpotlight {
+  width: min(94%, 1460px) !important;
+  margin: 18px auto 0 !important;
+}
+
+.mhFinalSpotlightHead {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.mhFinalSpotlightHead > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.mhFinalSpotlightHead i {
+  display: block;
+
+  width: 4px;
+  height: 27px;
+
+  background: #b57908;
+}
+
+.mhFinalSpotlightHead strong {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.mhFinalSpotlightHead em {
+  color: #696159;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   STAGE
+   ========================================================= */
+
+.mhFinalSpotlightStage {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 70fr)
+    minmax(0, 30fr);
+
+  width: 100%;
+  height: 350px;
+
+  overflow: hidden;
+
+  background: #f3efe6;
+}
+
+
+/* =========================================================
+   ART — EXACT 16:9 IMAGE, NO CROPPING
+   ========================================================= */
+
+.mhFinalSpotlightArt {
+  width: 100%;
+  height: 350px;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.mhFinalSpotlightArt img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #111;
+}
+
+
+/* =========================================================
+   TAKE
+   ========================================================= */
+
+.mhFinalSpotlightTake {
+  box-sizing: border-box;
+
+  padding: 34px 34px 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  background: #f3efe6;
+
+  border-left: 1px solid #d3ccc1;
+}
+
+.mhFinalSpotlightTake small {
+  margin-bottom: 18px;
+
+  color: #777067;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+}
+
+.mhFinalSpotlightTake > span {
+  margin-bottom: 14px;
+
+  color: #b57908;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.mhFinalSpotlightTake p {
+  margin: 0 0 24px;
+
+  color: #171512;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(19px, 1.55vw, 25px);
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  letter-spacing: -.25px;
+}
+
+.mhFinalSpotlightTake a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 26px;
+
+  padding: 11px 14px;
+
+  background: #111;
+
+  color: #f4efe6;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+}
+
+.mhFinalSpotlightTake a b {
+  color: #c78a0a;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   ARROWS
+   ========================================================= */
+
+.mhFinalSpotArrow {
+  position: absolute;
+
+  top: 50%;
+
+  width: 40px;
+  height: 56px;
+
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(255,255,255,.72);
+
+  background: rgba(17,17,17,.72);
+
+  color: #fff;
+
+  font-size: 36px;
+  font-weight: 300;
+
+  cursor: pointer;
+}
+
+.mhFinalSpotArrow:hover {
+  background: #111;
+
+  color: #d39a22;
+}
+
+.mhFinalPrev {
+  left: 11px;
+}
+
+.mhFinalNext {
+  right: 11px;
+}
+
+
+/* =========================================================
+   COUNTER / DOTS
+   ========================================================= */
+
+.mhFinalSpotControls {
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.mhFinalSpotControls > strong {
+  color: #b57908;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.mhFinalSpotControls > strong span {
+  margin: 0 3px;
+
+  color: #817970;
+}
+
+.mhFinalSpotControls > div {
+  display: flex;
+
+  gap: 7px;
+}
+
+.mhFinalSpotControls button {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 1px solid #918a81;
+  border-radius: 20px;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.mhFinalSpotControls button.active {
+  width: 27px;
+
+  border-color: #b57908;
+
+  background: #b57908;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .mhFinalSpotlight {
+    width: calc(100% - 28px) !important;
+
+    margin-top: 12px !important;
+  }
+
+  .mhFinalSpotlightHead {
+    height: 46px;
+  }
+
+  .mhFinalSpotlightHead em {
+    display: none;
+  }
+
+  .mhFinalSpotlightStage {
+    display: block;
+
+    height: auto;
+  }
+
+  .mhFinalSpotlightArt {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+  }
+
+  .mhFinalSpotlightTake {
+    padding: 20px 18px 24px;
+
+    border-left: 0;
+
+    border-top: 1px solid #d3ccc1;
+  }
+
+  .mhFinalSpotlightTake small {
+    margin-bottom: 11px;
+  }
+
+  .mhFinalSpotlightTake > span {
+    margin-bottom: 10px;
+  }
+
+  .mhFinalSpotlightTake p {
+    margin-bottom: 18px;
+
+    font-size: 19px;
+  }
+
+  .mhFinalSpotArrow {
+    top: calc((100vw - 28px) * .28125);
+
+    width: 34px;
+    height: 48px;
+
+    font-size: 31px;
+  }
+
+  .mhFinalPrev {
+    left: 7px;
+  }
+
+  .mhFinalNext {
+    right: 7px;
+  }
+
+}
+
+
+/* =========================================================
+   MOVIEHMM SPOTLIGHT — BALANCED FINAL PASS
+   55% CINEMA / 45% EDITORIAL
+   ========================================================= */
+
+.mhFinalSpotlightStage {
+  grid-template-columns:
+    minmax(0, 55fr)
+    minmax(0, 45fr) !important;
+
+  height: 340px !important;
+
+  background: #f3efe6 !important;
+}
+
+
+/* IMAGE
+   Our artwork is 16:9.
+   55% gives it enough width without creating giant black wings.
+*/
+
+.mhFinalSpotlightArt {
+  width: 100% !important;
+  height: 340px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+  background: #111 !important;
+}
+
+.mhFinalSpotlightArt img {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+}
+
+
+/* EDITORIAL SIDE */
+
+.mhFinalSpotlightTake {
+  width: 100% !important;
+  height: 340px !important;
+
+  padding: 38px 58px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+
+  background: #f3efe6 !important;
+
+  border-left: 1px solid #d5cec3 !important;
+}
+
+
+/* language */
+
+.mhFinalSpotlightTake small {
+  margin: 0 0 14px !important;
+
+  font-size: 7px !important;
+
+  letter-spacing: 2.5px !important;
+}
+
+
+/* MY TAKE */
+
+.mhFinalSpotlightTake > span {
+  position: relative;
+
+  margin: 0 0 18px !important;
+
+  color: #b57908 !important;
+}
+
+.mhFinalSpotlightTake > span::after {
+  content: "";
+
+  display: block;
+
+  width: 28px;
+  height: 2px;
+
+  margin: 9px auto 0;
+
+  background: #b57908;
+}
+
+
+/* quote */
+
+.mhFinalSpotlightTake p {
+  width: 100% !important;
+  max-width: 540px !important;
+
+  margin: 0 auto 25px !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+
+  font-size: clamp(20px, 1.65vw, 27px) !important;
+
+  font-weight: 500 !important;
+  line-height: 1.27 !important;
+
+  letter-spacing: -.35px !important;
+
+  text-wrap: balance;
+}
+
+
+/* subtle quotation mark */
+
+.mhFinalSpotlightTake p::before {
+  content: "“";
+
+  display: block;
+
+  height: 25px;
+
+  margin-bottom: 4px;
+
+  color: #b57908;
+
+  font-family: Georgia, serif;
+
+  font-size: 42px;
+  line-height: 1;
+}
+
+
+/* CTA centered */
+
+.mhFinalSpotlightTake a {
+  margin: 0 auto !important;
+
+  padding: 11px 17px !important;
+
+  gap: 32px !important;
+}
+
+
+/* ARROWS
+   Keep them away from actual content.
+*/
+
+.mhFinalPrev {
+  left: 12px !important;
+}
+
+.mhFinalNext {
+  right: 12px !important;
+}
+
+.mhFinalSpotArrow {
+  width: 38px !important;
+  height: 54px !important;
+
+  background: rgba(17,17,17,.68) !important;
+
+  backdrop-filter: blur(3px);
+}
+
+
+/* slightly tighter overall presentation */
+
+.mhFinalSpotlightControls {
+  height: 31px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .mhFinalSpotlightStage {
+    display: block !important;
+
+    height: auto !important;
+  }
+
+  .mhFinalSpotlightArt {
+    width: 100% !important;
+    height: auto !important;
+
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .mhFinalSpotlightArt img {
+    object-fit: cover !important;
+  }
+
+  .mhFinalSpotlightTake {
+    width: 100% !important;
+    height: auto !important;
+
+    padding: 23px 22px 27px !important;
+  }
+
+  .mhFinalSpotlightTake p {
+    max-width: 430px !important;
+
+    font-size: 19px !important;
+  }
+
+  .mhFinalSpotlightTake p::before {
+    height: 20px;
+
+    font-size: 34px;
+  }
+
+  .mhFinalSpotArrow {
+    top: calc((100vw - 28px) * .28125) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOVIEHMM HERO — TIGHTER EDITORIAL PASS
+   ========================================================= */
+
+/* Main hero: less empty vertical space */
+.hero {
+  padding-top: 38px !important;
+  padding-bottom: 38px !important;
+  min-height: 0 !important;
+}
+
+/* Main headline */
+.hero h1 {
+  max-width: 1120px !important;
+
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+
+  font-size: clamp(62px, 6.1vw, 108px) !important;
+  line-height: .88 !important;
+  letter-spacing: -4px !important;
+}
+
+/* Keep the gold phrase visually together where possible */
+.hero h1 em {
+  display: inline !important;
+  white-space: nowrap;
+}
+
+/* Honest reviews line */
+.hero .sub,
+.heroSubtitle {
+  margin-top: 18px !important;
+
+  font-size: clamp(13px, 1.25vw, 18px) !important;
+  letter-spacing: 5px !important;
+}
+
+
+/* Right quote column */
+.heroQuote {
+  padding-left: 48px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.heroQuote blockquote,
+.heroQuote p {
+  margin-top: 10px !important;
+
+  font-size: clamp(25px, 2.1vw, 34px) !important;
+  line-height: 1.02 !important;
+}
+
+.heroQuote::before {
+  font-size: 47px !important;
+}
+
+
+/* Reduce gap before bottom rule */
+.hero + *,
+.heroOutro {
+  margin-top: 0 !important;
+}
+
+
+/* Bottom welcome line becomes deliberate editorial ribbon */
+.welcomeStrip,
+.introStrip,
+.beforeScroll {
+  min-height: 56px !important;
+
+  margin-top: 0 !important;
+  padding: 0 9% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  border-top: 3px solid #111 !important;
+  border-bottom: 1px solid #c5bdb1 !important;
+}
+
+.welcomeStrip p,
+.introStrip p,
+.beforeScroll p {
+  margin: 0 !important;
+
+  font-size: 15px !important;
+  line-height: 1.3 !important;
+}
+
+
+/* Header itself slightly tighter */
+.siteHeader,
+.header {
+  padding-top: 12px !important;
+  padding-bottom: 15px !important;
+}
+
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+  .hero {
+    padding-top: 27px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 14vw, 68px) !important;
+    line-height: .91 !important;
+    letter-spacing: -2.5px !important;
+  }
+
+  .hero h1 em {
+    white-space: normal;
+  }
+
+  .heroQuote {
+    margin-top: 27px !important;
+    padding: 22px 0 0 !important;
+
+    border-left: 0 !important;
+    border-top: 1px solid #aaa195 !important;
+  }
+
+  .welcomeStrip,
+  .introStrip,
+  .beforeScroll {
+    padding: 15px 0 !important;
+
+    display: block !important;
+
+    min-height: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   MOVIE....🤔hmm HERO — COMPACT EDITORIAL FINAL
+   ========================================================= */
+
+/* Reduce the whole hero footprint */
+
+.hero {
+  min-height: 0 !important;
+
+  padding-top: 27px !important;
+  padding-bottom: 25px !important;
+}
+
+
+/* Main statement */
+
+.hero h1 {
+  max-width: 1080px !important;
+
+  margin: 0 0 14px !important;
+
+  font-size: clamp(54px, 5.45vw, 91px) !important;
+  line-height: .89 !important;
+
+  letter-spacing: -3.5px !important;
+}
+
+
+/* Gold phrase */
+
+.hero h1 em {
+  display: inline !important;
+
+  color: #b97800 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* Honest reviews line */
+
+.hero .sub,
+.heroSubtitle {
+  margin: 14px 0 0 !important;
+
+  font-size: clamp(11px, 1vw, 15px) !important;
+
+  line-height: 1.2 !important;
+
+  letter-spacing: 4.5px !important;
+}
+
+
+/* Right quote becomes compact editorial signature */
+
+.heroQuote {
+  min-height: 0 !important;
+
+  padding: 8px 0 8px 37px !important;
+
+  justify-content: center !important;
+}
+
+.heroQuote::before {
+  font-size: 38px !important;
+
+  line-height: .7 !important;
+}
+
+.heroQuote blockquote,
+.heroQuote p {
+  margin: 8px 0 0 !important;
+
+  font-size: clamp(21px, 1.7vw, 28px) !important;
+
+  line-height: 1.02 !important;
+}
+
+
+/* Gold signature line */
+
+.heroQuote::after {
+  width: 38px !important;
+  height: 3px !important;
+
+  margin-top: 16px !important;
+}
+
+
+/* =========================================================
+   INTRO / THANK-YOU STRIP
+   ========================================================= */
+
+/* Pull it tightly against the hero */
+
+.welcomeStrip,
+.introStrip,
+.beforeScroll {
+  min-height: 48px !important;
+
+  margin: 0 !important;
+
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  border-top: 3px solid #111 !important;
+  border-bottom: 1px solid #bdb5aa !important;
+}
+
+
+/* Main welcome sentence */
+
+.welcomeStrip p,
+.introStrip p,
+.beforeScroll p {
+  margin: 0 !important;
+
+  font-size: 13px !important;
+
+  line-height: 1.25 !important;
+}
+
+
+/* =========================================================
+   HEADER / CATEGORY BAR ALSO TIGHTER
+   ========================================================= */
+
+.siteHeader,
+.header {
+  padding-top: 8px !important;
+  padding-bottom: 10px !important;
+}
+
+.heroEyebrow,
+.topEditorialBar {
+  min-height: 43px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 13vw, 61px) !important;
+
+    line-height: .91 !important;
+
+    letter-spacing: -2px !important;
+  }
+
+  .hero h1 em {
+    white-space: normal !important;
+  }
+
+  .hero .sub,
+  .heroSubtitle {
+    margin-top: 13px !important;
+
+    font-size: 10px !important;
+
+    letter-spacing: 3px !important;
+  }
+
+  .heroQuote {
+    margin-top: 20px !important;
+
+    padding: 18px 0 0 !important;
+  }
+
+  .welcomeStrip,
+  .introStrip,
+  .beforeScroll {
+    min-height: 0 !important;
+
+    padding: 12px 0 !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOVIE....🤔hmm — NEWSPAPER FRONT PAGE HERO
+   ========================================================= */
+
+.editorialHero {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2.25fr)
+    minmax(300px, .75fr);
+
+  gap: 52px;
+
+  padding: 32px 10px 28px;
+
+  border-bottom: 4px solid #111;
+}
+
+
+/* =========================================================
+   MAIN HEADLINE
+   ========================================================= */
+
+.editorialHeadline {
+  position: relative;
+}
+
+.editionMark {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: #8b8278;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 3px;
+}
+
+.editorialHeadline h1 {
+  margin: 0;
+
+  color: #0d0d0c;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(65px, 6.2vw, 105px);
+
+  font-weight: 500;
+
+  line-height: .78;
+
+  letter-spacing: -5px;
+}
+
+.editorialHeadline h1 em {
+  display: inline-block;
+
+  margin-left: 18px;
+
+  color: #b97800;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MANIFESTO
+   ========================================================= */
+
+.editorialManifesto {
+  position: relative;
+
+  padding:
+    20px
+    0
+    10px
+    43px;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+
+  border-left: 1px solid #9d958a;
+}
+
+.quoteMark {
+  height: 42px;
+
+  color: #b97800;
+
+  font-family: Georgia, serif;
+
+  font-size: 61px;
+
+  line-height: .8;
+}
+
+.editorialManifesto h2 {
+  margin: 7px 0 3px;
+
+  color: #111;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(25px, 2vw, 34px);
+
+  line-height: .98;
+}
+
+.editorialManifesto > p {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 23px;
+  font-style: italic;
+
+  line-height: 1.1;
+}
+
+.editorialSignature {
+  width: fit-content;
+
+  margin-top: 22px;
+  padding-top: 10px;
+
+  border-top: 3px solid #b97800;
+
+  color: #111;
+
+  font-family: Georgia, serif;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.editorialSignature em {
+  color: #b97800;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   THREE-COLUMN NEWSPAPER DECK
+   ========================================================= */
+
+.editorialDeck {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.editorialDeck > div {
+  position: relative;
+
+  min-height: 105px;
+
+  padding:
+    20px
+    30px
+    20px
+    53px;
+}
+
+.editorialDeck > div + div {
+  border-left: 1px solid #c3bbb0;
+}
+
+.editorialDeck span {
+  position: absolute;
+
+  left: 16px;
+  top: 21px;
+
+  color: #b97800;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.editorialDeck strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 1.8px;
+}
+
+.editorialDeck p {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: #4e4841;
+
+  font-family: Georgia, serif;
+
+  font-size: 14px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   WELCOME STRIP
+   ========================================================= */
+
+.editorialWelcome {
+  min-height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.editorialWelcome strong {
+  color: #b97800;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.editorialWelcome p {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 14px;
+}
+
+.editorialWelcome p em {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .editorialHero {
+    display: block;
+
+    padding:
+      25px
+      0
+      22px;
+  }
+
+  .editionMark {
+    font-size: 9px;
+
+    letter-spacing: 2.3px;
+  }
+
+  .editorialHeadline h1 {
+    font-size: clamp(52px, 15vw, 73px);
+
+    line-height: .85;
+
+    letter-spacing: -3px;
+  }
+
+  .editorialHeadline h1 em {
+    display: block;
+
+    margin: 5px 0 0;
+  }
+
+  .editorialManifesto {
+    margin-top: 27px;
+
+    padding:
+      20px
+      0
+      4px;
+
+    border-left: 0;
+
+    border-top: 1px solid #aaa195;
+  }
+
+  .editorialManifesto h2 {
+    font-size: 28px;
+  }
+
+  .editorialDeck {
+    display: block;
+  }
+
+  .editorialDeck > div {
+    min-height: 0;
+
+    padding:
+      17px
+      10px
+      17px
+      47px;
+  }
+
+  .editorialDeck > div + div {
+    border-left: 0;
+
+    border-top: 1px solid #c3bbb0;
+  }
+
+  .editorialWelcome {
+    padding: 12px 0;
+
+    display: block;
+
+    text-align: center;
+  }
+
+  .editorialWelcome p {
+    margin-top: 5px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   MOVIE....🤔hmm — COMPACT FRONT-PAGE STRIP
+   Movies are now the hero.
+   ========================================================= */
+
+/* Old homepage hero is gone from markup */
+
+.mhFrontStrip {
+  width: min(94%, 1460px) !important;
+
+  min-height: 66px;
+
+  margin: 0 auto !important;
+
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    1.35fr
+    .55fr;
+
+  align-items: stretch;
+
+  border-top: 1px solid #111;
+  border-bottom: 3px solid #111;
+}
+
+
+/* LEFT */
+
+.mhFrontLead {
+  padding: 14px 22px 14px 5px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 19px;
+}
+
+.mhFrontLead strong {
+  flex: 0 0 auto;
+
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.mhFrontLead span {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 17px;
+  font-style: italic;
+
+  line-height: 1.15;
+}
+
+
+/* MIDDLE */
+
+.mhFrontQuote {
+  padding: 11px 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border-left: 1px solid #bbb3a8;
+}
+
+.mhFrontQuote > span {
+  color: #b97800;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+  line-height: .7;
+}
+
+.mhFrontQuote p {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+.mhFrontQuote p em {
+  color: #6b635b;
+
+  font-weight: 400;
+}
+
+
+/* RIGHT BRAND STAMP */
+
+.mhFrontSignature {
+  padding: 12px 5px 12px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  border-left: 1px solid #bbb3a8;
+
+  color: #111;
+
+  font-family: Georgia, serif;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mhFrontSignature em {
+  margin-left: 2px;
+
+  color: #b97800;
+
+  font-size: 19px;
+}
+
+
+/* Spotlight now starts immediately after strip */
+
+.mhFinalSpotlight {
+  margin-top: 15px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .mhFrontStrip {
+    display: block;
+
+    min-height: 0;
+  }
+
+  .mhFrontLead {
+    padding: 13px 3px;
+
+    display: block;
+  }
+
+  .mhFrontLead strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+  }
+
+  .mhFrontLead span {
+    font-size: 15px;
+  }
+
+  .mhFrontQuote {
+    padding: 11px 3px;
+
+    border-left: 0;
+    border-top: 1px solid #bbb3a8;
+  }
+
+  .mhFrontQuote p {
+    font-size: 14px;
+  }
+
+  .mhFrontSignature {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOVIE....🤔hmm — COMPACT NEWSPAPER INTRO
+   ========================================================= */
+
+.mhCompactIntro {
+  width: min(94%, 1460px) !important;
+
+  margin: 0 auto !important;
+
+  min-height: 76px;
+
+  display: grid;
+  grid-template-columns: 1.25fr 1fr .85fr;
+
+  border-top: 1px solid #111;
+  border-bottom: 3px solid #111;
+}
+
+
+/* LEFT — brand statement */
+
+.mhCompactPrimary {
+  padding: 15px 24px 15px 5px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.mhCompactPrimary strong {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+
+  white-space: nowrap;
+}
+
+.mhCompactPrimary em {
+  color: #b97800;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 25px;
+  font-weight: 600;
+  font-style: italic;
+
+  white-space: nowrap;
+}
+
+
+/* MIDDLE */
+
+.mhCompactMiddle {
+  padding: 13px 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-left: 1px solid #bdb5aa;
+}
+
+.mhCompactMiddle span {
+  margin-bottom: 5px;
+
+  color: #b97800;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.mhCompactMiddle p {
+  margin: 0;
+
+  color: #413c36;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 15px;
+  font-style: italic;
+
+  line-height: 1.2;
+}
+
+
+/* RIGHT */
+
+.mhCompactQuote {
+  padding: 10px 5px 10px 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  border-left: 1px solid #bdb5aa;
+}
+
+.mhCompactQuote > b {
+  align-self: flex-start;
+
+  margin-top: 5px;
+
+  color: #b97800;
+
+  font-family: Georgia, serif;
+
+  font-size: 35px;
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.mhCompactQuote p {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.06;
+}
+
+.mhCompactQuote p em {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #6c645b;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+/* Spotlight should immediately follow */
+
+.mhFinalSpotlight {
+  margin-top: 12px !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .mhCompactIntro {
+    display: block;
+
+    min-height: 0;
+  }
+
+  .mhCompactPrimary {
+    padding: 13px 2px;
+  }
+
+  .mhCompactPrimary strong {
+    font-size: 11px;
+  }
+
+  .mhCompactPrimary em {
+    font-size: 20px;
+  }
+
+  .mhCompactMiddle {
+    padding: 11px 2px;
+
+    border-left: 0;
+    border-top: 1px solid #bdb5aa;
+  }
+
+  .mhCompactQuote {
+    padding: 11px 2px;
+
+    border-left: 0;
+    border-top: 1px solid #bdb5aa;
+  }
+
+}
+
+
+/* =========================================================
+   MOVIE....🤔hmm — COMPACT EDITION BAR
+   Spotlight is the real hero
+   ========================================================= */
+
+.mhEditionBar {
+  min-height: 76px;
+
+  display: grid;
+  grid-template-columns: 1.55fr .75fr 1.15fr;
+
+  align-items: stretch;
+
+  border-top: 1px solid #111;
+  border-bottom: 3px solid #111;
+}
+
+
+/* LEFT */
+
+.mhEditionLead {
+  padding: 13px 22px 13px 5px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.mhEditionLead > span {
+  color: #817970;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 2.2px;
+
+  white-space: nowrap;
+}
+
+.mhEditionLead strong {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.mhEditionLead em {
+  color: #b97800;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* CENTER */
+
+.mhEditionRule {
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border-left: 1px solid #bdb5aa;
+  border-right: 1px solid #bdb5aa;
+}
+
+.mhEditionRule strong {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.mhEditionRule strong + strong::before {
+  content: "•";
+
+  margin-right: 10px;
+
+  color: #b97800;
+}
+
+
+/* RIGHT */
+
+.mhEditionQuote {
+  padding: 10px 5px 10px 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.mhEditionQuote > b {
+  color: #b97800;
+
+  font-family: Georgia, serif;
+
+  font-size: 37px;
+
+  line-height: .8;
+}
+
+.mhEditionQuote p {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+.mhEditionQuote p em {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #6d655c;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+/* Spotlight begins immediately */
+
+.mhFinalSpotlight {
+  margin-top: 13px !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .mhEditionBar {
+    display: block;
+
+    min-height: 0;
+  }
+
+  .mhEditionLead {
+    padding: 12px 2px;
+
+    flex-wrap: wrap;
+
+    gap: 5px 10px;
+  }
+
+  .mhEditionLead > span {
+    width: 100%;
+  }
+
+  .mhEditionLead strong {
+    font-size: 17px;
+  }
+
+  .mhEditionLead em {
+    font-size: 20px;
+  }
+
+  .mhEditionRule {
+    padding: 11px 2px;
+
+    justify-content: flex-start;
+
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid #bdb5aa;
+  }
+
+  .mhEditionQuote {
+    padding: 11px 2px;
+
+    border-top: 1px solid #bdb5aa;
+  }
+
+}
+
+
+/* UPCOMING MOVIE HOROSCOPE */
+
+.cbHead strong {
+  font-size: 14px !important;
+  letter-spacing: 2px !important;
+}
+
+.cbHead small {
+  font-size: 14px !important;
+}
+
+.horoscopeIntro {
+  padding: 17px 0 19px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  gap: 50px;
+
+  border-bottom: 1px solid #bdb5aa;
+}
+
+.horoscopeIntro > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+
+  gap: 25px;
+}
+
+.horoscopeIntro span {
+  color: #b57908;
+
+  font: 900 9px Arial, sans-serif;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+}
+
+.horoscopeIntro p {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: #3f3933;
+
+  font: 15px/1.35 Georgia, serif;
+}
+
+.horoscopeIntro > strong {
+  padding-left: 25px;
+
+  border-left: 1px solid #bdb5aa;
+
+  font: 900 9px Arial, sans-serif;
+
+  letter-spacing: 1.7px;
+
+  white-space: nowrap;
+}
+
+.horoscopeIntro > strong em {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #766d63;
+
+  font: italic 14px Georgia, serif;
+
+  letter-spacing: 0;
+}
+
+.cbCard > span {
+  color: #9b6500 !important;
+}
+
+@media (max-width:700px) {
+  .horoscopeIntro,
+  .horoscopeIntro > div {
+    display: block;
+  }
+
+  .horoscopeIntro span {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .horoscopeIntro > strong {
+    margin-top: 14px;
+    padding: 12px 0 0;
+
+    border-left: 0;
+    border-top: 1px solid #bdb5aa;
+  }
+}
+
+/* =========================================================
+   FULL REVIEW SHELF CTA
+   ========================================================= */
+
+.fullShelfCallout {
+  margin-top: 35px;
+  padding: 30px 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  gap: 50px;
+
+  border-top: 3px solid #111;
+  border-bottom: 1px solid #aaa195;
+}
+
+.fullShelfCallout small {
+  color: #b57908;
+
+  font: 900 9px Arial, sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.fullShelfCallout h2 {
+  margin: 7px 0 8px;
+
+  font: 500 32px/1 Georgia, serif;
+}
+
+.fullShelfCallout p {
+  max-width: 690px;
+
+  margin: 0;
+
+  color: #595149;
+
+  font: italic 15px/1.4 Georgia, serif;
+}
+
+.fullShelfCallout > a {
+  min-width: 215px;
+
+  padding: 17px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #111;
+
+  color: #f3efe6;
+
+  text-decoration: none;
+
+  font: 900 9px Arial, sans-serif;
+  letter-spacing: 1.7px;
+}
+
+.fullShelfCallout > a span {
+  color: #c88b0a;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   REVIEW ARCHIVE
+   ========================================================= */
+
+.reviewArchive {
+  padding-top: 38px;
+  padding-bottom: 80px;
+}
+
+.archiveHero {
+  padding: 35px 0 38px;
+
+  border-top: 1px solid #111;
+  border-bottom: 4px solid #111;
+}
+
+.archiveHero > small {
+  color: #777067;
+
+  font: 900 10px Arial, sans-serif;
+  letter-spacing: 3px;
+}
+
+.archiveHero h1 {
+  margin: 12px 0 25px;
+
+  font: 500 clamp(62px,7vw,112px)/.82 Georgia,serif;
+
+  letter-spacing: -5px;
+}
+
+.archiveHero h1 em {
+  display: block;
+
+  color: #b57908;
+}
+
+.archiveHero > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.archiveHero p {
+  max-width: 600px;
+
+  margin: 0;
+
+  font: italic 17px/1.4 Georgia,serif;
+}
+
+.archiveHero strong {
+  color: #b57908;
+
+  font: 700 35px Georgia,serif;
+}
+
+.archiveHero strong span {
+  color: #111;
+
+  font: 900 9px Arial,sans-serif;
+
+  letter-spacing: 2px;
+}
+
+
+/* poster grid */
+
+.archiveGrid {
+  padding-top: 35px;
+
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+
+  gap: 45px 22px;
+}
+
+.archiveCard {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.archivePoster {
+  position: relative;
+
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.archivePoster img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform .35s ease;
+}
+
+.archiveCard:hover .archivePoster img {
+  transform: scale(1.025);
+}
+
+.archivePoster span {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  padding: 8px 11px;
+
+  background: #f3efe6;
+
+  color: #b57908;
+
+  font: 700 17px Georgia,serif;
+}
+
+.archiveCard > small {
+  display: block;
+
+  margin-top: 12px;
+
+  color: #777067;
+
+  font: 900 7px Arial,sans-serif;
+
+  letter-spacing: 2px;
+}
+
+.archiveCard h2 {
+  margin: 7px 0 9px;
+
+  font: 700 24px/1.02 Georgia,serif;
+}
+
+.archiveCard p {
+  margin: 0 0 13px;
+
+  color: #554e47;
+
+  font: 14px/1.35 Georgia,serif;
+}
+
+.archiveCard b {
+  font: 900 8px Arial,sans-serif;
+
+  letter-spacing: 1.4px;
+
+  border-bottom: 2px solid #b57908;
+}
+
+
+/* ending */
+
+.archiveEnding {
+  margin-top: 70px;
+  padding: 42px 0 5px;
+
+  border-top: 4px solid #111;
+
+  text-align: center;
+}
+
+.archiveEnding > span {
+  color: #b57908;
+
+  font: 900 9px Arial,sans-serif;
+
+  letter-spacing: 3px;
+}
+
+.archiveEnding h2 {
+  margin: 14px auto;
+
+  font: 500 clamp(40px,5vw,75px)/.92 Georgia,serif;
+}
+
+.archiveEnding h2 em {
+  color: #b57908;
+}
+
+.archiveEnding p {
+  font: italic 15px Georgia,serif;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+  .fullShelfCallout {
+    display: block;
+
+    padding: 23px 0;
+  }
+
+  .fullShelfCallout h2 {
+    font-size: 27px;
+  }
+
+  .fullShelfCallout > a {
+    margin-top: 20px;
+
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .archiveHero h1 {
+    font-size: 60px;
+  }
+
+  .archiveHero > div {
+    display: block;
+  }
+
+  .archiveHero strong {
+    display: block;
+
+    margin-top: 20px;
+  }
+
+  .archiveGrid {
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 35px 13px;
+  }
+
+  .archiveCard h2 {
+    font-size: 20px;
+  }
+
+  .archiveCard p {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   REVIEW SHELF SEARCH
+   ========================================================= */
+
+.shelfSearch {
+  min-height: 82px;
+
+  display: grid;
+  grid-template-columns: minmax(300px, 1.25fr) 2fr auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+
+/* SEARCH */
+
+.shelfSearchBox {
+  position: relative;
+
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 2px solid #111;
+}
+
+.shelfSearchBox > span {
+  margin-right: 11px;
+
+  color: #b57908;
+
+  font-family: Georgia, serif;
+
+  font-size: 27px;
+}
+
+.shelfSearchBox input {
+  width: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #111;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 20px;
+  font-style: italic;
+}
+
+.shelfSearchBox input::placeholder {
+  color: #837b72;
+}
+
+.shelfSearchBox button {
+  border: 0;
+
+  background: transparent;
+
+  color: #111;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+
+/* LANGUAGE FILTER */
+
+.shelfLanguages {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  flex-wrap: wrap;
+}
+
+.shelfLanguages button {
+  padding: 7px 11px;
+
+  border: 1px solid #aaa195;
+  border-radius: 30px;
+
+  background: transparent;
+
+  color: #111;
+
+  font: 900 8px Arial, sans-serif;
+
+  letter-spacing: 1.2px;
+
+  cursor: pointer;
+}
+
+.shelfLanguages button:hover,
+.shelfLanguages button.active {
+  border-color: #b57908;
+
+  background: #b57908;
+
+  color: #fff;
+}
+
+
+/* COUNT */
+
+.shelfResultCount {
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+.shelfResultCount strong {
+  color: #b57908;
+
+  font: 700 25px Georgia, serif;
+}
+
+.shelfResultCount span {
+  font: 900 7px Arial, sans-serif;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* EMPTY SEARCH */
+
+.emptyShelf {
+  padding: 90px 20px;
+
+  text-align: center;
+
+  border-bottom: 1px solid #aaa195;
+}
+
+.emptyShelf > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 38px;
+}
+
+.emptyShelf h2 {
+  margin: 0 0 8px;
+
+  font: 500 35px Georgia, serif;
+}
+
+.emptyShelf p {
+  margin: 0 0 20px;
+
+  color: #6c645c;
+
+  font: italic 15px Georgia, serif;
+}
+
+.emptyShelf button {
+  padding: 11px 15px;
+
+  border: 0;
+
+  background: #111;
+
+  color: #f3efe6;
+
+  font: 900 8px Arial, sans-serif;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+  .shelfSearch {
+    padding: 18px 0;
+
+    display: block;
+  }
+
+  .shelfSearchBox {
+    margin-bottom: 15px;
+  }
+
+  .shelfLanguages {
+    margin-bottom: 15px;
+  }
+
+  .shelfResultCount {
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   REVIEW SHELF — COMPACT ARCHIVE
+   ========================================================= */
+
+.reviewArchive {
+  width: min(92%, 1420px) !important;
+
+  padding-top: 20px !important;
+}
+
+
+/* Shrink the oversized archive hero */
+
+.archiveHero {
+  padding: 24px 0 27px !important;
+}
+
+.archiveHero > small {
+  font-size: 9px !important;
+  letter-spacing: 2.5px !important;
+}
+
+.archiveHero h1 {
+  margin: 9px 0 18px !important;
+
+  font-size: clamp(52px, 5.4vw, 82px) !important;
+  line-height: .82 !important;
+
+  letter-spacing: -3.5px !important;
+}
+
+.archiveHero h1 em {
+  display: inline !important;
+
+  margin-left: 12px;
+}
+
+
+/* Description + count */
+
+.archiveHero > div {
+  align-items: center !important;
+}
+
+.archiveHero p {
+  max-width: 720px !important;
+
+  font-size: 15px !important;
+  line-height: 1.3 !important;
+}
+
+.archiveHero strong {
+  font-size: 29px !important;
+}
+
+
+/* Search row slightly tighter */
+
+.shelfSearch {
+  min-height: 68px !important;
+
+  grid-template-columns:
+    minmax(320px, 1.25fr)
+    minmax(420px, 1.8fr)
+    auto !important;
+
+  gap: 24px !important;
+}
+
+.shelfSearchBox {
+  height: 42px !important;
+}
+
+.shelfSearchBox input {
+  font-size: 18px !important;
+}
+
+
+/* Language is intentionally secondary */
+
+.shelfLanguages::before {
+  content: "FILTER IF YOU WANT";
+
+  margin-right: 7px;
+
+  color: #8a8178;
+
+  font: 900 7px Arial, sans-serif;
+
+  letter-spacing: 1.5px;
+}
+
+.shelfLanguages button {
+  padding: 6px 10px !important;
+
+  font-size: 7px !important;
+}
+
+
+/* Add philosophy under the search */
+
+.shelfSearch::after {
+  content: "Cinema has no language barrier. These filters are only here to help you find your movie.";
+
+  grid-column: 1 / -1;
+
+  margin-top: -13px;
+  padding-bottom: 10px;
+
+  color: #756d64;
+
+  font: italic 12px Georgia, "Times New Roman", serif;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+  .reviewArchive {
+    width: calc(100% - 28px) !important;
+  }
+
+  .archiveHero {
+    padding: 20px 0 22px !important;
+  }
+
+  .archiveHero h1 {
+    font-size: 50px !important;
+  }
+
+  .archiveHero h1 em {
+    display: block !important;
+
+    margin-left: 0;
+  }
+
+  .shelfSearch {
+    display: block !important;
+
+    padding: 14px 0 !important;
+  }
+
+  .shelfLanguages::before {
+    display: block;
+
+    width: 100%;
+
+    margin: 0 0 8px;
+  }
+
+  .shelfSearch::after {
+    display: block;
+
+    margin: 12px 0 0;
+
+    padding: 0;
+  }
+
+}
+

@@ -106,41 +106,4 @@ export default function Home(){const crystalBalls=getAllCrystalBalls();const rev
 
 </section>
 
-<section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{reviews.slice(0,4).map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster} alt={m.title}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section>
-
-<section id="shelf" className="dhSection shell">
-  <div className="dhHead">
-    <strong>FROM THE REVIEW SHELF</strong>
-    <small>A FEW MORE BEFORE YOU GO</small>
-  </div>
-
-  <div className="dhShelf">
-    {shelf.slice(0,4).map(m=>
-      <Link href={`/reviews/${m.slug}`} key={m.slug}>
-        <img src={m.poster} alt={m.title}/>
-        <div>
-          <small>{m.language} · {m.year}</small>
-          <h3>{m.title}</h3>
-          <p>{m.dek}</p>
-          <b>TAKE IT OFF THE SHELF →</b>
-        </div>
-      </Link>
-    )}
-  </div>
-
-  <div className="fullShelfCallout">
-    <div>
-      <small>THE ARCHIVE</small>
-      <h2>Still looking for something to watch?</h2>
-      <p>
-        Every movie I've reviewed lives on the full shelf —
-        the good, the bad, and the ones that made me go hmm. 🤔
-      </p>
-    </div>
-
-    <Link href="/reviews">
-      VIEW THE FULL SHELF
-      <span>→</span>
-    </Link>
-  </div>
-</section></main></>}
+<section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{reviews.slice(0,6).map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section><section id="shelf" className="dhSection shell"><div className="dhHead"><strong>FROM THE REVIEW SHELF</strong><small>{reviews.length} REVIEWS AND COUNTING</small></div><div className="dhShelf">{shelf.map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster}/><div><h3>{m.title}</h3><p>{m.dek}</p><b>TAKE IT OFF THE SHELF →</b></div></Link>)}</div></section><section className="dhIndex shell"><div className="dhHead"><strong>ALL REVIEWS</strong><small>THE Movie....🤔hmm INDEX</small></div>{reviews.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><span>{String(i+1).padStart(2,"0")}</span><h3>{m.title}</h3><b>READ →</b></Link>)}</section></main></>}

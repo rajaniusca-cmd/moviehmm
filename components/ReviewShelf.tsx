@@ -22,10 +22,11 @@ export default function ReviewShelf({
 
   const languages = [
     "ALL",
-    "Malayalam",
-    "Hindi",
     "Telugu",
     "Tamil",
+    "Hindi",
+    "Malayalam",
+    "Kannada",
   ];
 
   const filtered = useMemo(() => {

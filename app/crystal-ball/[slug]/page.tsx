@@ -1,3 +1,214 @@
-import Link from "next/link";import{notFound}from"next/navigation";import{getAllCrystalBalls,getCrystalBall}from"@/lib/crystalBall";
-export function generateStaticParams(){return getAllCrystalBalls().map(x=>({slug:x.slug}))}
-export default async function Page({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const x=getCrystalBall(slug);if(!x)notFound();return <main className="cbArticle shell"><Link href="/" className="back">← MOVIEHMM</Link><div className="cbArticleHero"><img src={x.poster} alt={x.title}/><div><span>🔮 MOVIEHMM CRYSTAL BALL</span><small>{x.language} · {x.releaseDate} · PREDICTION, NOT A REVIEW</small><h1>{x.title}</h1><p>{x.hook}</p><div className="cbCall">{x.emoji} {x.call}</div></div></div><section><h2>Why this one has my attention</h2><p>{x.why}</p><h2>My gut says...</h2><p>{x.gut}</p><h2>What could make it work</h2><p>{x.worksIf}</p><h2>What could send it sideways</h2><p>{x.worries}</p></section><div className="cbFinal"><span>🔮 MY CRYSTAL-BALL CALL</span><strong>{x.emoji} {x.call}</strong><p>No rating. I haven't watched it. This is just MovieHmm staring into the crystal ball. Come back after release and see whether I deserve applause or embarrassment. 😄</p></div></main>}
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  getAllCrystalBalls,
+  getCrystalBall,
+} from "@/lib/crystalBall";
+
+export function generateStaticParams() {
+  return getAllCrystalBalls().map((x) => ({
+    slug: x.slug,
+  }));
+}
+
+export default async function HoroscopePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const x = getCrystalBall(slug);
+
+  if (!x) notFound();
+
+  const chart = [
+    ["STAR POWER", x.starPower],
+    ["DIRECTOR FORM", x.directorForm],
+    ["MUSIC FACTOR", x.musicFactor],
+    ["GENRE / WORLD", x.genreWorld],
+    ["THE COMBINATION", x.combination],
+    ["BUZZ / EXPECTATION", x.buzz],
+  ];
+
+  return (
+    <main className="horoscopePage shell">
+
+      <Link href="/" className="back">
+        ← Movie....🤔hmm
+      </Link>
+
+      <header className="horoscopeHero">
+
+        <div className="horoscopePoster">
+          <img src={x.poster} alt={x.title} />
+        </div>
+
+        <div className="horoscopeHeroCopy">
+
+          <span className="horoscopeKicker">
+            🔮 UPCOMING MOVIE HOROSCOPE
+          </span>
+
+          <small>
+            {x.language} · {x.releaseDate}
+          </small>
+
+          <h1>{x.title}</h1>
+
+          <p className="horoscopeHook">
+            {x.hook}
+          </p>
+
+          <div className="horoscopeSigns">
+            <small>THE SIGNS</small>
+
+            <strong>
+              {x.emoji} {x.call}
+            </strong>
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <section className="birthChart">
+
+        <header>
+          <span>THE BIRTH CHART</span>
+
+          <h2>
+            What are the planets saying?
+          </h2>
+
+          <p>
+            Not astrology in the literal sense.
+            These are the movie's ingredients before
+            the first show: people, form, music,
+            positioning and expectations.
+          </p>
+        </header>
+
+        <div className="birthChartGrid">
+
+          {chart.map(([label, value], index) => (
+            <article key={label}>
+
+              <span>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <small>{label}</small>
+
+              <p>{value}</p>
+
+            </article>
+          ))}
+
+        </div>
+
+      </section>
+
+
+      <section className="horoscopeColumns">
+
+        <article className="goodPlanets">
+
+          <small>☀ THE GOOD PLANETS</small>
+
+          <h2>
+            What could make it work
+          </h2>
+
+          <p>{x.worksIf}</p>
+
+        </article>
+
+        <article className="warningSigns">
+
+          <small>☁ THE WARNING SIGNS</small>
+
+          <h2>
+            What could send it sideways
+          </h2>
+
+          <p>{x.worries}</p>
+
+        </article>
+
+      </section>
+
+
+      <section className="horoscopeGut">
+
+        <small>MY GUT SAYS...</small>
+
+        <p>{x.gut}</p>
+
+      </section>
+
+
+      <section className="fateForecast">
+
+        <div className="fateLabel">
+          <span>🔮</span>
+
+          <div>
+            <small>
+              Movie....🤔hmm FATE FORECAST
+            </small>
+
+            <strong>
+              BEFORE THE FIRST SHOW
+            </strong>
+          </div>
+        </div>
+
+        <div className="fatePrediction">
+
+          <span>{x.forecastEmoji}</span>
+
+          <h2>{x.forecast}</h2>
+
+          <p>{x.forecastLine}</p>
+
+        </div>
+
+        <div className="forecastConfidence">
+
+          <strong>{x.confidence}%</strong>
+
+          <div>
+            <span>MY CONFIDENCE</span>
+
+            <p>
+              Editorial conviction — not a statistical
+              probability or box-office guarantee.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <footer className="horoscopeDisclaimer">
+
+        <strong>NO RATING.</strong>
+
+        <p>
+          I haven't watched the movie yet.
+          This horoscope was written before release.
+          When I finally watch it, we'll find out
+          whether the stars were talking sense. 🤔
+        </p>
+
+        <Link href="/">
+          BACK TO Movie....🤔hmm →
+        </Link>
+
+      </footer>
+
+    </main>
+  );
+}

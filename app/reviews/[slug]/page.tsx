@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getReview, getAllReviews } from "@/lib/reviews";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import MovieReactions from "@/components/MovieReactions";
+import ReviewReactions from "@/components/ReviewReactions";
 
 const SITE = "https://www.moviehmm.com";
 
@@ -228,7 +230,9 @@ export default async function ReviewPage(
           </div>
         </div>
 
-        <div className="finalVerdict">
+        <MovieReactions movieSlug={r.slug} />
+<ReviewReactions movieSlug={r.slug} />
+<div className="finalVerdict">
           <span>THE VERDICT</span>
           <strong>{r.verdict}</strong>
           <b>{r.score.toFixed(1)} / 10</b>

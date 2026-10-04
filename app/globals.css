@@ -9564,3 +9564,58 @@ body{background:#f3efe6}
 
 }
 
+
+
+/* =========================================================
+   MOVIE HOROSCOPE — NINE PLANETS / 3×3
+   ========================================================= */
+
+.birthChartGrid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.birthChartGrid article {
+  min-height: 195px !important;
+}
+
+/* reset old 6-item borders */
+.birthChartGrid article {
+  border-left: 0 !important;
+  border-top: 0 !important;
+}
+
+/* columns 2 and 3 */
+.birthChartGrid article:nth-child(3n+2),
+.birthChartGrid article:nth-child(3n+3) {
+  border-left: 1px solid #c7bfb4 !important;
+}
+
+/* rows 2 and 3 */
+.birthChartGrid article:nth-child(n+4) {
+  border-top: 1px solid #c7bfb4 !important;
+}
+
+.birthChartGrid small {
+  font-size: 9px !important;
+}
+
+.birthChartGrid p {
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+}
+
+@media(max-width:700px) {
+
+  .birthChartGrid article {
+    min-height: 0 !important;
+
+    border-left: 0 !important;
+    border-top: 1px solid #c7bfb4 !important;
+  }
+
+  .birthChartGrid article:first-child {
+    border-top: 0 !important;
+  }
+
+}
+

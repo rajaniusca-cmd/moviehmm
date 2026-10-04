@@ -24,10 +24,13 @@ export default async function HoroscopePage({
   const chart = [
     ["STAR POWER", x.starPower],
     ["DIRECTOR FORM", x.directorForm],
+    ["WRITING / SCREENPLAY", x.writingScreenplay],
     ["MUSIC FACTOR", x.musicFactor],
+    ["CAST CHEMISTRY", x.castChemistry],
     ["GENRE / WORLD", x.genreWorld],
-    ["THE COMBINATION", x.combination],
     ["BUZZ / EXPECTATION", x.buzz],
+    ["RELEASE CLIMATE", x.releaseClimate],
+    ["X-FACTOR", x.xFactor],
   ];
 
   return (
@@ -78,14 +81,14 @@ export default async function HoroscopePage({
           <span>THE BIRTH CHART</span>
 
           <h2>
-            What are the planets saying?
+            Nine planets. One movie fate.
           </h2>
 
           <p>
             Not astrology in the literal sense.
-            These are the movie's ingredients before
-            the first show: people, form, music,
-            positioning and expectations.
+            Nine signals I look at before the first show —
+            from lead-cast power and filmmaking form to
+            screenplay, music, buzz and the unpredictable X-factor.
           </p>
         </header>
 

@@ -24,10 +24,13 @@ export type CrystalBall = {
 
   starPower: string;
   directorForm: string;
+  writingScreenplay: string;
   musicFactor: string;
+  castChemistry: string;
   genreWorld: string;
-  combination: string;
   buzz: string;
+  releaseClimate: string;
+  xFactor: string;
 
   publishedDate: string;
 };

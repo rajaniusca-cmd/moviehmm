@@ -702,227 +702,729 @@ body{background:#f3efe6}
  .dualFeaturePosterWrap .dualFeaturePoster{width:120px!important;height:180px!important}
 }
 
-/* MovieHmm Reader Reactions */
+/* v30: 2x2 featured editorial grid */
+.dualFeature{grid-template-columns:1fr 1fr!important}
+.dualFeatureCard:nth-child(n+3){border-top:1px solid #aaa195}
+.dualFeatureCard:nth-child(3){border-left:0!important;padding-left:0!important;padding-right:28px!important}
+.dualFeatureCard:nth-child(4){border-left:1px solid #aaa195;padding-left:28px!important;padding-right:0!important}
+.readerReaction{margin:60px 0 42px;padding:32px 0 28px;border-top:2px solid #111;border-bottom:1px solid #aaa195}
+.readerReactionHead>span,.reviewReactionHead>span{font:800 9px Arial;letter-spacing:3px;color:#6c655c}
+.readerReactionHead h2{margin:9px 0 4px;font:400 32px Georgia}
+.readerReactionHead p{margin:0 0 24px;color:#6c655c}
+.reactionChoices{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #aaa195;border-bottom:1px solid #aaa195}
+.reactionChoice{border:0;border-right:1px solid #aaa195;background:transparent;padding:21px 10px 18px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px}.reactionChoice:last-child{border-right:0}.reactionChoice.selected,.reviewReactionChoice.selected{background:#111;color:#f3efe6}.reactionEmoji{font-size:34px}.reactionChoice small,.reviewReactionChoice small{color:#b57908;font-weight:800}.reactionTotal,.reviewReactionTotal{text-align:right;margin-top:14px;font:11px Arial;color:#6c655c}
+.reviewReaction{margin:0 0 45px;padding:28px 0 26px;border-bottom:1px solid #aaa195}.reviewReactionHead h2{margin:9px 0 22px;font:400 27px Georgia}.reviewReactionChoices{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #aaa195;border-bottom:1px solid #aaa195}.reviewReactionChoice{border:0;border-right:1px solid #aaa195;background:transparent;padding:18px 10px 16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px}.reviewReactionChoice:last-child{border-right:0}.reviewReactionChoice>span{font-size:24px}
+@media(max-width:760px){.dualFeature{grid-template-columns:1fr!important}.dualFeatureCard:nth-child(n+2){border-left:0!important;border-top:1px solid #aaa195!important;padding:22px 0!important}.reactionChoices{grid-template-columns:repeat(2,1fr)}.reviewReactionChoices{grid-template-columns:1fr}}
 
-.readerReaction {
-  margin: 60px 0 42px;
-  padding: 32px 0 28px;
-  border-top: 2px solid #111;
-  border-bottom: 1px solid #aaa195;
-}
+/* ==================================================
+   MOVIEHMM SCORE SYSTEM
+   "An 8 should mean something."
+   ================================================== */
 
-.readerReactionHead > span {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  color: #6c655c;
-}
+.score {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 50%;
 
-.readerReactionHead h2 {
-  margin: 9px 0 4px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: -1px;
-}
-
-.readerReactionHead p {
-  margin: 0 0 24px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 14px;
-  color: #6c655c;
-}
-
-.reactionChoices {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid #aaa195;
-  border-bottom: 1px solid #aaa195;
-}
-
-.reactionChoice {
-  border: 0;
-  border-right: 1px solid #aaa195;
-  background: transparent;
-  padding: 21px 10px 18px;
-  cursor: pointer;
-  color: #111;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7px;
-}
-
-.reactionChoice:last-child {
-  border-right: 0;
-}
-
-.reactionChoice:hover {
-  background: rgba(181, 121, 8, .07);
-}
-
-.reactionChoice.selected {
-  background: #111;
-  color: #f3efe6;
-}
-
-.reactionEmoji {
-  font-size: 34px;
-  line-height: 1;
-}
-
-.reactionChoice strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-}
-
-.reactionChoice small {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  color: #b57908;
-}
-
-.reactionChoice.selected small {
-  color: #e1a72b;
-}
-
-.reactionTotal {
-  margin-top: 16px;
-  text-align: right;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  letter-spacing: .5px;
-  color: #6c655c;
-}
-
-.reactionTotal strong {
-  color: #111;
-  font-size: 14px;
-}
-
-@media (max-width: 650px) {
-  .reactionChoices {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .reactionChoice:nth-child(2) {
-    border-right: 0;
-  }
-
-  .reactionChoice:nth-child(-n+2) {
-    border-bottom: 1px solid #aaa195;
-  }
-}
-
-
-/* MovieHmm — reaction to the review */
-
-.reviewReaction {
-  margin: 0 0 45px;
-  padding: 28px 0 26px;
-  border-bottom: 1px solid #aaa195;
-}
-
-.reviewReactionHead > span {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  color: #6c655c;
-}
-
-.reviewReactionHead h2 {
-  margin: 9px 0 22px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 27px;
-  font-weight: 400;
-  letter-spacing: -0.7px;
-}
-
-.reviewReactionChoices {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid #aaa195;
-  border-bottom: 1px solid #aaa195;
-}
-
-.reviewReactionChoice {
-  border: 0;
-  border-right: 1px solid #aaa195;
-  background: transparent;
-  padding: 18px 10px 16px;
-  cursor: pointer;
-  color: #111;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-}
 
-.reviewReactionChoice:last-child {
-  border-right: 0;
-}
+  box-sizing: border-box;
 
-.reviewReactionChoice:hover {
-  background: rgba(181, 121, 8, .07);
-}
-
-.reviewReactionChoice.selected {
-  background: #111;
-  color: #f3efe6;
-}
-
-.reviewReactionChoice > span {
-  font-size: 24px;
-}
-
-.reviewReactionChoice strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.reviewReactionChoice small {
-  min-width: 24px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+
+  border-style: solid;
+  border-width: 3px;
+}
+
+
+/* BELOW 5 — POOR / CHARCOAL */
+
+.scoreLow {
+  color: #f3efe6 !important;
+  background: #57534e !important;
+  border-color: #57534e !important;
+}
+
+
+/* 5.x — WEAK / MUTED BROWN */
+
+.score5 {
+  color: #f3efe6 !important;
+  background: #765f4a !important;
+  border-color: #765f4a !important;
+}
+
+
+/* 6.x — OKAY / LIGHT BRONZE */
+
+.score6 {
+  color: #5c4215 !important;
+  background: #e1cfaa !important;
+  border-color: #a67c35 !important;
+}
+
+
+/* 7.x — GOOD / MOVIEHMM GOLD OUTLINE */
+
+.score7 {
+  color: #111 !important;
+  background: #f3efe6 !important;
+  border-color: #b57908 !important;
+}
+
+
+/* 8.x — VERY GOOD / SIGNATURE GOLD */
+
+.score8 {
+  color: #fff8e9 !important;
+  background: #b57908 !important;
+  border-color: #b57908 !important;
+
+  font-size: 20px !important;
+  font-weight: 900 !important;
+
+  box-shadow:
+    0 0 0 3px #f3efe6,
+    0 0 0 4px #b57908;
+}
+
+
+/* 9+ — EXCEPTIONAL / BLACK + GOLD */
+
+.score9 {
+  color: #e5ad36 !important;
+  background: #111 !important;
+  border-color: #b57908 !important;
+
+  font-size: 21px !important;
+  font-weight: 900 !important;
+
+  box-shadow:
+    0 0 0 3px #f3efe6,
+    0 0 0 5px #111;
+}
+
+
+/* REVIEW SHELF */
+
+.cornerScore.score {
+  position: absolute !important;
+
+  width: 46px !important;
+  height: 46px !important;
+
+  right: 10px !important;
+  bottom: 10px !important;
+
+  font-size: 15px !important;
+}
+
+
+/* ALL REVIEWS INDEX */
+
+.indexScore.score {
+  width: 38px !important;
+  height: 38px !important;
+  flex: 0 0 38px !important;
+
+  font-size: 12px !important;
+  border-width: 2px !important;
+}
+
+
+/* INDIVIDUAL REVIEW — 7 */
+
+.articleScore.score7 {
+  border-left: 4px solid #b57908;
+  padding-left: 16px;
+}
+
+.articleScore.score7 strong {
+  color: #b57908 !important;
+}
+
+
+/* INDIVIDUAL REVIEW — 8 */
+
+.articleScore.score8 {
+  border-left: 5px solid #b57908;
+  padding: 12px 0 12px 18px;
+}
+
+.articleScore.score8 strong {
+  color: #b57908 !important;
+  font-weight: 900 !important;
+}
+
+
+/* INDIVIDUAL REVIEW — 9+ */
+
+.articleScore.score9 {
+  background: #111 !important;
+  color: #f3efe6 !important;
+
+  padding: 16px 20px;
+
+  border-left: 6px solid #b57908;
+}
+
+.articleScore.score9 strong {
+  color: #e5ad36 !important;
+}
+
+
+/* FINAL VERDICT — 8 */
+
+.finalVerdict.score8 {
+  border-top: 4px solid #b57908 !important;
+}
+
+.finalVerdict.score8 > b {
+  color: #b57908 !important;
+}
+
+
+/* FINAL VERDICT — 9+ */
+
+.finalVerdict.score9 {
+  background: #111 !important;
+  color: #f3efe6 !important;
+
+  border-top: 5px solid #b57908 !important;
+}
+
+.finalVerdict.score9 > b {
+  color: #e5ad36 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+  .score {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+
+    font-size: 16px;
+  }
+
+  .indexScore.score {
+    width: 34px !important;
+    height: 34px !important;
+    flex-basis: 34px !important;
+
+    font-size: 11px !important;
+  }
+}
+
+
+/* THE HUMAN BIT */
+
+.humanNote {
+  margin: 38px 0 15px;
+  padding: 22px 26px;
+
+  border-left: 4px solid #b57908;
+  border-top: 1px solid #c8c0b4;
+  border-bottom: 1px solid #c8c0b4;
+
+  background: rgba(181, 121, 8, .045);
+}
+
+.humanNote > span {
+  display: block;
+  margin-bottom: 9px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 3px;
+
   color: #b57908;
 }
 
-.reviewReactionChoice.selected small {
-  color: #e1a72b;
+.humanNote p {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.55;
 }
 
-.reviewReactionTotal {
-  margin-top: 14px;
-  text-align: right;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  color: #6c655c;
+.humanNote strong {
+  font-weight: 700;
 }
 
-.reviewReactionTotal strong {
-  color: #111;
-  font-size: 14px;
+.humanNote em {
+  color: #b57908;
+  font-weight: 700;
 }
+
+
+/* ==================================================
+   MOVIEHMM — EDITORIAL VERDICT
+   ================================================== */
+
+.finalVerdict {
+  position: relative;
+
+  margin: 46px 0 34px !important;
+  padding: 26px 30px 27px !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  grid-template-areas:
+    "label score"
+    "verdict score" !important;
+
+  align-items: center !important;
+  column-gap: 35px !important;
+
+  background: rgba(181, 121, 8, .045) !important;
+
+  border-top: 3px solid #111 !important;
+  border-bottom: 1px solid #aaa195 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+
+/* THE VERDICT label */
+
+.finalVerdict > span {
+  grid-area: label !important;
+
+  margin: 0 0 9px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 3px !important;
+
+  color: #6c655c !important;
+}
+
+
+/* Hmm... good */
+
+.finalVerdict > strong {
+  grid-area: verdict !important;
+
+  margin: 0 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(30px, 3.1vw, 48px) !important;
+  font-weight: 600 !important;
+  line-height: 1.05 !important;
+
+  letter-spacing: -1.4px !important;
+
+  color: #111 !important;
+}
+
+
+/* Rating */
+
+.finalVerdict > b {
+  grid-area: score !important;
+
+  width: 92px !important;
+  height: 92px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 50% !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 23px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* 7.x — GOOD */
+
+.finalVerdict.score7 {
+  border-top-color: #b57908 !important;
+}
+
+.finalVerdict.score7 > b {
+  color: #111 !important;
+  background: #f3efe6 !important;
+  border: 3px solid #b57908 !important;
+}
+
+
+/* 8.x — VERY GOOD */
+
+.finalVerdict.score8 {
+  border-top-color: #b57908 !important;
+  background: rgba(181, 121, 8, .075) !important;
+}
+
+.finalVerdict.score8 > strong {
+  color: #8f5d00 !important;
+}
+
+.finalVerdict.score8 > b {
+  color: #fff8e9 !important;
+  background: #b57908 !important;
+  border: 3px solid #b57908 !important;
+
+  box-shadow:
+    0 0 0 4px #f3efe6,
+    0 0 0 5px #b57908 !important;
+}
+
+
+/* 9+ — EXCEPTIONAL */
+
+.finalVerdict.score9 {
+  background: #111 !important;
+  border-top-color: #b57908 !important;
+  border-bottom-color: #111 !important;
+}
+
+.finalVerdict.score9 > span {
+  color: #c6bba9 !important;
+}
+
+.finalVerdict.score9 > strong {
+  color: #f3efe6 !important;
+}
+
+.finalVerdict.score9 > b {
+  color: #e5ad36 !important;
+  background: #111 !important;
+  border: 3px solid #b57908 !important;
+
+  box-shadow:
+    0 0 0 4px #111,
+    0 0 0 5px #b57908 !important;
+}
+
+
+/* 6.x */
+
+.finalVerdict.score6 > b {
+  color: #5c4215 !important;
+  background: #e1cfaa !important;
+  border: 3px solid #a67c35 !important;
+}
+
+
+/* 5.x */
+
+.finalVerdict.score5 > b {
+  color: #f3efe6 !important;
+  background: #765f4a !important;
+  border: 3px solid #765f4a !important;
+}
+
+
+/* BELOW 5 */
+
+.finalVerdict.scoreLow > b {
+  color: #f3efe6 !important;
+  background: #57534e !important;
+  border: 3px solid #57534e !important;
+}
+
+
+/* Small gold signature line */
+
+.finalVerdict::after {
+  content: "MOVIE.... hmm";
+
+  position: absolute;
+  left: 30px;
+  bottom: -22px;
+
+  padding: 0 8px 0 0;
+
+  background: #f3efe6;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #b57908;
+}
+
+
+/* Mobile */
 
 @media (max-width: 650px) {
-  .reviewReactionChoices {
-    grid-template-columns: 1fr;
+
+  .finalVerdict {
+    padding: 22px 20px 24px !important;
+
+    grid-template-columns: 1fr auto !important;
+
+    column-gap: 18px !important;
   }
 
-  .reviewReactionChoice {
-    border-right: 0;
-    border-bottom: 1px solid #aaa195;
+  .finalVerdict > strong {
+    font-size: 30px !important;
   }
 
-  .reviewReactionChoice:last-child {
-    border-bottom: 0;
+  .finalVerdict > b {
+    width: 72px !important;
+    height: 72px !important;
+
+    font-size: 18px !important;
+  }
+
+  .finalVerdict::after {
+    left: 20px;
+  }
+}
+
+
+/* ==================================================
+   MOVIEHMM — EDITORIAL VERDICT
+   ================================================== */
+
+.finalVerdict {
+  position: relative;
+
+  margin: 46px 0 34px !important;
+  padding: 26px 30px 27px !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  grid-template-areas:
+    "label score"
+    "verdict score" !important;
+
+  align-items: center !important;
+  column-gap: 35px !important;
+
+  background: rgba(181, 121, 8, .045) !important;
+
+  border-top: 3px solid #111 !important;
+  border-bottom: 1px solid #aaa195 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+
+/* THE VERDICT label */
+
+.finalVerdict > span {
+  grid-area: label !important;
+
+  margin: 0 0 9px !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 900 !important;
+
+  letter-spacing: 3px !important;
+
+  color: #6c655c !important;
+}
+
+
+/* Hmm... good */
+
+.finalVerdict > strong {
+  grid-area: verdict !important;
+
+  margin: 0 !important;
+
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(30px, 3.1vw, 48px) !important;
+  font-weight: 600 !important;
+  line-height: 1.05 !important;
+
+  letter-spacing: -1.4px !important;
+
+  color: #111 !important;
+}
+
+
+/* Rating */
+
+.finalVerdict > b {
+  grid-area: score !important;
+
+  width: 92px !important;
+  height: 92px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 50% !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 23px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* 7.x — GOOD */
+
+.finalVerdict.score7 {
+  border-top-color: #b57908 !important;
+}
+
+.finalVerdict.score7 > b {
+  color: #111 !important;
+  background: #f3efe6 !important;
+  border: 3px solid #b57908 !important;
+}
+
+
+/* 8.x — VERY GOOD */
+
+.finalVerdict.score8 {
+  border-top-color: #b57908 !important;
+  background: rgba(181, 121, 8, .075) !important;
+}
+
+.finalVerdict.score8 > strong {
+  color: #8f5d00 !important;
+}
+
+.finalVerdict.score8 > b {
+  color: #fff8e9 !important;
+  background: #b57908 !important;
+  border: 3px solid #b57908 !important;
+
+  box-shadow:
+    0 0 0 4px #f3efe6,
+    0 0 0 5px #b57908 !important;
+}
+
+
+/* 9+ — EXCEPTIONAL */
+
+.finalVerdict.score9 {
+  background: #111 !important;
+  border-top-color: #b57908 !important;
+  border-bottom-color: #111 !important;
+}
+
+.finalVerdict.score9 > span {
+  color: #c6bba9 !important;
+}
+
+.finalVerdict.score9 > strong {
+  color: #f3efe6 !important;
+}
+
+.finalVerdict.score9 > b {
+  color: #e5ad36 !important;
+  background: #111 !important;
+  border: 3px solid #b57908 !important;
+
+  box-shadow:
+    0 0 0 4px #111,
+    0 0 0 5px #b57908 !important;
+}
+
+
+/* 6.x */
+
+.finalVerdict.score6 > b {
+  color: #5c4215 !important;
+  background: #e1cfaa !important;
+  border: 3px solid #a67c35 !important;
+}
+
+
+/* 5.x */
+
+.finalVerdict.score5 > b {
+  color: #f3efe6 !important;
+  background: #765f4a !important;
+  border: 3px solid #765f4a !important;
+}
+
+
+/* BELOW 5 */
+
+.finalVerdict.scoreLow > b {
+  color: #f3efe6 !important;
+  background: #57534e !important;
+  border: 3px solid #57534e !important;
+}
+
+
+/* Small gold signature line */
+
+.finalVerdict::after {
+  content: "MOVIE.... hmm";
+
+  position: absolute;
+  left: 30px;
+  bottom: -22px;
+
+  padding: 0 8px 0 0;
+
+  background: #f3efe6;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #b57908;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+  .finalVerdict {
+    padding: 22px 20px 24px !important;
+
+    grid-template-columns: 1fr auto !important;
+
+    column-gap: 18px !important;
+  }
+
+  .finalVerdict > strong {
+    font-size: 30px !important;
+  }
+
+  .finalVerdict > b {
+    width: 72px !important;
+    height: 72px !important;
+
+    font-size: 18px !important;
+  }
+
+  .finalVerdict::after {
+    left: 20px;
   }
 }
 

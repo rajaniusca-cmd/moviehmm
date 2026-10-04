@@ -622,3 +622,9 @@ body{background:#f3efe6}
   .dualFeatureCopy h2{font-size:25px}
   .dualFeatureCopy p{font-size:14px}
 }
+
+/* v25 — Drishyam featured artwork is landscape; preserve the full supplied image */
+.dualFeaturePosterLandscape{
+  object-fit:contain!important;
+  background:#111!important;
+}

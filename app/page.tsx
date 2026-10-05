@@ -1,7 +1,9 @@
 import Link from"next/link";import{getAllReviews}from"@/lib/reviews";import HomeSpotlight from"@/components/HomeSpotlight";
 import {getAllCrystalBalls} from "@/lib/crystalBall";
-const leads=["drishyam-the-conclusion","dont-trouble-the-trouble","thella-kaagitham","bethlehem-kudumba-unit"];
-export default function Home(){const crystalBalls=getAllCrystalBalls();const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=reviews.filter(r=>!leads.includes(r.slug));return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
+const leads=["baththa","drishyam-the-conclusion","dont-trouble-the-trouble","bethlehem-kudumba-unit"];
+const spotlightLeads=["baththa","sigma","drishyam-the-conclusion","dont-trouble-the-trouble","thella-kaagitham"];
+const newReviewLeads=["baththa","sigma","thella-kaagitham","drishyam-the-conclusion","dont-trouble-the-trouble","bethlehem-kudumba-unit"];
+export default function Home(){const crystalBalls=getAllCrystalBalls();const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=newReviewLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=["sigma","thella-kaagitham","the-paradise","toxic-a-fairy-tale-for-grown-ups"].map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r);return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
   <div className="mhEditionBar">
 
     <div className="mhEditionLead">
@@ -28,7 +30,7 @@ export default function Home(){const crystalBalls=getAllCrystalBalls();const rev
 
 </section>
 
-<div id="spotlight"><HomeSpotlight movies={f}/></div><section id="trending" className="dhSection shell"><div className="dhHead"><strong>TRENDING REVIEWS</strong><small>START HERE</small></div><div className="dhPosters">{f.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><div><img src={m.poster} alt={m.title}/><span>{String(i+1).padStart(2,"0")}</span></div><small>{m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>READ THE TAKE →</b></Link>)}</div></section>
+<div id="spotlight"><HomeSpotlight movies={spotlight}/></div><section id="trending" className="dhSection shell"><div className="dhHead"><strong>TRENDING REVIEWS</strong><small>START HERE</small></div><div className="dhPosters">{f.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><div><img src={m.poster} alt={m.title}/><span>{String(i+1).padStart(2,"0")}</span></div><small>{m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>READ THE TAKE →</b></Link>)}</div></section>
 <section id="crystal-ball" className="cbHome shell">
 
   <div className="cbHead">
@@ -106,7 +108,7 @@ export default function Home(){const crystalBalls=getAllCrystalBalls();const rev
 
 </section>
 
-<section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{reviews.slice(0,4).map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster} alt={m.title}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section>
+<section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{newReviews.map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster} alt={m.title}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section>
 
 <section id="shelf" className="dhSection shell">
   <div className="dhHead">

@@ -17,7 +17,7 @@ export default function HomeSpotlight({
 }: {
   movies: Movie[];
 }) {
-  const spotlightMovies = movies.slice(0, 4);
+  const spotlightMovies = movies.slice(0, 5);
   const [active, setActive] = useState(0);
 
   useEffect(() => {

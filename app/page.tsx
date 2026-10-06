@@ -1,9 +1,10 @@
 import Link from"next/link";import{getAllReviews}from"@/lib/reviews";import HomeSpotlight from"@/components/HomeSpotlight";
 import {getAllCrystalBalls} from "@/lib/crystalBall";
-const leads=["baththa","drishyam-the-conclusion","dont-trouble-the-trouble","bethlehem-kudumba-unit"];
-const spotlightLeads=["baththa","sigma","drishyam-the-conclusion","dont-trouble-the-trouble","thella-kaagitham"];
-const newReviewLeads=["baththa","sigma","thella-kaagitham","drishyam-the-conclusion","dont-trouble-the-trouble","bethlehem-kudumba-unit"];
-export default function Home(){const crystalBalls=getAllCrystalBalls();const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=newReviewLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=["sigma","thella-kaagitham","the-paradise","toxic-a-fairy-tale-for-grown-ups"].map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r);return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
+const leads=["baththa","drishyam-the-conclusion","dont-trouble-the-trouble","anakapalli","bethlehem-kudumba-unit"];
+const spotlightLeads=["baththa","sigma","drishyam-the-conclusion","anakapalli","thella-kaagitham"];
+const horoscopeLeads=["jailer-2","ranabaali","418","aadarsha-kutumbam","ramayana-part-1"];
+const newReviewLeads=["baththa","sigma","thella-kaagitham","anakapalli","drishyam-the-conclusion","dont-trouble-the-trouble"];
+export default function Home(){const allCrystalBalls=getAllCrystalBalls();const crystalBalls=horoscopeLeads.map(s=>allCrystalBalls.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=newReviewLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=["sigma","thella-kaagitham","the-paradise","toxic-a-fairy-tale-for-grown-ups"].map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r);return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="/horoscope">Horoscope 🔮</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
   <div className="mhEditionBar">
 
     <div className="mhEditionLead">
@@ -44,25 +45,32 @@ export default function Home(){const crystalBalls=getAllCrystalBalls();const rev
     </small>
   </div>
 
-  <div className="horoscopeIntro">
-    <div>
-      <span>🔮 BEFORE I WATCH</span>
-      <p>
-        Cast. Director. Music. Genre. Buzz. Track record.
-        I read the signs and predict what may work, what may not,
-        and where the movie could surprise us.
-      </p>
-    </div>
+  <Link href="/horoscope" className="horoscopeExplore horoscopePortal">
 
-    <strong>
-      NO RATING.
-      <em>I haven't watched it yet.</em>
-    </strong>
-  </div>
+      <div className="horoscopePortalMark">
+        <span>🔮</span>
+        <small>BEFORE THE FIRST SHOW</small>
+      </div>
+
+      <div className="horoscopePortalCopy">
+        <strong>ENTER THE FORECAST</strong>
+
+        <p>
+          I read nine movie signs and call the fate
+          before the audience gets its turn.
+        </p>
+      </div>
+
+      <div className="horoscopePortalAction">
+        <small>ALL HOROSCOPES</small>
+        <b>→</b>
+      </div>
+
+    </Link>
 
   <div className="cbRail">
 
-    {crystalBalls.slice(0,4).map((x) => (
+    {crystalBalls.slice(0,5).map((x) => (
 
       <Link
         href={`/crystal-ball/${x.slug}`}

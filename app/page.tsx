@@ -1,10 +1,11 @@
 import Link from"next/link";import{getAllReviews}from"@/lib/reviews";import HomeSpotlight from"@/components/HomeSpotlight";
 import {getAllCrystalBalls} from "@/lib/crystalBall";
+import {getAllPostmortems} from "@/lib/postmortem";
 const leads=["baththa","drishyam-the-conclusion","dont-trouble-the-trouble","anakapalli","bethlehem-kudumba-unit"];
 const spotlightLeads=["baththa","sigma","drishyam-the-conclusion","anakapalli","thella-kaagitham"];
 const horoscopeLeads=["jailer-2","ranabaali","418","aadarsha-kutumbam","ramayana-part-1"];
 const newReviewLeads=["baththa","sigma","thella-kaagitham","anakapalli","drishyam-the-conclusion","dont-trouble-the-trouble"];
-export default function Home(){const allCrystalBalls=getAllCrystalBalls();const crystalBalls=horoscopeLeads.map(s=>allCrystalBalls.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=newReviewLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=["sigma","thella-kaagitham","the-paradise","toxic-a-fairy-tale-for-grown-ups"].map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r);return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="/horoscope">Horoscope 🔮</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
+export default function Home(){const allPostmortems=getAllPostmortems();const postmortems=["the-paradise","dont-trouble-the-trouble","thella-kaagitham","baththa","sigma"].map(s=>allPostmortems.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const allCrystalBalls=getAllCrystalBalls();const crystalBalls=horoscopeLeads.map(s=>allCrystalBalls.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=newReviewLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=["sigma","thella-kaagitham","the-paradise","toxic-a-fairy-tale-for-grown-ups"].map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r);return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="/horoscope">Horoscope 🔮</a><a href="/postmortem">Postmortem 🎬</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
   <div className="mhEditionBar">
 
     <div className="mhEditionLead">
@@ -116,7 +117,100 @@ export default function Home(){const allCrystalBalls=getAllCrystalBalls();const 
 
 </section>
 
+<section id="postmortem" className="pmHome dhSection shell">
+
+  <div className="pmHomeHead">
+
+    <div>
+      <span>🎬</span>
+
+      <div>
+        <small>AFTER THE CREDITS</small>
+        <strong>THE Movie....🤔hmm POSTMORTEM</strong>
+      </div>
+    </div>
+
+    <p>
+      The review tells you whether it worked.
+      <b> Now let's find out why.</b>
+    </p>
+
+  </div>
+
+
+  <div className="pmHomeGrid">
+
+    {postmortems.map((x,i)=>(
+
+      <Link
+        href={`/postmortem/${x.slug}`}
+        className="pmHomeCard"
+        key={x.slug}
+      >
+
+        <div className="pmHomePoster">
+
+          <img
+            src={x.poster}
+            alt={`${x.title} postmortem`}
+          />
+
+          <span>
+            {String(i+1).padStart(2,"0")}
+          </span>
+
+        </div>
+
+        <div className="pmHomeCopy">
+
+          <small>
+            {x.language} · AFTER RELEASE
+          </small>
+
+          <h3>{x.title}</h3>
+
+          <div className={`pmHomeDiagnosis pm${x.status}`}>
+            <span>{x.emoji}</span>
+            <strong>{x.diagnosis}</strong>
+          </div>
+
+          <p>{x.caption}</p>
+
+          <b>OPEN THE POSTMORTEM →</b>
+
+        </div>
+
+      </Link>
+
+    ))}
+
+  </div>
+
+
+  <Link
+    href="/postmortem"
+    className="pmHomePortal"
+  >
+
+    <div>
+      <small>THE CREDITS ROLLED.</small>
+      <strong>THE LEARNING SHOULDN'T.</strong>
+    </div>
+
+    <p>
+      Hero. Director. Writing. Music. Editing.
+      Audience. Producer. What worked, what failed,
+      and what the next film should learn.
+    </p>
+
+    <span>ENTER THE AUTOPSY →</span>
+
+  </Link>
+
+</section>
+
 <section id="latest" className="dhSection shell"><div className="dhHead"><strong>NEW REVIEWS</strong><small>FRESH FROM Movie....🤔hmm</small></div><div className="dhLatest">{newReviews.map(m=><Link href={`/reviews/${m.slug}`} key={m.slug}><img src={m.poster} alt={m.title}/><div><small>NEW TAKE · {m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>OPEN REVIEW →</b></div></Link>)}</div></section>
+
 
 <section id="shelf" className="dhSection shell">
   <div className="dhHead">

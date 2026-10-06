@@ -13133,3 +13133,117 @@ body{background:#f3efe6}
   }
 }
 
+
+
+/* =========================================================
+   POSTMORTEM HOME - TYPOGRAPHY PARITY
+   Match editorial weight of Reviews + Horoscope
+   ========================================================= */
+
+/* Section identity */
+#postmortem .pmHomeHead small {
+  font-size: 9px !important;
+  letter-spacing: 2.2px !important;
+}
+
+#postmortem .pmHomeHead strong {
+  font-size: 15px !important;
+  letter-spacing: 2px !important;
+}
+
+#postmortem .pmHomeHead > p {
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+}
+
+
+/* Movie metadata */
+#postmortem .pmHomeCopy > small {
+  font-size: 8px !important;
+  letter-spacing: 1.8px !important;
+}
+
+
+/* Movie title */
+#postmortem .pmHomeCopy h3 {
+  min-height: 65px !important;
+
+  font-size: clamp(26px,1.7vw,34px) !important;
+  line-height: .98 !important;
+  letter-spacing: -.5px !important;
+}
+
+
+/* Diagnosis becomes a meaningful editorial verdict */
+#postmortem .pmHomeDiagnosis {
+  min-height: 33px !important;
+
+  padding: 7px 11px !important;
+
+  gap: 7px !important;
+}
+
+#postmortem .pmHomeDiagnosis span {
+  font-size: 11px !important;
+}
+
+#postmortem .pmHomeDiagnosis strong {
+  font-size: 7.5px !important;
+  line-height: 1.15 !important;
+  letter-spacing: 1.15px !important;
+}
+
+
+/* Main diagnosis teaser */
+#postmortem .pmHomeCopy > p {
+  min-height: 70px !important;
+
+  margin-top: 15px !important;
+
+  font-size: 15.5px !important;
+  line-height: 1.42 !important;
+}
+
+
+/* Open Postmortem */
+#postmortem .pmHomeCopy > b {
+  font-size: 8.5px !important;
+  letter-spacing: 1.5px !important;
+}
+
+
+/* Bottom manifesto */
+#postmortem .pmHomePortal > div small {
+  font-size: 7.5px !important;
+}
+
+#postmortem .pmHomePortal > div strong {
+  font-size: 11.5px !important;
+}
+
+#postmortem .pmHomePortal > p {
+  font-size: 15px !important;
+  line-height: 1.35 !important;
+}
+
+#postmortem .pmHomePortal > span {
+  font-size: 7.5px !important;
+  padding: 11px 15px !important;
+}
+
+
+/* Slightly more breathing room after larger typography */
+#postmortem .pmHomeGrid {
+  row-gap: 28px !important;
+}
+
+@media(max-width:1200px) {
+  #postmortem .pmHomeCopy h3 {
+    font-size: 29px !important;
+  }
+
+  #postmortem .pmHomeCopy > p {
+    font-size: 15px !important;
+  }
+}
+

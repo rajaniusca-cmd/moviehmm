@@ -282,15 +282,21 @@ async function createPage(number,svg,composites=[]){
 }
 
 /* ======================================================
-   PAGE 2 — THE QUESTION
+   PAGE 2 — MY TAKE
+   Dynamic from review JSON
    ====================================================== */
 
 {
+  const thought =
+    m.review?.[0] ||
+    m.dek ||
+    m.verdict;
+
   const svg=`
   <svg width="${W}" height="${H}"
        xmlns="http://www.w3.org/2000/svg">
 
-    ${header(2,"THE QUESTION")}
+    ${header(2,"MY TAKE")}
 
     <text x="55" y="355"
           font-family="Georgia,serif"
@@ -304,60 +310,47 @@ async function createPage(number,svg,composites=[]){
           font-family="Georgia,serif"
           font-size="100"
           font-weight="700"
-          fill="${RED}">
-      QUESTION
+          fill="${GOLD}">
+      THOUGHT
     </text>
 
     <rect x="55" y="495"
           width="400" height="8"
           fill="${GOLD}"/>
 
-    <text x="55" y="650"
+    <text x="55" y="640"
           font-family="Georgia,serif"
-          font-size="120"
+          font-size="115"
           fill="${GOLD}">
       “
     </text>
 
     ${lines(
-      "Honour without humanity is only fear wearing pride.",
-      130,675,
-      58,27,72,
-      {weight:700,limit:4}
+      thought,
+      125,675,
+      48,31,62,
+      {weight:700,limit:8}
     )}
 
-    <line x1="55" y1="1010"
-          x2="1025" y2="1010"
+    <line x1="55" y1="1320"
+          x2="1025" y2="1320"
           stroke="${INK}"
           stroke-width="4"/>
 
     ${lines(
-      "The violence doesn't begin with a weapon. It begins much earlier — when reputation becomes more important than a person.",
-      55,1110,
-      38,45,53,
-      {limit:6}
+      m.dek || m.verdict,
+      55,1410,
+      31,55,43,
+      {italic:true,color:MUTED,limit:5}
     )}
 
-    <rect x="55" y="1485"
-          width="970" height="135"
-          fill="${INK}"/>
-
-    <text x="540" y="1568"
-          text-anchor="middle"
-          font-family="Arial,sans-serif"
-          font-size="20"
-          font-weight="700"
-          letter-spacing="5"
-          fill="${PAPER}">
-      CASTE · HONOUR · FEAR · IDENTITY
-    </text>
-
     <text x="55" y="1720"
-          font-family="Georgia,serif"
-          font-size="28"
-          font-style="italic"
-          fill="${MUTED}">
-      Some questions survive long after the credits.
+          font-family="Arial,sans-serif"
+          font-size="15"
+          font-weight="700"
+          letter-spacing="4"
+          fill="${GOLD}">
+      MY TAKE · NOT THE CONSENSUS
     </text>
 
     ${footer()}
@@ -370,9 +363,12 @@ async function createPage(number,svg,composites=[]){
 
 /* ======================================================
    PAGE 3 — WHAT WORKED
+   Dynamic from m.works
    ====================================================== */
 
 {
+  const worked = m.works || "The film finds moments that connect.";
+
   const svg=`
   <svg width="${W}" height="${H}"
        xmlns="http://www.w3.org/2000/svg">
@@ -391,95 +387,39 @@ async function createPage(number,svg,composites=[]){
           width="970" height="8"
           fill="${GREEN}"/>
 
-
-    <text x="55" y="490"
+    <text x="55" y="500"
           font-family="Arial,sans-serif"
           font-size="17"
           font-weight="700"
           letter-spacing="4"
           fill="${GREEN}">
-      PERFORMANCE
+      ✓ WHY IT CONNECTS
     </text>
 
-    <text x="55" y="555"
+    ${lines(
+      worked,
+      55,610,
+      42,40,58,
+      {weight:400,limit:11}
+    )}
+
+    <line x1="55" y1="1420"
+          x2="1025" y2="1420"
+          stroke="#aaa195"/>
+
+    <text x="55" y="1510"
           font-family="Georgia,serif"
-          font-size="39"
-          font-weight="700"
-          fill="${INK}">
-      Sananth gives the film its emotional soul.
+          font-size="33"
+          font-style="italic"
+          fill="${MUTED}">
+      What survives after the screening?
     </text>
 
-
-    <line x1="55" y1="655"
-          x2="1025" y2="655"
-          stroke="#aaa195"/>
-
-
-    <text x="55" y="735"
-          font-family="Arial,sans-serif"
-          font-size="17"
-          font-weight="700"
-          letter-spacing="4"
-          fill="${GREEN}">
-      RISHIKANTH
-    </text>
-
-    ${lines(
-      "There is genuine leading-man potential here.",
-      55,800,
-      38,42,50,
-      {limit:3}
-    )}
-
-
-    <line x1="55" y1="930"
-          x2="1025" y2="930"
-          stroke="#aaa195"/>
-
-
-    <text x="55" y="1010"
-          font-family="Arial,sans-serif"
-          font-size="17"
-          font-weight="700"
-          letter-spacing="4"
-          fill="${GREEN}">
-      ILAIYARAAJA
-    </text>
-
-    ${lines(
-      "Music that doesn't accompany nostalgia. It creates it.",
-      55,1075,
-      38,42,50,
-      {weight:700,limit:3}
-    )}
-
-
-    <line x1="55" y1="1220"
-          x2="1025" y2="1220"
-          stroke="#aaa195"/>
-
-
-    <text x="55" y="1300"
-          font-family="Arial,sans-serif"
-          font-size="17"
-          font-weight="700"
-          letter-spacing="4"
-          fill="${GREEN}">
-      THE WORLD
-    </text>
-
-    ${lines(
-      "Rustic. Rough. Unpolished. Exactly as this story needs.",
-      55,1365,
-      38,42,50,
-      {limit:3}
-    )}
-
-    <rect x="55" y="1580"
-          width="970" height="115"
+    <rect x="55" y="1600"
+          width="970" height="110"
           fill="${INK}"/>
 
-    <text x="540" y="1652"
+    <text x="540" y="1670"
           text-anchor="middle"
           font-family="Georgia,serif"
           font-size="27"
@@ -498,9 +438,14 @@ async function createPage(number,svg,composites=[]){
 
 /* ======================================================
    PAGE 4 — WHAT HELD IT BACK
+   Dynamic from m.misses
    ====================================================== */
 
 {
+  const missed =
+    m.misses ||
+    "A few choices stop the film from reaching its full potential.";
+
   const svg=`
   <svg width="${W}" height="${H}"
        xmlns="http://www.w3.org/2000/svg">
@@ -519,103 +464,45 @@ async function createPage(number,svg,composites=[]){
           width="970" height="8"
           fill="${RED}"/>
 
-
-    <text x="55" y="510"
+    <text x="55" y="505"
           font-family="Arial,sans-serif"
-          font-size="19"
+          font-size="17"
           font-weight="700"
-          letter-spacing="5"
+          letter-spacing="4"
           fill="${RED}">
-      FRIENDSHIP → LOVE
+      × WHERE IT MISSED
     </text>
 
+    ${lines(
+      missed,
+      55,620,
+      42,40,58,
+      {weight:400,limit:11}
+    )}
 
-    <text x="55" y="650"
-          font-family="Georgia,serif"
-          font-size="52"
-          font-weight="700"
-          fill="${INK}">
-      I believe the destination.
-    </text>
-
-    <text x="55" y="735"
-          font-family="Georgia,serif"
-          font-size="52"
-          font-weight="700"
-          fill="${INK}">
-      I don't completely believe
-    </text>
-
-    <text x="55" y="810"
-          font-family="Georgia,serif"
-          font-size="52"
-          font-weight="700"
-          fill="${INK}">
-      how quickly we reached it.
-    </text>
-
-
-    <line x1="55" y1="900"
-          x2="1025" y2="900"
+    <line x1="55" y1="1430"
+          x2="1025" y2="1430"
           stroke="#aaa195"/>
 
-
-    <text x="55" y="1000"
+    <text x="55" y="1520"
           font-family="Georgia,serif"
-          font-size="39"
-          font-weight="700"
-          fill="${INK}">
-      Karthi needed another emotional bridge.
-    </text>
-
-
-    <text x="110" y="1130"
-          font-family="Georgia,serif"
-          font-size="37"
+          font-size="32"
           font-style="italic"
           fill="${MUTED}">
-      A silence.
+      Criticism isn't dismissal.
     </text>
 
-    <text x="110" y="1205"
+    <text x="55" y="1580"
           font-family="Georgia,serif"
-          font-size="37"
+          font-size="32"
           font-style="italic"
           fill="${MUTED}">
-      A jealousy.
+      Sometimes it's the distance between good and great.
     </text>
 
-    <text x="110" y="1280"
-          font-family="Georgia,serif"
-          font-size="37"
-          font-style="italic"
-          fill="${MUTED}">
-      A closeness he couldn't explain.
-    </text>
-
-
-    <rect x="55" y="1435"
-          width="970" height="195"
+    <rect x="55" y="1660"
+          width="970" height="55"
           fill="${RED}"/>
-
-    <text x="540" y="1515"
-          text-anchor="middle"
-          font-family="Georgia,serif"
-          font-size="31"
-          font-weight="700"
-          fill="${PAPER}">
-      THE DESTINATION WORKS.
-    </text>
-
-    <text x="540" y="1575"
-          text-anchor="middle"
-          font-family="Georgia,serif"
-          font-size="31"
-          font-weight="700"
-          fill="${PAPER}">
-      THE ROAD NEEDED ANOTHER KILOMETRE.
-    </text>
-
 
     ${footer()}
 
@@ -862,11 +749,15 @@ console.log("Five newspaper scenes joined.");
    ADD Movie....hmm SIGNATURE MUSIC
    ====================================================== */
 
+const musicMap = {
+  baththa: "baththa-review-bed.mp3",
+};
+
 const musicFile = path.join(
   root,
   "public",
   "audio",
-  "moviehmm-review-bed.mp3"
+  musicMap[slug] ?? "moviehmm-review-bed.mp3"
 );
 
 if (fs.existsSync(musicFile)) {

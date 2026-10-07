@@ -34,6 +34,14 @@ export default function HomeSpotlight({
 
   const movie = spotlightMovies[active];
 
+  const spotlightArt: Record<string, string> = {
+    dorothy: "/spotlight/dorothy.jpg",
+  };
+
+  const artwork =
+    spotlightArt[movie.slug] ??
+    `/spotlight/${movie.slug}.png`;
+
   const previous = () =>
     setActive(
       (n) =>
@@ -63,7 +71,7 @@ export default function HomeSpotlight({
         <div className="mhFinalSpotlightArt">
           <img
             key={movie.slug}
-            src={`/spotlight/${movie.slug}.png`}
+            src={artwork}
             alt={`${movie.title} spotlight`}
           />
         </div>

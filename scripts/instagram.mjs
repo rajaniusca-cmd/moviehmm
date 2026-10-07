@@ -19,331 +19,533 @@ if (!fs.existsSync(reviewFile)) {
 
 const movie = JSON.parse(fs.readFileSync(reviewFile, "utf8"));
 
-const outputDir = path.join(root, "public", "instagram", slug);
-fs.mkdirSync(outputDir, { recursive: true });
+const posterFile = path.join(
+  root,
+  "public",
+  movie.poster.replace(/^\//, "")
+);
 
-const WIDTH = 1080;
-const HEIGHT = 1350;
+if (!fs.existsSync(posterFile)) {
+  console.error(`Poster not found: ${posterFile}`);
+  process.exit(1);
+}
 
-const esc = (value = "") =>
-  String(value)
+const outDir = path.join(root, "public", "instagram", slug);
+fs.mkdirSync(outDir, { recursive: true });
+
+const W = 1080;
+const H = 1350;
+
+const PAPER = "#f1eadc";
+const INK = "#171411";
+const GOLD = "#a66d00";
+const RED = "#8d2e27";
+const GREEN = "#536f49";
+const MUTED = "#6e665d";
+
+const esc = (v = "") =>
+  String(v)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
 
-const wrap = (text = "", max = 34) => {
-  const words = String(text).split(/\s+/);
+function wrap(text = "", max = 38) {
+  const words = String(text).trim().split(/\s+/);
   const lines = [];
   let line = "";
 
   for (const word of words) {
-    const next = line ? `${line} ${word}` : word;
+    const candidate = line ? `${line} ${word}` : word;
 
-    if (next.length > max && line) {
+    if (candidate.length > max && line) {
       lines.push(line);
       line = word;
     } else {
-      line = next;
+      line = candidate;
     }
   }
 
   if (line) lines.push(line);
   return lines;
-};
+}
 
-const textLines = (text, x, y, size, max, lineHeight, weight = 400) =>
-  wrap(text, max)
-    .map(
-      (line, i) =>
-        `<text x="${x}" y="${y + i * lineHeight}"
-          font-family="Georgia, serif"
-          font-size="${size}"
-          font-weight="${weight}"
-          fill="#171411">${esc(line)}</text>`
-    )
+function lines(text, x, y, size, max, lh, opts = {}) {
+  const {
+    weight = 400,
+    fill = INK,
+    family = "Georgia, serif",
+    italic = false
+  } = opts;
+
+  return wrap(text, max)
+    .map((line, i) => `
+      <text
+        x="${x}"
+        y="${y + i * lh}"
+        font-family="${family}"
+        font-size="${size}"
+        font-weight="${weight}"
+        ${italic ? 'font-style="italic"' : ""}
+        fill="${fill}">
+        ${esc(line)}
+      </text>
+    `)
     .join("");
+}
 
-const base = (page, kicker, body) => `
-<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
+function masthead(page, section) {
+  return `
+    <rect width="${W}" height="${H}" fill="${PAPER}" fill-opacity="0"/>
 
-  <rect width="1080" height="1350" fill="#eee7da"/>
+    <line x1="55" y1="52" x2="1025" y2="52"
+          stroke="${INK}" stroke-width="5"/>
 
-  <line x1="65" y1="75" x2="1015" y2="75"
-        stroke="#171411" stroke-width="5"/>
+    <text x="55" y="105"
+          font-family="Georgia, serif"
+          font-size="45"
+          font-weight="700"
+          fill="${INK}">
+      Movie....hmm
+    </text>
 
-  <text x="65" y="132"
-        font-family="Georgia, serif"
-        font-size="44"
-        font-weight="700"
-        fill="#171411">
-    Movie....hmm
-  </text>
+    <text x="1025" y="101"
+          text-anchor="end"
+          font-family="Arial, sans-serif"
+          font-size="15"
+          font-weight="700"
+          letter-spacing="3"
+          fill="${GOLD}">
+      THE INDEPENDENT TAKE
+    </text>
 
-  <text x="1015" y="128"
-        text-anchor="end"
-        font-family="Arial, sans-serif"
-        font-size="18"
-        font-weight="700"
-        letter-spacing="3"
-        fill="#9b6500">
-    THE INDEPENDENT TAKE
-  </text>
+    <line x1="55" y1="130" x2="1025" y2="130"
+          stroke="#aaa195" stroke-width="1"/>
 
-  <line x1="65" y1="165" x2="1015" y2="165"
-        stroke="#8d857b" stroke-width="1"/>
+    <text x="55" y="166"
+          font-family="Arial, sans-serif"
+          font-size="13"
+          font-weight="700"
+          letter-spacing="2.5"
+          fill="${GOLD}">
+      ${esc(section)}
+    </text>
 
-  <text x="65" y="215"
-        font-family="Arial, sans-serif"
-        font-size="17"
-        font-weight="700"
-        letter-spacing="3"
-        fill="#9b6500">
-    ${esc(kicker)}
-  </text>
+    <text x="1025" y="166"
+          text-anchor="end"
+          font-family="Arial, sans-serif"
+          font-size="13"
+          font-weight="700"
+          letter-spacing="2"
+          fill="${MUTED}">
+      ${page} / 5
+    </text>
+  `;
+}
 
-  ${body}
+function footer() {
+  return `
+    <line x1="55" y1="1270" x2="1025" y2="1270"
+          stroke="#aaa195"/>
 
-  <line x1="65" y1="1260" x2="1015" y2="1260"
-        stroke="#8d857b" stroke-width="1"/>
+    <text x="55" y="1310"
+          font-family="Arial, sans-serif"
+          font-size="14"
+          font-weight="700"
+          letter-spacing="2"
+          fill="${INK}">
+      MOVIEHMM.COM
+    </text>
 
-  <text x="65" y="1305"
-        font-family="Arial, sans-serif"
-        font-size="16"
-        font-weight="700"
-        letter-spacing="2"
-        fill="#171411">
-    MOVIEHMM.COM
-  </text>
+    <text x="1025" y="1310"
+          text-anchor="end"
+          font-family="Georgia, serif"
+          font-size="16"
+          font-style="italic"
+          fill="${MUTED}">
+      No hype. No hate. Just the movie.
+    </text>
+  `;
+}
 
-  <text x="1015" y="1305"
-        text-anchor="end"
-        font-family="Arial, sans-serif"
-        font-size="16"
-        font-weight="700"
-        fill="#9b6500">
-    ${page} / 5
-  </text>
+async function posterBuffer(width, height, position = "centre") {
+  return sharp(posterFile)
+    .resize(width, height, {
+      fit: "cover",
+      position
+    })
+    .jpeg({ quality: 94 })
+    .toBuffer();
+}
 
-</svg>`;
-
-async function save(page, svg) {
-  const file = path.join(
-    outputDir,
+async function render(page, svg, composites = []) {
+  const output = path.join(
+    outDir,
     `${String(page).padStart(2, "0")}.jpg`
   );
 
-  await sharp(Buffer.from(svg))
-    .jpeg({ quality: 92, mozjpeg: true })
-    .toFile(file);
+  await sharp({
+    create: {
+      width: W,
+      height: H,
+      channels: 3,
+      background: PAPER
+    }
+  })
+    .composite([
+      ...composites,
+      { input: Buffer.from(svg), top: 0, left: 0 }
+    ])
+    .jpeg({ quality: 94, mozjpeg: true })
+    .toFile(output);
 
-  console.log(`Created ${file}`);
+  console.log(`Created ${output}`);
 }
 
-/* PAGE 1 */
+/* ======================================================
+   SLIDE 1 — REAL POSTER HERO
+   ====================================================== */
 
-await save(
-  1,
-  base(
-    1,
-    `${movie.language} · ${movie.year} · REVIEW`,
-    `
-      <text x="65" y="330"
-            font-family="Georgia, serif"
-            font-size="100"
-            font-weight="700"
-            fill="#171411">${esc(movie.title)}</text>
+{
+  const poster = await posterBuffer(970, 710, "centre");
 
-      <text x="65" y="470"
-            font-family="Georgia, serif"
-            font-size="120"
-            font-weight="700"
-            fill="#9b6500">${esc(movie.score)} / 10</text>
+  const svg = `
+  <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
 
-      ${textLines(movie.verdict,65,590,45,32,57,700)}
+    ${masthead(1, `${movie.language} · ${movie.year} · REVIEW`)}
 
-      <line x1="65" y1="810" x2="1015" y2="810"
-            stroke="#171411" stroke-width="4"/>
+    <rect x="55" y="195" width="970" height="710"
+          fill="none" stroke="${INK}" stroke-width="2"/>
 
-      ${textLines(movie.dek,65,890,35,48,48,400)}
+    <rect x="55" y="905" width="970" height="305"
+          fill="${PAPER}"/>
 
-      <text x="65" y="1190"
-            font-family="Arial, sans-serif"
-            font-size="16"
-            font-weight="700"
-            letter-spacing="3"
-            fill="#9b6500">
-        SWIPE FOR THE TAKE →
-      </text>
-    `
-  )
-);
+    <text x="70" y="970"
+          font-family="Georgia, serif"
+          font-size="62"
+          font-weight="700"
+          fill="${INK}">
+      ${esc(movie.title)}
+    </text>
 
-/* PAGE 2 */
+    <text x="70" y="1065"
+          font-family="Georgia, serif"
+          font-size="88"
+          font-weight="700"
+          fill="${GOLD}">
+      ${esc(movie.score)} / 10
+    </text>
 
-await save(
-  2,
-  base(
-    2,
-    "MY TAKE",
-    `
-      <text x="65" y="350"
-            font-family="Georgia, serif"
-            font-size="72"
-            font-weight="700"
-            fill="#171411">
-        THE THOUGHT
-      </text>
+    ${lines(
+      movie.verdict,
+      430, 1025,
+      30, 31, 39,
+      { weight: 700 }
+    )}
 
-      <line x1="65" y1="400" x2="350" y2="400"
-            stroke="#9b6500" stroke-width="6"/>
+    <text x="430" y="1175"
+          font-family="Arial, sans-serif"
+          font-size="13"
+          font-weight="700"
+          letter-spacing="2.5"
+          fill="${GOLD}">
+      SWIPE FOR THE TAKE →
+    </text>
 
-      ${textLines(movie.review?.[0] || movie.dek,65,500,42,43,58,400)}
+    ${footer()}
 
-      <text x="65" y="1110"
-            font-family="Georgia, serif"
-            font-size="31"
-            font-style="italic"
-            fill="#675f57">
-        I watched it. I thought about it.
-      </text>
+  </svg>`;
 
-      <text x="65" y="1160"
-            font-family="Georgia, serif"
-            font-size="31"
-            font-style="italic"
-            fill="#9b6500">
-        The rest is between us.
-      </text>
-    `
-  )
-);
+  await render(1, svg, [
+    { input: poster, left: 55, top: 195 }
+  ]);
+}
 
-/* PAGE 3 */
+/* ======================================================
+   SLIDE 2 — THE THOUGHT + REAL POSTER CLIPPING
+   ====================================================== */
 
-await save(
-  3,
-  base(
-    3,
-    "WHAT WORKED",
-    `
-      <text x="65" y="350"
-            font-family="Georgia, serif"
-            font-size="76"
-            font-weight="700"
-            fill="#171411">
-        WHAT WORKED
-      </text>
+{
+  const poster = await posterBuffer(330, 480, "centre");
 
-      <rect x="65" y="400" width="950" height="6" fill="#56764c"/>
+  const thought =
+    movie.review?.[0] ||
+    movie.dek;
 
-      <text x="65" y="500"
-            font-family="Arial, sans-serif"
-            font-size="22"
-            font-weight="700"
-            letter-spacing="3"
-            fill="#56764c">
-        ✓ THE GOOD STUFF
-      </text>
+  const svg = `
+  <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
 
-      ${textLines(movie.works,65,590,38,48,54,400)}
-    `
-  )
-);
+    ${masthead(2, "MY TAKE")}
 
-/* PAGE 4 */
+    <text x="55" y="275"
+          font-family="Georgia, serif"
+          font-size="72"
+          font-weight="700"
+          fill="${INK}">
+      THE THOUGHT
+    </text>
 
-await save(
-  4,
-  base(
-    4,
-    "WHAT HELD IT BACK",
-    `
-      <text x="65" y="350"
-            font-family="Georgia, serif"
-            font-size="72"
-            font-weight="700"
-            fill="#171411">
-        WHAT HELD IT BACK
-      </text>
+    <rect x="55" y="305" width="240" height="6" fill="${GOLD}"/>
 
-      <rect x="65" y="400" width="950" height="6" fill="#8e332b"/>
+    ${lines(
+      thought,
+      55, 400,
+      39, 34, 52,
+      { weight: 400 }
+    )}
 
-      <text x="65" y="500"
-            font-family="Arial, sans-serif"
-            font-size="22"
-            font-weight="700"
-            letter-spacing="3"
-            fill="#8e332b">
-        × WHERE IT MISSED
-      </text>
+    <rect x="675" y="350"
+          width="330" height="480"
+          fill="none"
+          stroke="${INK}"
+          stroke-width="2"/>
 
-      ${textLines(movie.misses,65,590,38,48,54,400)}
-    `
-  )
-);
+    <text x="675" y="865"
+          font-family="Georgia, serif"
+          font-size="22"
+          font-style="italic"
+          fill="${MUTED}">
+      The movie, through my lens.
+    </text>
 
-/* PAGE 5 */
+    <line x1="55" y1="1000" x2="1005" y2="1000"
+          stroke="${INK}" stroke-width="3"/>
 
-await save(
-  5,
-  base(
-    5,
-    "FINAL VERDICT",
-    `
-      <text x="540" y="420"
-            text-anchor="middle"
-            font-family="Georgia, serif"
-            font-size="160"
-            font-weight="700"
-            fill="#9b6500">
-        ${esc(movie.score)}
-      </text>
+    ${lines(
+      movie.dek,
+      55, 1070,
+      28, 59, 38,
+      { italic: true, fill: MUTED }
+    )}
 
-      <text x="540" y="475"
-            text-anchor="middle"
-            font-family="Arial, sans-serif"
-            font-size="24"
-            font-weight="700"
-            letter-spacing="5"
-            fill="#171411">
-        OUT OF 10
-      </text>
+    ${footer()}
 
-      <line x1="250" y1="540" x2="830" y2="540"
-            stroke="#171411" stroke-width="4"/>
+  </svg>`;
 
-      ${textLines(movie.verdict,150,660,48,30,62,700)}
+  await render(2, svg, [
+    { input: poster, left: 675, top: 350 }
+  ]);
+}
 
-      <text x="540" y="980"
-            text-anchor="middle"
-            font-family="Georgia, serif"
-            font-size="33"
-            fill="#171411">
-        Full review at
-      </text>
+/* ======================================================
+   SLIDE 3 — WHAT WORKED
+   ====================================================== */
 
-      <text x="540" y="1040"
-            text-anchor="middle"
-            font-family="Georgia, serif"
-            font-size="48"
-            font-weight="700"
-            fill="#9b6500">
-        moviehmm.com
-      </text>
+{
+  const poster = await posterBuffer(290, 600, "centre");
 
-      <text x="540" y="1160"
-            text-anchor="middle"
-            font-family="Arial, sans-serif"
-            font-size="18"
-            font-weight="700"
-            letter-spacing="3"
-            fill="#171411">
-        NO HYPE. NO HATE. JUST THE MOVIE.
-      </text>
-    `
-  )
-);
+  const svg = `
+  <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
+
+    ${masthead(3, "THE GOOD STUFF")}
+
+    <text x="55" y="285"
+          font-family="Georgia, serif"
+          font-size="70"
+          font-weight="700"
+          fill="${INK}">
+      WHAT WORKED
+    </text>
+
+    <rect x="55" y="315" width="970" height="6" fill="${GREEN}"/>
+
+    <text x="55" y="380"
+          font-family="Arial, sans-serif"
+          font-size="16"
+          font-weight="700"
+          letter-spacing="3"
+          fill="${GREEN}">
+      ✓ WHY THE FILM CONNECTS
+    </text>
+
+    ${lines(
+      movie.works,
+      55, 465,
+      34, 39, 48,
+      { weight: 400 }
+    )}
+
+    <rect x="735" y="425"
+          width="290" height="600"
+          fill="none"
+          stroke="${INK}"
+          stroke-width="2"/>
+
+    <line x1="55" y1="1085" x2="1025" y2="1085"
+          stroke="#aaa195"/>
+
+    <text x="55" y="1145"
+          font-family="Georgia, serif"
+          font-size="30"
+          font-style="italic"
+          fill="${MUTED}">
+      Good cinema leaves something behind.
+    </text>
+
+    ${footer()}
+
+  </svg>`;
+
+  await render(3, svg, [
+    { input: poster, left: 735, top: 425 }
+  ]);
+}
+
+/* ======================================================
+   SLIDE 4 — WHAT HELD IT BACK
+   ====================================================== */
+
+{
+  const poster = await posterBuffer(300, 470, "centre");
+
+  const svg = `
+  <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
+
+    ${masthead(4, "THE OTHER SIDE")}
+
+    <text x="55" y="285"
+          font-family="Georgia, serif"
+          font-size="65"
+          font-weight="700"
+          fill="${INK}">
+      WHAT HELD IT BACK
+    </text>
+
+    <rect x="55" y="315" width="970" height="6" fill="${RED}"/>
+
+    <text x="55" y="380"
+          font-family="Arial, sans-serif"
+          font-size="16"
+          font-weight="700"
+          letter-spacing="3"
+          fill="${RED}">
+      × WHERE IT COULD HAVE GONE FURTHER
+    </text>
+
+    ${lines(
+      movie.misses,
+      55, 465,
+      34, 41, 48,
+      { weight: 400 }
+    )}
+
+    <rect x="705" y="650"
+          width="300" height="470"
+          fill="none"
+          stroke="${INK}"
+          stroke-width="2"/>
+
+    <text x="55" y="1100"
+          font-family="Georgia, serif"
+          font-size="29"
+          font-style="italic"
+          fill="${MUTED}">
+      Not a dismissal. A missed opportunity.
+    </text>
+
+    ${footer()}
+
+  </svg>`;
+
+  await render(4, svg, [
+    { input: poster, left: 705, top: 650 }
+  ]);
+}
+
+/* ======================================================
+   SLIDE 5 — FINAL VERDICT
+   ====================================================== */
+
+{
+  const poster = await posterBuffer(300, 440, "centre");
+
+  const svg = `
+  <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
+
+    ${masthead(5, "FINAL VERDICT")}
+
+    <text x="55" y="330"
+          font-family="Georgia, serif"
+          font-size="145"
+          font-weight="700"
+          fill="${GOLD}">
+      ${esc(movie.score)}
+    </text>
+
+    <text x="365" y="325"
+          font-family="Georgia, serif"
+          font-size="50"
+          font-weight="700"
+          fill="${INK}">
+      / 10
+    </text>
+
+    <rect x="55" y="375" width="500" height="6" fill="${INK}"/>
+
+    ${lines(
+      movie.verdict,
+      55, 475,
+      45, 27, 58,
+      { weight: 700 }
+    )}
+
+    <rect x="705" y="270"
+          width="300" height="440"
+          fill="none"
+          stroke="${INK}"
+          stroke-width="2"/>
+
+    <line x1="55" y1="805" x2="1025" y2="805"
+          stroke="#aaa195"/>
+
+    <text x="55" y="885"
+          font-family="Georgia, serif"
+          font-size="33"
+          fill="${INK}">
+      I watched it.
+    </text>
+
+    <text x="55" y="935"
+          font-family="Georgia, serif"
+          font-size="33"
+          fill="${INK}">
+      I thought about it.
+    </text>
+
+    <text x="55" y="985"
+          font-family="Georgia, serif"
+          font-size="33"
+          font-style="italic"
+          fill="${GOLD}">
+      The rest is between us.
+    </text>
+
+    <text x="55" y="1110"
+          font-family="Arial, sans-serif"
+          font-size="15"
+          font-weight="700"
+          letter-spacing="3"
+          fill="${MUTED}">
+      READ THE COMPLETE REVIEW
+    </text>
+
+    <text x="55" y="1170"
+          font-family="Georgia, serif"
+          font-size="45"
+          font-weight="700"
+          fill="${GOLD}">
+      moviehmm.com
+    </text>
+
+    ${footer()}
+
+  </svg>`;
+
+  await render(5, svg, [
+    { input: poster, left: 705, top: 270 }
+  ]);
+}
 
 console.log("");
-console.log(`DONE: 5 Instagram slides generated for ${movie.title}`);
+console.log(`DONE: Instagram newspaper carousel generated for ${movie.title}`);
+console.log(`REAL POSTER USED: ${movie.poster}`);

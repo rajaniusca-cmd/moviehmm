@@ -205,8 +205,9 @@ async function createPage(number,svg,composites=[]){
 {
   const posterArt=await sharp(poster)
     .resize(970,1020,{
-      fit:"cover",
-      position:"centre"
+      fit:"contain",
+      position:"centre",
+      background:"#171411"
     })
     .jpeg({quality:95})
     .toBuffer();
@@ -231,7 +232,7 @@ async function createPage(number,svg,composites=[]){
 
     <text x="55" y="1330"
           font-family="Georgia,serif"
-          font-size="82"
+          font-size="92"
           font-weight="700"
           fill="${INK}">
       ${esc(m.title)}
@@ -239,7 +240,7 @@ async function createPage(number,svg,composites=[]){
 
     <text x="55" y="1470"
           font-family="Georgia,serif"
-          font-size="120"
+          font-size="135"
           font-weight="700"
           fill="${GOLD}">
       ${esc(m.score)} / 10
@@ -327,9 +328,9 @@ async function createPage(number,svg,composites=[]){
 
     ${lines(
       thought,
-      125,675,
-      48,31,62,
-      {weight:700,limit:8}
+      95,675,
+      56,29,70,
+      {weight:700,limit:7}
     )}
 
     <line x1="55" y1="1320"
@@ -399,8 +400,8 @@ async function createPage(number,svg,composites=[]){
     ${lines(
       worked,
       55,610,
-      42,40,58,
-      {weight:400,limit:11}
+      49,34,65,
+      {weight:400,limit:9}
     )}
 
     <line x1="55" y1="1420"
@@ -476,8 +477,8 @@ async function createPage(number,svg,composites=[]){
     ${lines(
       missed,
       55,620,
-      42,40,58,
-      {weight:400,limit:11}
+      49,34,65,
+      {weight:400,limit:9}
     )}
 
     <line x1="55" y1="1430"
@@ -751,6 +752,7 @@ console.log("Five newspaper scenes joined.");
 
 const musicMap = {
   baththa: "baththa-review-bed.mp3",
+  "dont-trouble-the-trouble": "dont-trouble-the-trouble-review-bed.mp3",
 };
 
 const musicFile = path.join(

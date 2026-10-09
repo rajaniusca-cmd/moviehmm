@@ -21,6 +21,8 @@ export type CrystalBall = {
   forecastEmoji: string;
   forecastLine: string;
   confidence: number;
+  hitProbability?: number;
+  predictionTag?: string;
 
   starPower: string;
   directorForm: string;

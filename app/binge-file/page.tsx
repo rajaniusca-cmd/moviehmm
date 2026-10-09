@@ -1,4 +1,5 @@
 "use client";
+import OttPlatform from "@/components/OttPlatform";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -7,15 +8,35 @@ import catalog from "@/content/binge-file/catalog.json";
 export default function BingeFilePage() {
   const [query,setQuery] = useState("");
   const [language,setLanguage] = useState("All");
+  const [platform,setPlatform] = useState("All");
 
   const languages = [
     "All","Telugu","Tamil","Hindi",
     "Malayalam","Kannada","English"
   ];
 
+  const platforms = [
+    "All",
+    ...Array.from(new Set(
+      catalog.flatMap(item =>
+        (item.platform ?? "")
+          .split("·")
+          .map(x => x.trim())
+          .filter(Boolean)
+      )
+    )).sort()
+  ];
+
   const filtered = catalog.filter(item =>
     item.title.toLowerCase().includes(query.toLowerCase()) &&
-    (language === "All" || item.language === language)
+    (language === "All" || item.language === language) &&
+    (
+      platform === "All" ||
+      (item.platform ?? "")
+        .split("·")
+        .map(x => x.trim())
+        .includes(platform)
+    )
   );
 
   return (
@@ -69,6 +90,40 @@ export default function BingeFilePage() {
 
       </div>
 
+      <section className="bfPlatformBrowse">
+        <div className="bfPlatformBrowseHead">
+          <div>
+            <small>STREAMING DIRECTORY</small>
+            <h2>📺 Browse by Platform</h2>
+          </div>
+          <span>FIND YOUR NEXT WATCH</span>
+        </div>
+
+        <div className="bfPlatformPills">
+          {platforms.map(name => {
+            const count = catalog.filter(item =>
+              name === "All" ||
+              (item.platform ?? "")
+                .split("·")
+                .map(x => x.trim())
+                .includes(name)
+            ).length;
+
+            return (
+              <button
+                key={name}
+                type="button"
+                className={platform === name ? "active" : ""}
+                onClick={() => setPlatform(name)}
+              >
+                <span>{name === "All" ? "📺 All OTT" : name}</span>
+                <b>{count}</b>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
       <div className="mhBingeSearchGrid">
         {filtered.map(item=>(
           <Link
@@ -78,6 +133,9 @@ export default function BingeFilePage() {
           >
             <img src={item.poster} alt={item.title}/>
             <small>{item.language} · {item.category}</small>
+            <small className="bfCardPlatform">
+              <OttPlatform platform={item.platform ?? ""} />
+            </small>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             <strong>

@@ -14416,3 +14416,820 @@ body{background:#f3efe6}
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* BINGE FILE — STREAMING PLATFORM */
+
+.bfPlatform {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 18px 0;
+  padding: 14px 0;
+  border-top: 1px solid #b8aa96;
+  border-bottom: 1px solid #b8aa96;
+}
+
+.bfPlatform small {
+  color: #776d5d;
+  font: 800 10px Arial,sans-serif;
+  letter-spacing: 2px;
+}
+
+.bfPlatform strong {
+  color: #a66d00;
+  font: bold 23px Georgia,serif;
+}
+
+.bfCardPlatform {
+  display: block;
+  color: #a66d00 !important;
+  font: 800 11px Arial,sans-serif !important;
+  letter-spacing: .5px;
+  margin: 6px 0 8px;
+}
+
+/* BINGE FILE — OTT PLATFORM DIRECTORY */
+
+.bfPlatformBrowse {
+  margin: 24px 0 30px;
+  padding: 22px 0;
+  border-top: 3px solid #171411;
+  border-bottom: 1px solid #b8aa96;
+}
+
+.bfPlatformBrowseHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bfPlatformBrowseHead small {
+  color: #a66d00;
+  font: 800 10px Arial,sans-serif;
+  letter-spacing: 2px;
+}
+
+.bfPlatformBrowseHead h2 {
+  font: bold clamp(25px,3vw,36px) Georgia,serif;
+  margin: 7px 0 0;
+}
+
+.bfPlatformBrowseHead > span {
+  font: 800 10px Arial,sans-serif;
+  letter-spacing: 2px;
+  color: #776d5d;
+}
+
+.bfPlatformPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bfPlatformPills button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #b8aa96;
+  background: transparent;
+  color: #171411;
+  padding: 11px 15px;
+  border-radius: 30px;
+  font: 700 12px Arial,sans-serif;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .2s;
+}
+
+.bfPlatformPills button:hover {
+  transform: translateY(-3px);
+  border-color: #a66d00;
+}
+
+.bfPlatformPills button.active {
+  background: #a66d00;
+  color: white;
+  border-color: #a66d00;
+}
+
+.bfPlatformPills button b {
+  font-size: 11px;
+  opacity: .75;
+}
+
+@media(max-width:650px) {
+  .bfPlatformBrowseHead {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+/* MOVIEHMM — BINGE REVIEW TYPOGRAPHY */
+
+.bfReviewPage .bfReviewHeading {
+  padding: 18px 0 22px !important;
+}
+
+.bfReviewPage .bfReviewHeading h1 {
+  font-size: clamp(32px, 3.2vw, 48px) !important;
+  line-height: 1.12 !important;
+  margin: 8px 0 12px !important;
+}
+
+.bfReviewPage .bfEditorialHeadline {
+  font-size: clamp(17px, 1.7vw, 23px) !important;
+  line-height: 1.3 !important;
+  margin: 10px 0 !important;
+}
+
+.bfReviewPage .bfReviewHeading p {
+  font-size: clamp(16px, 1.5vw, 20px) !important;
+  line-height: 1.45 !important;
+}
+
+.bfReviewPage .bfReviewHero {
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr) !important;
+  gap: 32px !important;
+  padding: 22px 0 !important;
+}
+
+.bfReviewPage .bfReviewPoster img {
+  height: 330px !important;
+  max-height: 330px !important;
+}
+
+.bfReviewPage .bfReviewVerdict strong {
+  font-size: clamp(45px, 5vw, 68px) !important;
+  line-height: 1.05 !important;
+}
+
+.bfReviewPage .bfReviewVerdict h2 {
+  font-size: clamp(24px, 2.5vw, 34px) !important;
+}
+
+.bfReviewPage .bfReviewVerdict p {
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+}
+
+.bfReviewPage .bfReviewBody > p {
+  font-size: 18px !important;
+  line-height: 1.75 !important;
+}
+
+@media (max-width: 700px) {
+  .bfReviewPage .bfReviewHero {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* OTT PLATFORM LOGOS */
+
+.ottPlatformList {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+
+.ottPlatformItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  color: #a66d00;
+  font: 700 11px Arial, sans-serif;
+}
+
+.ottPlatformItem img {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* MOVIEHMM — OTT LOGO FINAL ALIGNMENT */
+
+#binge-file .mhBingeCard {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: 0 !important;
+}
+
+#binge-file .mhBingePoster {
+  flex: 0 0 auto !important;
+  margin-bottom: 8px !important;
+}
+
+#binge-file .mhBingeCard h3 {
+  margin: 8px 0 !important;
+}
+
+#binge-file .mhBingeCard p {
+  margin: 0 0 12px !important;
+}
+
+#binge-file .mhBingeMeta {
+  margin-top: auto !important;
+  padding-top: 10px !important;
+}
+
+#binge-file .bfCardPlatform {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 12px 0 4px !important;
+  padding: 0 !important;
+}
+
+.ottPlatformList {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px 14px !important;
+}
+
+.ottPlatformItem {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+}
+
+.ottPlatformItem img {
+  display: inline-block !important;
+  width: 28px !important;
+  height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+}
+
+.ottPlatformItem span {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+.mhBingeSearchCard .ottPlatformItem img {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.bfReviewPage .ottPlatformItem img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+}
+
+.bfReviewPage .ottPlatformItem span {
+  font-size: 15px !important;
+}
+
+/* BINGE FILE — REMOVE EXCESS CARD WHITESPACE */
+
+#binge-file .mhBingeGrid {
+  align-items: start !important;
+}
+
+#binge-file .mhBingeCard {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  height: auto !important;
+  min-height: 0 !important;
+  gap: 0 !important;
+}
+
+#binge-file .mhBingePoster {
+  flex: none !important;
+  margin: 0 0 8px !important;
+}
+
+#binge-file .mhBingeCard small {
+  margin: 3px 0 !important;
+}
+
+#binge-file .mhBingeCard h3 {
+  margin: 7px 0 !important;
+}
+
+#binge-file .mhBingeCard p {
+  margin: 5px 0 12px !important;
+  flex: none !important;
+}
+
+#binge-file .mhBingeMeta {
+  margin: 0 !important;
+  padding: 5px 0 0 !important;
+  flex: none !important;
+}
+
+#binge-file .bfCardPlatform {
+  display: flex !important;
+  align-items: center !important;
+  margin: 8px 0 10px !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  flex: none !important;
+}
+
+#binge-file .ottPlatformList {
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 6px 12px !important;
+}
+
+#binge-file .ottPlatformItem {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#binge-file .mhBingeCard::after {
+  margin-top: 12px !important;
+}
+
+/* BINGE FILE — RATING + OTT DIRECTLY UNDER POSTER */
+
+#binge-file .bfUnderPoster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 10px;
+  padding: 9px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #c5b8a4;
+}
+
+#binge-file .bfUnderRating {
+  color: #a66d00;
+  font: bold 24px Georgia, serif;
+  white-space: nowrap;
+}
+
+#binge-file .bfUnderPoster .ottPlatformList {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px 9px;
+}
+
+#binge-file .bfUnderPoster .ottPlatformItem img {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+#binge-file .bfUnderPoster .ottPlatformItem span {
+  font-size: 11px !important;
+}
+
+#binge-file .bfUnderVerdict {
+  display: inline-block;
+  margin-top: 8px;
+  color: #a66d00;
+  font: 800 11px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  #binge-file .bfUnderPoster {
+    align-items: flex-start;
+  }
+}
+
+/* BINGE FILE — CLEAN CARD ALIGNMENT */
+
+#binge-file .mhBingeCard {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  height: auto !important;
+  min-height: 0 !important;
+  gap: 0 !important;
+}
+
+#binge-file .bfUnderPoster {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 6px 10px !important;
+  margin: 8px 0 !important;
+  padding: 7px 0 !important;
+  border-bottom: 1px solid #c5b8a4;
+}
+
+#binge-file .bfUnderRating {
+  font: bold 23px Georgia, serif;
+  color: #a66d00;
+  white-space: nowrap;
+}
+
+#binge-file .bfUnderPoster .ottPlatformList {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px 9px !important;
+}
+
+#binge-file .bfUnderPoster .ottPlatformItem img {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+#binge-file .mhBingeCard h3 {
+  margin: 8px 0 !important;
+}
+
+#binge-file .mhBingeCard p {
+  margin: 5px 0 10px !important;
+}
+
+#binge-file .bfUnderVerdict {
+  color: #a66d00;
+  font: 800 11px Arial, sans-serif;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* MOVIEHMM — TRENDING REVIEW RATINGS */
+
+#trending .mhTrendingRating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  margin: 0 0 8px;
+  border-bottom: 1px solid #c5b8a4;
+}
+
+#trending .mhTrendingRating strong {
+  color: #a66d00;
+  font: bold 26px Georgia, serif;
+  white-space: nowrap;
+}
+
+#trending .mhTrendingRating span {
+  color: #8c650d;
+  font: 800 10px Arial, sans-serif;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+#trending .dhPosters > a:hover .mhTrendingRating span {
+  color: #171411;
+}
+
+@media (max-width: 650px) {
+  #trending .mhTrendingRating {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #trending .mhTrendingRating strong {
+    font-size: 23px;
+  }
+}
+
+/* TRENDING — COMPACT RATING EXPLANATION */
+
+#trending .mhTrendingRating {
+  display: block !important;
+  position: static !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 10px 0 12px !important;
+  margin: 0 0 8px !important;
+  background: transparent !important;
+  border-bottom: 1px solid #c5b8a4 !important;
+}
+
+#trending .mhTrendingRating strong {
+  display: block !important;
+  font: bold 27px Georgia, serif !important;
+  color: #a66d00 !important;
+  margin-bottom: 7px !important;
+}
+
+#trending .mhTrendingReason {
+  display: block !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  font: italic 15px/1.45 Georgia, serif !important;
+  color: #4c453b !important;
+  letter-spacing: normal !important;
+  white-space: normal !important;
+  text-align: left !important;
+}
+
+#trending .dhPosters > a {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+#trending .dhPosters > a .mhTrendingRating {
+  flex: none !important;
+}
+
+/* TRENDING — NEWSPAPER EDITORIAL FINISH */
+
+#trending .dhPosters > a {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  height: auto !important;
+  min-height: 0 !important;
+  gap: 0 !important;
+}
+
+/* Only the actual poster receives poster sizing */
+#trending .dhPosters > a > div:first-child {
+  margin: 0 !important;
+  flex: none !important;
+}
+
+/* Rating immediately below poster */
+#trending .mhTrendingRating {
+  display: block !important;
+  flex: none !important;
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 0 9px !important;
+  padding: 10px 0 12px !important;
+  background: transparent !important;
+  border-bottom: 1px solid #c5b8a4 !important;
+  box-shadow: none !important;
+}
+
+/* Editorial score */
+#trending .mhTrendingRating strong {
+  display: block !important;
+  margin: 0 0 5px !important;
+  color: #a66d00 !important;
+  font: 700 25px/1.1 Georgia, serif !important;
+}
+
+/* No italics, fog or shadow */
+#trending .mhTrendingReason {
+  display: block !important;
+  color: #51483c !important;
+  font: 400 14px/1.45 Georgia, serif !important;
+  font-style: normal !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  letter-spacing: normal !important;
+  white-space: normal !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#trending .dhPosters > a > small {
+  margin: 4px 0 6px !important;
+}
+
+#trending .dhPosters > a > h3 {
+  margin: 0 0 10px !important;
+}
+
+#trending .dhPosters > a > p {
+  margin: 0 0 13px !important;
+}
+
+#trending .dhPosters > a > b {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #a66d00 !important;
+  font-size: 10px !important;
+  letter-spacing: .5px !important;
+}
+
+/* MOVIEHMM — COMPACT SPOTLIGHT TO TRENDING */
+
+#spotlight {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#trending {
+  margin-top: 0 !important;
+  padding-top: 12px !important;
+}
+
+#trending .dhHead {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+
+#trending .dhPosters {
+  margin-top: 0 !important;
+}
+
+/* HOROSCOPE — HIT PROBABILITY */
+
+.cbHitProbability {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  padding: 10px 0;
+  border-top: 1px solid #c5b8a4;
+  border-bottom: 1px solid #c5b8a4;
+}
+
+.cbHitProbability span {
+  font: 800 10px Arial, sans-serif;
+  letter-spacing: 1px;
+  color: #5d5549;
+}
+
+.cbHitProbability strong {
+  font: bold 27px Georgia, serif;
+  color: #a66d00;
+}
+
+/* HOROSCOPE — HIT FORECAST UNDER POSTER */
+
+#crystal-ball .cbCard {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+}
+
+#crystal-ball .cbPosterForecast {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  margin: 0 0 10px !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid #c5b8a4;
+}
+
+#crystal-ball .cbPosterForecast strong {
+  color: #a66d00;
+  font: bold 26px Georgia, serif;
+}
+
+#crystal-ball .cbPosterForecast span {
+  color: #5d5549;
+  font: 800 9px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+#crystal-ball .cbCard > div:last-child {
+  flex: none !important;
+}
+
+/* Preserve complete Ranabaali artwork */
+
+#crystal-ball .cbCard[href*="ranabaali"] > img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #e9e0d1 !important;
+}
+
+/* SPOTLIGHT → TRENDING — REMOVE EXCESS SPACE */
+
+#spotlight {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#trending {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#spotlight + #trending {
+  margin-top: 0 !important;
+}
+
+#trending .dhHead {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+
+#trending .dhPosters {
+  margin-top: 0 !important;
+}
+
+/* FIX: SPOTLIGHT → TRENDING VERTICAL GAP */
+
+#spotlight {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#spotlight + #trending {
+  margin-top: 0 !important;
+}
+
+#trending.dhSection {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#trending .dhHead {
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+#trending .dhPosters {
+  margin-top: 0 !important;
+}
+
+/* Remove spacing between adjacent homepage sections */
+#spotlight:has(+ #trending) {
+  margin-bottom: 0 !important;
+}
+
+/* MOVIEHMM — SPOTLIGHT / TRENDING SPACING FIX */
+
+#spotlight + #trending.dhSection {
+  padding-top: 0 !important;
+  margin-top: -12px !important;
+}
+
+#trending .dhHead {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+#trending .dhPosters {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* MOVIEHMM — COMPACT HOMEPAGE SECTION SPACING */
+
+/* Editorial strip to Spotlight */
+.mhFinalSpotlight {
+  margin-top: 4px !important;
+}
+
+.mhFinalSpotlightHead {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+/* Horoscope heading and introduction */
+#crystal-ball .cbHead {
+  margin-bottom: 0 !important;
+}
+
+#crystal-ball .horoscopePortal {
+  margin-bottom: 0 !important;
+}
+
+/* Horoscope introduction to poster row */
+#crystal-ball .cbRail {
+  margin-top: 14px !important;
+  padding-top: 0 !important;
+}
+
+/* Preserve consistent poster spacing */
+#crystal-ball .cbCard {
+  margin-top: 0 !important;
+}
+
+/* HOROSCOPE — REMOVE GAP BELOW HIT FORECAST */
+
+#crystal-ball .cbCard {
+  gap: 0 !important;
+  justify-content: flex-start !important;
+}
+
+#crystal-ball .cbPosterForecast {
+  margin: 0 0 6px !important;
+  padding: 8px 0 !important;
+}
+
+#crystal-ball .cbCard > div:last-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+#crystal-ball .cbCard > div:last-child > small:first-child {
+  display: block;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

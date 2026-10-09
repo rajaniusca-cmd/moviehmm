@@ -1,3 +1,4 @@
+import OttPlatform from "@/components/OttPlatform";
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
@@ -17,6 +18,7 @@ type Review = {
   poster: string;
   score: number | null;
   verdict: string;
+  platform?: string;
   hook?: string;
   editorialHeadline?: string;
   review: string[];
@@ -97,6 +99,12 @@ export default async function Page({
             {r.score === null ? "UNRATED" : `${r.score} / 10`}
           </strong>
           <h2>{r.verdict}</h2>
+          {r.platform && (
+            <div className="bfPlatform">
+              <small>NOW STREAMING ON</small>
+              <OttPlatform platform={r.platform ?? ""} />
+            </div>
+          )}
           <p>
             {r.review[0]}
           </p>

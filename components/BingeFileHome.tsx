@@ -1,59 +1,77 @@
 import Link from "next/link";
+import OttPlatform from "@/components/OttPlatform";
 import catalog from "@/content/binge-file/catalog.json";
 
 export default function BingeFileHome() {
   return (
     <section id="binge-file" className="dhSection shell mhBinge">
+
       <div className="bfHomeHead">
-  <div className="bfHomeHeadTop">
-    <div className="bfHomeEyebrow">
-      <span>▶</span>
-      <strong>THE BINGE FILE</strong>
-    </div>
-    <small>LONG SEASONS. SHORT STORIES. YOUR TIME MATTERS.</small>
-  </div>
+        <div className="bfHomeHeadTop">
+          <div className="bfHomeEyebrow">
+            <span>▶</span>
+            <strong>THE BINGE FILE</strong>
+          </div>
+          <small>
+            LONG SEASONS. SHORT STORIES. YOUR TIME MATTERS.
+          </small>
+        </div>
 
-  <div className="bfHomeIntro">
-    <div>
-      <small>BEYOND THE BIG SCREEN</small>
-      <h2>Stories worth <em>your time.</em></h2>
-      <p>Web series. Seasons. Short films. Independent reviews.</p>
-    </div>
-    <a href="/binge-file">EXPLORE THE FILE →</a>
-  </div>
-</div>
+        <div className="bfHomeIntro">
+          <div>
+            <small>BEYOND THE BIG SCREEN</small>
+            <h2>Stories worth <em>your time.</em></h2>
+            <p>
+              Web series. Seasons. Short films.
+              Independent reviews.
+            </p>
+          </div>
 
-<div className="mhBingeGrid">
-        {catalog.slice(0,5).map((item, i) => (
+          <Link href="/binge-file">
+            EXPLORE THE FILE →
+          </Link>
+        </div>
+      </div>
+
+      <div className="mhBingeGrid">
+        {catalog.slice(0, 5).map((item, i) => (
           <Link
             href={`/binge-file/${item.slug}`}
             key={item.slug}
             className="mhBingeCard"
           >
             <div className="mhBingePoster">
-              <img src={item.poster} alt={`${item.title} poster`} />
+              <img
+                src={item.poster}
+                alt={`${item.title} poster`}
+              />
               <span className="mhBingeNumber">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </div>
 
+            <div className="bfUnderPoster">
+              <strong className="bfUnderRating">
+                {item.score === null
+                  ? "UNRATED"
+                  : `${item.score}/10`}
+              </strong>
+
+              <OttPlatform platform={item.platform ?? ""} />
+            </div>
+
             <small>{item.language} · {item.category}</small>
+
             <h3>{item.title}</h3>
+
             <p>{item.description}</p>
 
-            <div className="mhBingeMeta">
-              <strong>
-                {item.score === null ? "UNRATED" : `${item.score}/10`}
-              </strong>
-              <span>{item.verdict} →</span>
-            </div>
+            <span className="bfUnderVerdict">
+              {item.verdict} →
+            </span>
           </Link>
         ))}
       </div>
-
-      <Link href="/binge-file" className="mhBingeExplore">
-        EXPLORE ALL BINGE FILE REVIEWS →
-      </Link>
     </section>
   );
 }

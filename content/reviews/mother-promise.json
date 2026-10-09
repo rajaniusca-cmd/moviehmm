@@ -1,11 +1,17 @@
 {
-  "slug": "mother-promise",
   "title": "Mother Promise",
+  "slug": "mother-promise",
+  "year": 2026,
   "language": "Kannada",
-  "category": "Feature Film",
+  "genre": "Comedy · Action",
+  "runtime": "2h 21m",
   "score": 7.2,
-  "verdict": "WORTH WATCHING",
-  "hook": "Behind the ridiculous situations, there is room for something surprisingly human.",
+  "verdict": "Hmm... madness with a human heart. Worth watching.",
+  "poster": "/posters/mother-promise.jpg",
+  "publishedDate": "2026-10-09",
+  "featured": false,
+  "displayOrder": 3,
+  "dek": "Behind the ridiculous situations, there is room for something surprisingly human.",
   "review": [
     "Comedy does not always need a sensible world. Sometimes the stranger the characters behave, the more entertaining their problems become.",
     "Mother Promise approaches humour through eccentric personalities and chaotic situations.",
@@ -24,9 +30,5 @@
     "The available critical response has been relatively favourable towards its energetic comedy. My reservation is that this kind of humour depends heavily on individual taste. Someone looking for restrained, believable storytelling may find the same excess exhausting."
   ],
   "works": "Offbeat humour, unusual characters, energetic situations and emotional undertones.",
-  "misses": "Uneven jokes, narrative detours and occasional excess.",
-  "episodes": [],
-  "poster": "/binge-file/mother-promise.jpg",
-  "note": "Original Movie....hmm editorial assessment based on available story information and critical discussion; not a firsthand screening.",
-  "editorialHeadline": "WHEN COMEDY BECOMES CHAOS, THE STORY MUST FIND ITS HEART."
+  "misses": "Uneven jokes, narrative detours and occasional excess."
 }

@@ -1,3 +1,4 @@
+import BingeFileHome from "@/components/BingeFileHome";
 import Link from"next/link";import{getAllReviews}from"@/lib/reviews";import HomeSpotlight from"@/components/HomeSpotlight";
 import {getAllCrystalBalls} from "@/lib/crystalBall";
 import {getAllPostmortems} from "@/lib/postmortem";
@@ -5,7 +6,7 @@ const leads=["hanuman-ansh","baththa","drishyam-the-conclusion","dorothy","dont-
 const spotlightLeads=["hanuman-ansh","baththa","drishyam-the-conclusion","dorothy","dont-trouble-the-trouble"];
 const horoscopeLeads=["comrade-kalyan","jailer-2","ranabaali","418","aadarsha-kutumbam"];
 const newReviewLeads=["chakora","hanuman-ansh","dorothy","baththa","sigma","anakapalli","thella-kaagitham","drishyam-the-conclusion"];
-export default function Home(){const allPostmortems=getAllPostmortems();const postmortems=["the-paradise","dont-trouble-the-trouble","thella-kaagitham","baththa","sigma"].map(s=>allPostmortems.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const allCrystalBalls=getAllCrystalBalls();const crystalBalls=horoscopeLeads.map(s=>allCrystalBalls.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=newReviewLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=["chakora","anakapalli","sigma","thella-kaagitham","the-paradise","toxic-a-fairy-tale-for-grown-ups"].map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r);return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="/horoscope">Horoscope 🔮</a><a href="/postmortem">Postmortem 🎬</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
+export default function Home(){const allPostmortems=getAllPostmortems();const postmortems=["the-paradise","dont-trouble-the-trouble","thella-kaagitham","baththa","sigma"].map(s=>allPostmortems.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const allCrystalBalls=getAllCrystalBalls();const crystalBalls=horoscopeLeads.map(s=>allCrystalBalls.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=newReviewLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),shelf=["chakora","anakapalli","sigma","thella-kaagitham","the-paradise","toxic-a-fairy-tale-for-grown-ups"].map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r);return <><header className="dhHeader shell"><Link href="/" className="dhBrand">Movie....🤔<em>hmm</em><small>WE WATCH. WE THINK. WE WRITE.</small></Link><nav><a href="#spotlight">Spotlight</a><a href="#trending">Trending</a><a href="#latest">New Reviews</a><a href="/binge-file">The Binge File</a><a href="/horoscope">Horoscope 🔮</a><a href="/postmortem">Postmortem 🎬</a><a href="#shelf">The Shelf</a></nav></header><main><section className="dhMast shell">
   <div className="mhEditionBar">
 
     <div className="mhEditionLead">
@@ -32,7 +33,10 @@ export default function Home(){const allPostmortems=getAllPostmortems();const po
 
 </section>
 
+
 <div id="spotlight"><HomeSpotlight movies={spotlight}/></div><section id="trending" className="dhSection shell"><div className="dhHead"><strong>TRENDING REVIEWS</strong><small>START HERE</small></div><div className="dhPosters">{f.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><div><img src={m.poster} alt={m.title}/><span>{String(i+1).padStart(2,"0")}</span></div><small>{m.language} · {m.year}</small><h3>{m.title}</h3><p>{m.dek}</p><b>READ THE TAKE →</b></Link>)}</div></section>
+
+
 <section id="crystal-ball" className="cbHome shell">
 
   <div className="cbHead">
@@ -116,6 +120,8 @@ export default function Home(){const allPostmortems=getAllPostmortems();const po
   </p>
 
 </section>
+
+<BingeFileHome />
 
 <section id="postmortem" className="pmHome dhSection shell">
 

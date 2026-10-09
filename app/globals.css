@@ -13247,3 +13247,1172 @@ body{background:#f3efe6}
   }
 }
 
+
+/* MOVIEHMM — THE BINGE FILE */
+
+.mhBingeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px 22px;
+  margin-top: 22px;
+}
+
+.mhBingeCard {
+  display: block;
+  min-width: 0;
+  color: #191612;
+  text-decoration: none;
+  border-bottom: 1px solid #c9bcaa;
+  padding-bottom: 22px;
+}
+
+.mhBingeCard:hover h3,
+.mhBingeExplore:hover {
+  color: #a66d00;
+}
+
+.mhBingePoster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: #e6ddcf;
+  overflow: hidden;
+}
+
+.mhBingePoster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mhBingeNumber {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font: bold 36px Georgia, serif;
+  color: white;
+  text-shadow: 0 2px 8px #000;
+}
+
+.mhBingeCard small {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.mhBingeCard h3 {
+  font: bold clamp(23px, 2.2vw, 34px)/1.08 Georgia, serif;
+  margin: 9px 0 12px;
+}
+
+.mhBingeCard p {
+  font: 17px/1.55 Georgia, serif;
+  margin: 0 0 18px;
+}
+
+.mhBingeMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mhBingeMeta strong {
+  font: bold 27px Georgia, serif;
+  color: #a66d00;
+}
+
+.mhBingeMeta span,
+.mhBingeExplore {
+  color: #956000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.mhBingeExplore {
+  display: inline-block;
+  margin-top: 25px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #a66d00;
+}
+
+@media (max-width: 850px) {
+  .mhBingeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .mhBingeGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   MOVIEHMM BINGE FILE — COMPACT NEWSPAPER
+   ========================================== */
+
+.mhBingeGrid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px 20px !important;
+}
+
+.mhBingePoster {
+  width: 100% !important;
+  height: 310px !important;
+  aspect-ratio: auto !important;
+  background: #e9e0d1 !important;
+  overflow: hidden !important;
+}
+
+.mhBingePoster img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.mhBingeCard h3 {
+  font-size: 27px !important;
+}
+
+.mhBingeCard p {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.mhBingeCard {
+  color: #171411 !important;
+  text-decoration: none !important;
+}
+
+/* Binge File search page */
+
+.mhBingeSearchPage {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.mhBingeSearchPage a {
+  color: #171411;
+  text-decoration: none;
+}
+
+.mhBingeSearchPage a:hover {
+  color: #a66d00;
+}
+
+.mhBingeSearch {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid #b8aa96;
+  background: #f1eadc;
+  color: #171411;
+  font-size: 16px;
+  outline: none;
+}
+
+.mhBingeSearch:focus {
+  border-color: #a66d00;
+}
+
+.mhBingeFilters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0 30px;
+}
+
+.mhBingeFilters select {
+  min-width: 150px;
+  padding: 12px;
+  border: 1px solid #b8aa96;
+  background: #f1eadc;
+  color: #171411;
+  font-size: 14px;
+}
+
+.mhBingeSearchGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px 18px;
+}
+
+.mhBingeSearchCard {
+  min-width: 0;
+  color: #171411;
+  text-decoration: none;
+}
+
+.mhBingeSearchCard img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  background: #e9e0d1;
+}
+
+.mhBingeSearchCard h3 {
+  font: bold 25px/1.15 Georgia, serif;
+  margin: 10px 0;
+}
+
+.mhBingeSearchCard p {
+  font: 15px/1.5 Georgia, serif;
+}
+
+@media(max-width:900px) {
+  .mhBingeSearchGrid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:600px) {
+  .mhBingeGrid,
+  .mhBingeSearchGrid {
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .mhBingePoster {
+    height: 230px !important;
+  }
+
+  .mhBingeSearchCard img {
+    height: 220px;
+  }
+}
+
+/* Compact Binge File homepage */
+
+.mhBinge .mhBingeGrid {
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 18px !important;
+}
+
+.mhBinge .mhBingePoster {
+  height: 220px !important;
+  aspect-ratio: auto !important;
+}
+
+.mhBinge .mhBingePoster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mhBinge .mhBingeCard h3 {
+  font-size: 22px !important;
+}
+
+.mhBinge .mhBingeCard p {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.mhBinge .mhBingeMeta strong {
+  font-size: 22px;
+}
+
+@media(max-width:650px) {
+  .mhBinge .mhBingeGrid {
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .mhBinge .mhBingePoster {
+    height: 180px !important;
+  }
+}
+
+/* Binge File — newspaper archive */
+
+.mhBingeArchive {
+  padding-top: 45px;
+  padding-bottom: 80px;
+}
+
+.mhBingeArchive a {
+  color: #171411;
+  text-decoration: none;
+}
+
+.mhBingeArchiveHead {
+  border-top: 3px solid #171411;
+  margin-top: 30px;
+  padding: 30px 0;
+}
+
+.mhBingeArchiveHead small {
+  color: #a66d00;
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+
+.mhBingeArchiveHead h1 {
+  font: 400 clamp(42px,6vw,90px)/1.05 Georgia,serif;
+  margin: 15px 0;
+}
+
+.mhBingeArchiveHead h1 em {
+  color: #b77b00;
+}
+
+.mhBingeArchiveHead p {
+  font: 22px/1.5 Georgia,serif;
+}
+
+.mhBingeSearchRow {
+  display: grid;
+  grid-template-columns: 1.1fr 1.5fr auto;
+  align-items: center;
+  gap: 25px;
+  border-top: 1px solid #b8aa96;
+  border-bottom: 1px solid #b8aa96;
+  padding: 24px 0;
+  margin-bottom: 30px;
+}
+
+.mhBingeSearchLine {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #171411;
+  padding-bottom: 12px;
+}
+
+.mhBingeSearchLine span {
+  color: #b77b00;
+  font-size: 28px;
+  margin-right: 12px;
+}
+
+.mhBingeSearchLine input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: italic 21px Georgia,serif;
+  color: #171411;
+}
+
+.mhBingePills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mhBingePills button {
+  background: transparent;
+  color: #171411;
+  border: 1px solid #b8aa96;
+  border-radius: 30px;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.mhBingePills button.active {
+  background: #b77b00;
+  color: white;
+  border-color: #b77b00;
+}
+
+.mhBingeCount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.mhBingeCount strong {
+  font: bold 35px Georgia,serif;
+  color: #b77b00;
+}
+
+.mhBingeCount span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+@media(max-width:1000px) {
+  .mhBingeSearchRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BINGE FILE — MATCH TRENDING REVIEWS */
+
+.mhBinge .mhBingeGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+}
+
+.mhBinge .mhBingePoster {
+  height: 320px !important;
+  aspect-ratio: auto !important;
+}
+
+.mhBinge .mhBingePoster img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.mhBinge .mhBingeCard h3 {
+  font-size: 25px !important;
+}
+
+@media (max-width: 850px) {
+  .mhBinge .mhBingeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .mhBinge .mhBingePoster {
+    height: 250px !important;
+  }
+}
+
+/* BINGE FILE — FIVE COMPACT CARDS */
+
+.mhBinge .mhBingeGrid {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: start;
+}
+
+.mhBinge .mhBingeCard {
+  min-width: 0;
+}
+
+.mhBinge .mhBingePoster {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+  background: #e9e0d1 !important;
+}
+
+.mhBinge .mhBingePoster img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 45% !important;
+}
+
+.mhBinge .mhBingeCard h3 {
+  font-size: 21px !important;
+  line-height: 1.15 !important;
+  margin: 8px 0 !important;
+}
+
+.mhBinge .mhBingeCard p {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.mhBinge .mhBingeMeta strong {
+  font-size: 22px !important;
+}
+
+@media (max-width: 900px) {
+  .mhBinge .mhBingeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .mhBinge .mhBingeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+}
+
+/* FINAL BINGE FILE POSTER FIX */
+
+.mhBinge .mhBingeGrid {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.mhBinge .mhBingePoster {
+  width: 100% !important;
+  height: 290px !important;
+  aspect-ratio: auto !important;
+  background: #e9e0d1 !important;
+  overflow: hidden !important;
+}
+
+.mhBinge .mhBingePoster img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+@media (max-width: 900px) {
+  .mhBinge .mhBingeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .mhBinge .mhBingeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .mhBinge .mhBingePoster {
+    height: 230px !important;
+  }
+}
+
+/* BINGE FILE — CONSISTENT POSTER FITTING */
+
+.mhBinge .mhBingePoster,
+.mhBingeSearchCard img {
+  background: #eee7da !important;
+}
+
+.mhBinge .mhBingePoster {
+  height: 340px !important;
+  aspect-ratio: auto !important;
+}
+
+.mhBinge .mhBingePoster img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.mhBingeSearchCard img {
+  height: 340px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+@media (max-width: 650px) {
+  .mhBinge .mhBingePoster,
+  .mhBingeSearchCard img {
+    height: 250px !important;
+  }
+}
+
+/* THE BINGE FILE — FULL NEWSPAPER REVIEW */
+
+.bfReviewPage {
+  padding-top: 24px;
+  padding-bottom: 80px;
+  color: #191612;
+}
+
+.bfReviewPage a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bfReviewPage a:hover {
+  color: #ae7600;
+}
+
+.bfReviewMast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 4px solid #191612;
+  border-bottom: 1px solid #b8aa96;
+  padding: 16px 0;
+  gap: 16px;
+}
+
+.bfReviewBrand {
+  font: bold clamp(27px,3vw,43px) Georgia,serif;
+}
+
+.bfReviewBrand em {
+  color: #ae7600;
+}
+
+.bfReviewMast span,
+.bfReviewNav,
+.bfReviewHeading small,
+.bfReviewVerdict small,
+.bfReviewProsCons small {
+  font: 800 11px Arial,sans-serif;
+  letter-spacing: 2px;
+}
+
+.bfReviewMast span,
+.bfReviewHeading small,
+.bfReviewVerdict small {
+  color: #a66d00;
+}
+
+.bfReviewNav {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.bfReviewHeading {
+  padding: 35px 0;
+  border-bottom: 2px solid #191612;
+}
+
+.bfReviewHeading h1 {
+  font: bold clamp(40px,6vw,85px)/1.05 Georgia,serif;
+  margin: 15px 0;
+}
+
+.bfReviewHeading p {
+  font: italic clamp(19px,2.2vw,28px)/1.45 Georgia,serif;
+  max-width: 850px;
+}
+
+.bfReviewHero {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid #b8aa96;
+  align-items: center;
+}
+
+.bfReviewPoster {
+  background: #e9e0d1;
+  padding: 16px;
+  text-align: center;
+}
+
+.bfReviewPoster img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 550px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.bfReviewVerdict strong {
+  display: block;
+  font: bold clamp(75px,10vw,145px) Georgia,serif;
+  color: #ae7600;
+  margin: 15px 0;
+}
+
+.bfReviewVerdict h2 {
+  font: bold clamp(32px,4vw,55px) Georgia,serif;
+}
+
+.bfReviewVerdict p {
+  font: italic 22px/1.5 Georgia,serif;
+  margin-top: 25px;
+}
+
+.bfReviewBody {
+  max-width: 850px;
+  margin: 60px auto;
+}
+
+.bfReviewSectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-top: 3px solid #191612;
+  border-bottom: 1px solid #b8aa96;
+  padding: 17px 0;
+  margin-bottom: 30px;
+}
+
+.bfReviewSectionLabel span {
+  font: bold 35px Georgia,serif;
+  color: #ae7600;
+}
+
+.bfReviewSectionLabel h2 {
+  font: 800 14px Arial,sans-serif;
+  letter-spacing: 3px;
+}
+
+.bfReviewBody > p {
+  font: 20px/1.85 Georgia,serif;
+  margin: 0 0 26px;
+}
+
+.bfReviewProsCons {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 40px;
+  padding: 35px 0;
+  border-top: 3px solid #191612;
+  border-bottom: 1px solid #b8aa96;
+}
+
+.bfReviewProsCons h2 {
+  font: bold 31px Georgia,serif;
+  margin: 15px 0;
+}
+
+.bfReviewProsCons p,
+.bfReviewEpisodes p {
+  font: 18px/1.65 Georgia,serif;
+}
+
+.bfReviewEpisodes {
+  margin: 65px auto;
+  max-width: 950px;
+}
+
+.bfReviewEpisodes article {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid #b8aa96;
+}
+
+.bfReviewEpisodes article > span {
+  font: bold 39px Georgia,serif;
+  color: #ae7600;
+}
+
+.bfReviewEpisodes h3 {
+  font: bold 28px Georgia,serif;
+  margin-bottom: 10px;
+}
+
+.bfReviewNote {
+  font: 13px/1.6 Arial,sans-serif;
+  color: #6d665e;
+  margin: 35px 0;
+}
+
+.bfReviewFooter {
+  border-top: 3px solid #191612;
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bfReviewFooter strong {
+  font: bold 26px Georgia,serif;
+}
+
+@media(max-width:700px) {
+  .bfReviewHero,
+  .bfReviewProsCons {
+    grid-template-columns: 1fr;
+  }
+
+  .bfReviewBody > p {
+    font-size: 18px;
+  }
+
+  .bfReviewMast span {
+    display: none;
+  }
+}
+
+/* BINGE FILE — COMPACT EDITORIAL REVIEW */
+
+.bfReviewPage {
+  max-width: 1180px !important;
+  margin: 0 auto;
+}
+
+.bfReviewHeading {
+  padding: 22px 0 !important;
+}
+
+.bfReviewHeading h1 {
+  font-size: clamp(36px, 4vw, 58px) !important;
+  line-height: 1.08 !important;
+  margin: 10px 0 !important;
+}
+
+.bfReviewHeading p {
+  font-size: clamp(17px, 1.7vw, 22px) !important;
+}
+
+.bfReviewHero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr) !important;
+  gap: 38px !important;
+  align-items: center !important;
+  padding: 25px 0 !important;
+}
+
+.bfReviewPoster {
+  padding: 8px !important;
+}
+
+.bfReviewPoster img {
+  display: block !important;
+  width: 100% !important;
+  height: 380px !important;
+  max-height: 380px !important;
+  object-fit: contain !important;
+}
+
+.bfReviewVerdict strong {
+  font-size: clamp(52px, 6vw, 82px) !important;
+  line-height: 1.1 !important;
+  margin: 12px 0 !important;
+}
+
+.bfReviewVerdict h2 {
+  font-size: clamp(27px, 3vw, 42px) !important;
+  line-height: 1.15 !important;
+}
+
+.bfReviewVerdict p {
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+  max-width: 540px;
+}
+
+.bfReviewBody {
+  margin: 35px auto !important;
+}
+
+.bfReviewBody > p {
+  font-size: 19px !important;
+  line-height: 1.8 !important;
+}
+
+.bfReviewSectionLabel h2 {
+  font-size: 15px !important;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+  .bfReviewHero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bfReviewPoster {
+    max-width: 300px;
+  }
+
+  .bfReviewPoster img {
+    height: 360px !important;
+  }
+}
+
+.bfEditorialHeadline {
+  font: 800 clamp(18px, 2.2vw, 29px)/1.3
+    Georgia, serif;
+  color: #a66d00;
+  max-width: 850px;
+  margin: 15px 0;
+  letter-spacing: 0.3px;
+}
+
+/* BINGE FILE — NEWSPAPER MASTHEAD AND SPACING */
+
+#binge-file {
+  margin-top: 12px !important;
+  padding-top: 12px !important;
+  padding-bottom: 30px !important;
+}
+
+#crystal-ball {
+  margin-bottom: 0 !important;
+  padding-bottom: 12px !important;
+}
+
+.bfHomeHeadTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 0;
+  border-top: 1px solid #b7aa98;
+  border-bottom: 4px solid #191612;
+}
+
+.bfHomeEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bfHomeEyebrow span {
+  color: #b77b00;
+  font-size: 22px;
+}
+
+.bfHomeEyebrow strong {
+  font: 800 16px Arial,sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.bfHomeHeadTop small,
+.bfHomeIntro small {
+  font: 800 10px Arial,sans-serif;
+  letter-spacing: 2px;
+}
+
+.bfHomeIntro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  padding: 20px 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #b7aa98;
+}
+
+.bfHomeIntro small {
+  color: #b77b00;
+}
+
+.bfHomeIntro h2 {
+  font: 400 clamp(27px,3vw,43px)/1.15 Georgia,serif;
+  margin: 8px 0;
+}
+
+.bfHomeIntro h2 em {
+  color: #b77b00;
+}
+
+.bfHomeIntro p {
+  font: 16px/1.5 Georgia,serif;
+  margin: 0;
+}
+
+.bfHomeIntro a {
+  color: #a66d00;
+  text-decoration: none;
+  white-space: nowrap;
+  font: 800 11px Arial,sans-serif;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #b77b00;
+  padding-bottom: 7px;
+}
+
+@media(max-width:700px) {
+  .bfHomeIntro {
+    flex-direction: column;
+    align-items: start;
+  }
+  .bfHomeHeadTop > small {
+    display: none;
+  }
+}
+
+/* MOVIEHMM — UNIFIED SECTION DESIGN */
+
+#binge-file {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 32px !important;
+}
+
+#crystal-ball {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.bfHomeHead {
+  margin: 0 0 18px !important;
+}
+
+.bfHomeHeadTop {
+  border-top: 1px solid #b8aa96 !important;
+  border-bottom: 4px solid #171411 !important;
+  padding: 15px 0 !important;
+}
+
+.bfHomeEyebrow strong {
+  font-size: 15px !important;
+  letter-spacing: 2px !important;
+}
+
+.bfHomeIntro {
+  padding: 16px 0 !important;
+  margin: 0 0 18px !important;
+  border-bottom: 1px solid #b8aa96 !important;
+  align-items: center !important;
+}
+
+.bfHomeIntro h2 {
+  font: 400 clamp(26px,2.8vw,40px)/1.15 Georgia,serif !important;
+  margin: 6px 0 !important;
+}
+
+.bfHomeIntro p {
+  font: 16px/1.5 Georgia,serif !important;
+}
+
+.bfHomeIntro a,
+.mhBingeExplore {
+  color: #a66d00 !important;
+  text-decoration: none !important;
+  font: 800 11px Arial,sans-serif !important;
+  letter-spacing: 1px !important;
+}
+
+.mhBingeGrid {
+  margin-top: 0 !important;
+}
+
+/* MOVIEHMM — EDITORIAL SCROLL REVEAL */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  #trending .dhHead,
+  #binge-file .bfHomeHead {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 650ms ease,
+      transform 650ms ease;
+  }
+
+  #trending .dhPosters > a,
+  #binge-file .mhBingeCard {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 700ms ease,
+      transform 700ms cubic-bezier(.2,.8,.2,1);
+    transition-delay: calc(var(--reveal-index, 0) * 100ms);
+  }
+
+  #trending.mhRevealVisible .dhHead,
+  #binge-file.mhRevealVisible .bfHomeHead,
+  #trending.mhRevealVisible .dhPosters > a,
+  #binge-file.mhRevealVisible .mhBingeCard {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #trending .dhPosters > a:nth-child(1),
+  #binge-file .mhBingeCard:nth-child(1) {
+    --reveal-index: 0;
+  }
+
+  #trending .dhPosters > a:nth-child(2),
+  #binge-file .mhBingeCard:nth-child(2) {
+    --reveal-index: 1;
+  }
+
+  #trending .dhPosters > a:nth-child(3),
+  #binge-file .mhBingeCard:nth-child(3) {
+    --reveal-index: 2;
+  }
+
+  #trending .dhPosters > a:nth-child(4),
+  #binge-file .mhBingeCard:nth-child(4) {
+    --reveal-index: 3;
+  }
+
+  #trending .dhPosters > a:nth-child(5),
+  #binge-file .mhBingeCard:nth-child(5) {
+    --reveal-index: 4;
+  }
+}
+
+/* ==========================================
+   MOVIEHMM — HOVER ANIMATION
+   TRENDING REVIEWS + THE BINGE FILE
+   ========================================== */
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+
+  /* Smooth card movement */
+  #trending .dhPosters > a,
+  #binge-file .mhBingeCard {
+    position: relative;
+    transition:
+      transform 350ms cubic-bezier(.2,.8,.2,1),
+      filter 350ms ease !important;
+    transform-origin: center bottom;
+  }
+
+  /* Lift the card */
+  #trending .dhPosters > a:hover,
+  #binge-file .mhBingeCard:hover {
+    transform: translateY(-9px) !important;
+  }
+
+  /* Smooth poster zoom */
+  #trending .dhPosters > a > div > img,
+  #binge-file .mhBingePoster img {
+    transition:
+      transform 550ms cubic-bezier(.2,.8,.2,1),
+      filter 450ms ease !important;
+  }
+
+  #trending .dhPosters > a > div,
+  #binge-file .mhBingePoster {
+    overflow: hidden;
+  }
+
+  #trending .dhPosters > a:hover > div > img,
+  #binge-file .mhBingeCard:hover .mhBingePoster img {
+    transform: scale(1.055) !important;
+    filter: brightness(1.06) contrast(1.04);
+  }
+
+  /* Gold title on hover */
+  #trending .dhPosters > a h3,
+  #binge-file .mhBingeCard h3 {
+    transition: color 300ms ease !important;
+  }
+
+  #trending .dhPosters > a:hover h3,
+  #binge-file .mhBingeCard:hover h3 {
+    color: #b77b00 !important;
+  }
+
+  /* Gold underline animation */
+  #trending .dhPosters > a::after,
+  #binge-file .mhBingeCard::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #b77b00;
+    margin-top: 12px;
+    transition: width 400ms ease;
+  }
+
+  #trending .dhPosters > a:hover::after,
+  #binge-file .mhBingeCard:hover::after {
+    width: 100%;
+  }
+}
+
+/* Keyboard accessibility */
+#trending .dhPosters > a:focus-visible,
+#binge-file .mhBingeCard:focus-visible {
+  outline: 2px solid #b77b00;
+  outline-offset: 5px;
+}
+
+/* Disable previous scroll-reveal visibility rules */
+
+#trending .dhHead,
+#binge-file .bfHomeHead,
+#trending .dhPosters > a,
+#binge-file .mhBingeCard {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

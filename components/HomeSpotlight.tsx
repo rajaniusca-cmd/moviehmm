@@ -36,6 +36,7 @@ export default function HomeSpotlight({
 
   const spotlightArt: Record<string, string> = {
     dorothy: "/spotlight/dorothy.jpg",
+    "hanuman-ansh": "/spotlight/hanuman.jpg",
   };
 
   const artwork =

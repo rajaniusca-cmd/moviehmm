@@ -35,6 +35,7 @@ export default function HomeSpotlight({
   const movie = spotlightMovies[active];
 
   const spotlightArt: Record<string, string> = {
+    "comrade-kalyan": "/spotlight/comrade-kalyan.jpg",
     dorothy: "/spotlight/dorothy.jpg",
     "hanuman-ansh": "/spotlight/hanuman.jpg",
   };

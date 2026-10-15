@@ -7,6 +7,7 @@ type Movie = {
   slug: string;
   title: string;
   poster: string;
+  spotlightPoster?: string;
   language: string;
   year: number;
   dek: string;
@@ -41,8 +42,9 @@ export default function HomeSpotlight({
   };
 
   const artwork =
+    movie.spotlightPoster ??
     spotlightArt[movie.slug] ??
-    `/spotlight/${movie.slug}.png`;
+    movie.poster;
 
   const previous = () =>
     setActive(
@@ -75,6 +77,12 @@ export default function HomeSpotlight({
             key={movie.slug}
             src={artwork}
             alt={`${movie.title} spotlight`}
+            onError={(e) => {
+              const img = e.currentTarget;
+              if (!img.src.endsWith(movie.poster)) {
+                img.src = movie.poster;
+              }
+            }}
           />
         </div>
 

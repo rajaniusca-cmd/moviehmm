@@ -15290,3 +15290,13 @@ body{background:#f3efe6}
 
 
 
+
+/* MovieHmm: Garividi Lakshmi poster fit */
+a[href="/reviews/garividi-lakshmi"] img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 2 / 3 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: transparent !important;
+}

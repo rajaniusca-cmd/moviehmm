@@ -5,7 +5,13 @@ import {getAllPostmortems} from "@/lib/postmortem";
 const trendingReasons:Record<string,string>={"garividi-lakshmi":"Anandhi gives a forgotten folk artist a powerful voice, but uneven pacing and a conventional screenplay weaken an important story.","ranabaali":"A rare famine drama with committed performances, Rashmika's emotional strength and impressive visuals, though uneven pacing holds back its ambition.","jailer-2": "Pandian delivers again. Rajinikanth's presence, Anirudh's explosive music and Nelson's comedy-suspense balance create regular theatrical highs, despite underused villains.", "hanuman-ansh": "Faith touches the heart. The storytelling doesn't always reach the same height.", "baththa": "A powerful idea about childhood and fear, with moments that stay longer than the film.", "drishyam-the-conclusion": "Too much waiting for the final move. The climax makes the patience worthwhile.", "dorothy": "Brave storytelling and strong performances. Some emotional turns needed more breathing room.", "dont-trouble-the-trouble": "A charming little fantasy that works best when it stops trying to explain itself.", "comrade-kalyan": "The atmosphere holds attention, but convenient twists and a wasted political backdrop weaken the film.", "premada-oorali": "A heartfelt village romance with strong performances, but familiar thinking and heavy melodrama hold it back.", "modha-rathri": "A clever look at marriage and village hypocrisy, though the noisy comedy occasionally overwhelms its heart.", "bail": "Three veterans and a promising premise, but predictable operations and easy solutions weaken the thriller.", "viswanath-and-sons": "Suriya and Mamitha bring warmth and freshness to an engaging family story.", "irumudi": "Ravi Teja's emotional depth, a touching father-daughter bond and faith make this a rewarding experience."};
 const leads=["ranabaali","jailer-2","garividi-lakshmi","baththa","comrade-kalyan","dorothy","hanuman-ansh","drishyam-the-conclusion","premada-oorali","bail"];
 const spotlightLeads=["ranabaali","jailer-2","hanuman-ansh","baththa","comrade-kalyan"];
-const horoscopeLeads=["ranabaali","jailer-2","comrade-kalyan","418","aadarsha-kutumbam"];
+const horoscopeLeads=[
+  "ramayana-part-1",
+  "donga-nakoduku",
+  "418",
+  "cult",
+  "aadarsha-kutumbam"
+];
 const newReviewLeads=["irumudi","comrade-kalyan","dont-trouble-the-trouble","mother-promise","chakora","hanuman-ansh","dorothy","baththa","sigma","anakapalli","thella-kaagitham","drishyam-the-conclusion"];
 export default function Home(){const allPostmortems=getAllPostmortems();const postmortems=["irumudi","viswanath-and-sons","the-paradise","thella-kaagitham","baththa"].map(s=>allPostmortems.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const allCrystalBalls=getAllCrystalBalls();const crystalBalls=horoscopeLeads.map(s=>allCrystalBalls.find(x=>x.slug===s)).filter((x):x is NonNullable<typeof x>=>!!x);const reviews=getAllReviews(),f=leads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),spotlight=spotlightLeads.map(s=>reviews.find(r=>r.slug===s)).filter((r):r is NonNullable<typeof r>=>!!r),newReviews=[...reviews].sort((a,b)=>(b.releaseDate??b.publishedDate).localeCompare(a.releaseDate??a.publishedDate)).slice(0,20),shelf=[...reviews].filter(r=>
       r.slug === "modha-rathri" ||
@@ -99,11 +105,11 @@ export default function Home(){const allPostmortems=getAllPostmortems();const po
 
         <img
           src={x.poster}
-          alt={`${x.title} Movie....🤔hmm prediction`}
+          alt={`${x.title} MovieHmm prediction`}
         />
 
         <div className="cbPosterForecast">
-          <strong>{x.hitProbability}%</strong>
+          <strong>{x.confidence}%</strong>
           <span>{x.predictionTag ?? 'THE EARLY CALL'}</span>
         </div>
 

@@ -15300,3 +15300,55 @@ a[href="/reviews/garividi-lakshmi"] img {
   object-position: center center !important;
   background: transparent !important;
 }
+
+/* Prediction percentage */
+.cbPosterForecast strong {
+  font-size: 30px;
+  font-weight: 900;
+  color: #f4c56a;
+  line-height: 1.1;
+}
+
+.cbPosterForecast span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Keep prediction visible */
+.cbCard .cbPosterForecast {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* MovieHmm — approved Horoscope card layout */
+.cbRail .cbCard > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+  border: 0;
+  border-radius: 0;
+}
+
+.cbRail .cbCard .cbPosterForecast strong {
+  font-size: 30px;
+  font-weight: 900;
+  color: #c18a36;
+}
+
+/* Full-size Crystal Ball posters without artificial framing */
+.cbRail .cbCard > img {
+  display: block !important;
+  width: 100% !important;
+  height: 360px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}

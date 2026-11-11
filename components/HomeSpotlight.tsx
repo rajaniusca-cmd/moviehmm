@@ -72,7 +72,7 @@ export default function HomeSpotlight({
 
       <div className="mhFinalSpotlightStage">
 
-        <div className="mhFinalSpotlightArt">
+        <div className={`mhFinalSpotlightArt ${movie.slug === "cult" ? "mhCultSpotlight" : ""}`}>
           <img
             key={movie.slug}
             src={artwork}

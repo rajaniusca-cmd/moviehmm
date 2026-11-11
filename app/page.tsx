@@ -43,7 +43,11 @@ export default function Home(){const allPostmortems=getAllPostmortems();const po
 </section>
 
 
-<div id="spotlight"><HomeSpotlight movies={spotlight.map(m => m.slug === "adarsha-kutumbam" ? {...m, poster: "/posters/ak47spotlight.jpg"} : m)}/></div><section id="trending" className="dhSection shell"><div className="dhHead"><strong>TRENDING REVIEWS</strong><small>START HERE</small></div><div className="dhPosters">{f.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><div><img src={m.poster} alt={m.title}/><span>{String(i+1).padStart(2,"0")}</span></div>
+<div id="spotlight"><HomeSpotlight movies={spotlight.map(m => m.slug === "cult"
+  ? {...m, poster: "/posters/cultspotlight.jpg"}
+  : m.slug === "adarsha-kutumbam"
+  ? {...m, poster: "/posters/ak47spotlight.jpg"}
+  : m)}/></div><section id="trending" className="dhSection shell"><div className="dhHead"><strong>TRENDING REVIEWS</strong><small>START HERE</small></div><div className="dhPosters">{f.map((m,i)=><Link href={`/reviews/${m.slug}`} key={m.slug}><div><img src={m.poster} alt={m.title}/><span>{String(i+1).padStart(2,"0")}</span></div>
 <aside className="mhTrendingRating">
   <strong>{m.score.toFixed(1)} / 10</strong>
   <span className="mhTrendingReason">

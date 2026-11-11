@@ -15352,3 +15352,42 @@ a[href="/reviews/garividi-lakshmi"] img {
   margin: 0 !important;
   border: none !important;
 }
+
+
+/* CULT Spotlight — show complete artwork */
+.mhCultSpotlight {
+  background: #17120f;
+}
+
+.mhCultSpotlight img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+
+/* MovieHmm CULT — Spotlight and Trending poster fit */
+.mhCultSpotlight,
+.dhPosters a:has(img[src*="cult-review"]) > div {
+  position: relative;
+  overflow: hidden;
+  background: #181313;
+}
+
+/* Complete poster, proportional sizing */
+.mhCultSpotlight img,
+.dhPosters a:has(img[src*="cult-review"]) img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block;
+}
+
+/* Keep the artwork centered */
+.mhCultSpotlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

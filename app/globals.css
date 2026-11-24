@@ -15398,3 +15398,11 @@ a[href="/reviews/garividi-lakshmi"] img {
   object-fit: cover !important;
   object-position: center center !important;
 }
+
+/* Aakasamlo Oka Tara — preserve complete Spotlight artwork */
+img[src="/posters/akasamlo-oka-tara-spotlight.jpg"] {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background-color: #171411;
+}
+
